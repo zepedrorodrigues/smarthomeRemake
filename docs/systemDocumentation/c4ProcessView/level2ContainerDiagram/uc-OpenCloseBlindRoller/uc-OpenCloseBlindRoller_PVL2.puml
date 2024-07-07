@@ -1,0 +1,24 @@
+@startuml
+
+title UC: Open or Close a Blind Roller in a Room\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nFrontend" as FE
+participant "<<system(C4)>>\nBackend" as BE
+
+[o-> FE : Request actuator by device id
+activate FE
+FE -> BE : (GET) Request actuators by device id
+activate BE
+BE --> FE : (200 OK) Actuators
+deactivate BE
+[o<-- FE : Provide actuators
+[o-> FE : Set Blind Roller position
+FE -> BE : (PUT) Set Blind roller percentage
+activate BE
+BE --> FE : (200 OK) Blind Roller position updated
+deactivate BE
+[o<-- FE : Provide Blind Roller position updated
+deactivate FE
+
+@enduml

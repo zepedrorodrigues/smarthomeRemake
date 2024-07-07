@@ -1,0 +1,48 @@
+@startuml
+
+title Aggregate ActuatorModel Class Diagram\nSystem / BackEnd / Domain\n(Implementation View - Level 4)
+
+class ActuatorTypeName {
+- actuatorTypeName : String
++ ActuatorTypeName(...)
++ getActuatorTypeName() : String
+}
+
+package "Actuator Model Ag"{
+class ActuatorModel {
++ ActuatorModel(...)
++ getIdentity() : ActuatorModelName
++ getActuatorTypeName() : ActuatorTypeName
+}
+
+class ActuatorModelName {
+- actuatorModelName : String
++ ActuatorModelName(...)
++ getActuatorModelName() : String
+}
+}
+
+
+package Repositories {
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+interface IActuatorModelRepository {
++ findActuatorModelsByActuatorTypeName(...) : Iterable<ActuatorModel>
++ findActuatorModelNamesByActuatorTypeName(...) : Iterable<ActuatorModelName>
+}
+}
+
+ActuatorModel "1" *-- "1" ActuatorModelName : contains
+ActuatorModel ..> ActuatorTypeName: knows
+
+IActuatorModelRepository "1" -up-|> IRepository : extends
+
+IActuatorModelRepository "1" *-- "*" ActuatorModel : contains
+
+
+@enduml

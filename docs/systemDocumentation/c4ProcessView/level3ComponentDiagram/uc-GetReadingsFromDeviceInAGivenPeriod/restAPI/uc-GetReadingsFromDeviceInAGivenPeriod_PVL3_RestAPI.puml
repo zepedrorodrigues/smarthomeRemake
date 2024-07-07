@@ -1,0 +1,32 @@
+@startuml
+
+title UC: Get Readings From Device in a Given Period\nREST API\n(Process View Level 3)
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repositories" as R
+
+[o-> RC : (GET) Request readings from device (period)
+activate RC
+RC -> S : Get readings from device in a given period
+activate S
+S -> R : get device
+activate R
+R --> S : device
+deactivate R
+S -> R : get sensors
+activate R
+R --> S : sensors
+deactivate R
+S -> R : get readings
+activate R
+R --> S : readings
+deactivate R
+S --> RC : Provide readings
+deactivate S
+[o<-- RC : 200 OK, readings
+deactivate RC
+
+
+
+@enduml

@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title UC: Get Peak Power Consumption in a Given Period\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nBackend" as BE
+
+[o-> BE : (GET) Request Peak Power Consumption (Period)
+activate BE
+[o<-- BE: (OK, 200) Peak Power Consumption
+deactivate BE
+
+
+@enduml

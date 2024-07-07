@@ -1,0 +1,18 @@
+@startuml
+
+autonumber
+title UC: Deactivate Device\n(Process View Level 2)
+
+participant "<<system(C4)>>\nFrontend" as FE
+participant "<<system(C4)>>\nBackend" as BE
+
+[o->FE : Request deactivate device
+activate FE
+FE -> BE : (POST) Request device deactivation
+activate BE
+FE <-- BE : (200 OK) deactivated device
+deactivate BE
+[o<-- FE : Device deactivated
+deactivate FE
+
+@enduml

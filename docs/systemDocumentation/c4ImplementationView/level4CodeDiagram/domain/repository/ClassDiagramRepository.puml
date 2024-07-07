@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+title Domain Class Diagram - Repository\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+
+interface IRepository<ID,T>{
++ save(T) : T
++ findAll(): Iterable<T>
++ findByIdentity(ID) : T
++ containsIdentity(ID) : boolean
+}
+
+interface JpaRepository<DataModel,ID>{
+}
+
+interface "IObjectRepository<ObjectId,Object>" as IObjectRepository{
+}
+
+interface IObjectRepositorySpringData<ObjectDataModel,String>{
+}
+
+class ObjectRepositoryMemImpl{
+}
+class ObjectRepositoryJPAImpl{
+}
+class EntityManager{
+}
+
+IObjectRepository -u-|> IRepository : extends
+
+ObjectRepositoryMemImpl .u.|> IObjectRepository : implements
+ObjectRepositoryJPAImpl .u.|> IObjectRepository : implements
+IObjectRepositorySpringData -u-|> JpaRepository : extends
+ObjectRepositoryJPAImpl .u.> EntityManager : uses
+
+ObjectRepositorySpringDataImpl  .u.|> IObjectRepository : implements
+ObjectRepositorySpringDataImpl .u.> IObjectRepositorySpringData : uses
+
+note left of IObjectRepository
+    this is a generic interface for
+    object repositories, may not include
+    specific method signatures
+end note
+
+@enduml

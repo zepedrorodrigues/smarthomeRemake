@@ -1,0 +1,263 @@
+.device-details {
+    background-color: rgba(224, 224, 224, 0.61);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+.device-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.device-details-header h2 {
+    margin: 0;
+}
+
+.device-details-info p {
+    margin: 5px 0;
+}
+
+.sensor-list, .actuator-list {
+    margin-top: 20px;
+}
+
+.sensor-item, .actuator-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 10px 0; /* Space between items */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* min-height: 35px; /* Ensure the sensors have the same height as the actuators */
+}
+
+.add-sensor-form, .add-actuator-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.add-sensor-form select, .add-sensor-form input, .add-actuator-form select, .add-actuator-form input {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*flex-wrap: wrap;*/
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center; /* Center align items */
+    position: relative; /* Relative position to allow absolute positioning of slider value */
+    gap: 10px; /* Add some space between slider and icons */
+    max-width: 500px; /* Set a maximum width for the slider wrapper */
+    margin: 0 auto; /* Center the slider wrapper within its parent */
+    width: 100%; /* Ensure it takes full width up to the max-width */
+}
+
+.slider-wrapper .slider-value {
+    position: absolute;
+    top: -20px; /* Position it above the slider bar */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    background: #fff;
+    padding: 2px 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+.slider-container .slider-icon {
+    margin: 0; /* Remove margin from the slider icons */
+    width: 24px; /* Fixed width for the icons */
+    height: 24px; /* Fixed height for the icons */
+}
+
+/* Left icon */
+.slider-wrapper .slider-icon:first-child {
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+/* Right icon */
+.slider-wrapper .slider-icon:last-child {
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+
+.slider-container input[type="range"] {
+    flex-grow: 1; /* Ensure the slider takes remaining width */
+    margin: 0 10px; /* Space between the slider and icons */
+}
+
+.slider-value {
+    margin-bottom: 5px; /* Add some space below the slider value */
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .slider-container {
+        flex-direction: column; /* Change direction to column on small screens */
+        align-items: center;
+    }
+
+    .slider-wrapper .slider-value {
+        position: relative;
+        top: -20px;
+        left: 0;
+        transform: none;
+        margin-bottom: 5px; /* Add space below the slider value */
+    }
+
+    .slider-container input[type="range"] {
+        width: calc(100% - 48px); /* Adjust width to accommodate icons */
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.popup-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.device-details p {
+    margin: 5px 0; /* Adjust margin to decrease spacing */
+}
+
+.get-readings-button, .submit-readings-button, .cancel-readings-button {
+    background-color: #7198d1;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.get-readings-button:hover, .submit-readings-button:hover, .cancel-readings-button:hover {
+    background-color: #4c74af;
+    transform: translateY(-3px);
+}
+
+.get-readings-button:active, .submit-readings-button:active, .cancel-readings-button:active {
+    background-color: #4c74af;
+    transform: translateY(0);
+}
+
+.get-readings-button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Adicionar animação para o botão desativado */
+}
+
+.readings-form {
+    display: flex;
+    flex-direction: column; /* Center items vertically */
+    margin-top: 10px;
+}
+
+.date-picker {
+    margin-bottom: 10px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.readings-form label {
+    margin-right: 10px; /* Espaço entre os labels */
+}
+
+.readings-form input {
+    padding: 10px;
+    margin: 0 10px; /* Espaço horizontal entre os inputs */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.readings-form .submit-readings-button {
+    margin-right: 10px; /* Espaço entre os botões submit e cancel */
+}
+
+.readings-card {
+    /*background: rgba(212, 223, 237, 0.98); */
+    background-color: #ffffff; /* Background color of the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    margin-top: 20px; /* Spacing between cards */
+}
+
+/* Styles for the card title */
+.readings-card-title {
+    font-size: 18px; /* Adjust the font size */
+    margin-bottom: 15px; /* Add some space below the title */
+}
+
+/* Styles for the sensor card */
+.sensor-card {
+    /*background: rgba(212, 223, 237, 0.98); */
+    background-color: #ffffff; /* Background color of the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    margin-top: 20px; /* Spacing between cards */
+    height: 100%; /* Set a fixed height for the card */
+}
+
+/* Styles for the actuator card */
+.actuator-card {
+    /*background: rgba(212, 223, 237, 0.98); */
+    background-color: #ffffff; /* Background color of the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    margin-top: 20px; /* Spacing between cards */
+    height: 100%; /* Set a fixed height for the card */
+}
+
+/* Styles for the card title */
+.error-message {
+    color: red; /* Red color for error messages */
+    margin-top: 5px; /* Spacing above the error message */
+}

@@ -1,0 +1,60 @@
++@startuml
+
+title Use Case Diagram (G6)\n(Scenario View - Level 1)
+
+left to right direction
+
+actor Administrator as admin
+actor "Power User\n[or Administrator]" as pu
+actor "Room Owner\n[or Power User\nor Administrator]" as ro
+
+package "Smart Home System"{
+
+usecase UC1 as "UC-To configure the location of the house"
+usecase UC2 as "UC-To add a new room to the house"
+usecase UC3 as "UC-To list existing rooms"
+usecase UC4 as "UC-To define a sensor type"
+usecase UC5 as "UC-To add a new device to a room"
+usecase UC6 as "UC-To list devices in room"
+usecase UC7 as "UC-To add a sensor to an existing device"
+usecase UC8 as "UC-To deactivate a device"
+usecase UC9 as "UC-To get list of devices by functionality types"
+usecase UC12 as "UC-To add an actuator to an existing device"
+usecase UC33 as "UC-To get readings from a Device"
+usecase UC34 as "UC-To get maximum instantaneous temperature difference"
+usecase UC36 as "UC-To get peak power consumption"
+usecase UC37 as "UC- To open/close a BlindRoller in a Room"
+
+admin ..> UC1
+admin ..> UC2
+admin ..> UC3
+admin ..> UC4
+
+pu ..> UC5
+pu ..> UC7
+pu ..> UC8
+pu ..> UC9
+pu ..> UC12
+pu ..> UC36
+
+ro ..> UC6
+ro ..> UC33
+ro ..> UC34
+ro ..> UC37
+
+UC5 ..> UC3 : <include>
+UC6 ..> UC3 : <include>
+UC7 ..> UC6 : <include>
+UC8 ..> UC6  : <include>
+UC12 ..> UC6 : <include>
+UC33 ..> UC6 : <include>
+UC34 ..> UC33 : <include>
+UC37 ..> UC6 : <include>
+
+}
+
+@enduml
+
+
+
+@enduml

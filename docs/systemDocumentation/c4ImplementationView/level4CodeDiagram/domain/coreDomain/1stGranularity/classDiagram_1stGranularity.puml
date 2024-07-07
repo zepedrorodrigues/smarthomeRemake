@@ -1,0 +1,80 @@
+@startuml
+
+title Domain Class Diagram - Core Domain\nSystem / BackEnd / Domain\n(Implementation View Level 4 - 1st Granularity)
+
+class House {
+- houseName : HouseName
+- location : Location
+}
+
+class Room {
+- roomId : RoomId
+- roomName : RoomName
+- houseName : HouseName
+- floor : Floor
+- dimensions : Dimensions
+}
+
+class Device {
+- deviceId : DeviceId
+- deviceType : DeviceType
+- deviceName : DeviceName
+- deviceStatus : DeviceStatus
+- roomId : RoomId
+}
+
+class DeviceType {
+- deviceTypeName : DeviceTypeName
+}
+
+interface Sensor {
+- sensorId : SensorId
+- sensorModelName : SensorModelName
+- deviceId : DeviceId
+}
+
+
+class Reading {
+- readingId : ReadingId
+- ReadingValue : ReadingValue
+- timeStamp : TimeStamp
+- sensorId : SensorId
+}
+
+class SensorType {
+- sensorTypeId : SensorTypeId
+- sensorTypeName : SensorTypeName
+- sensorTypeUnit : SensorTypeUnit
+}
+
+class SensorModel{
+- sensorModelName : SensorModelName
+- sensorTypeId : SensorTypeId
+}
+
+interface Actuator {
+- actuatorId : ActuatorId
+- actuatorModelName : ActuatorModelName
+- deviceId : DeviceId
+}
+
+class ActuatorType {
+- actuatorTypeName : ActuatorTypeName
+}
+
+class ActuatorModel {
+- actuatorModelName : ActuatorModelName
+}
+
+House "1" <-r- "*" Room
+Room "1" <-r- "*" Device
+Device "1" <-- "*" Sensor
+Device "1" <-- "*" Actuator
+Actuator "*" --> "1" ActuatorModel
+ActuatorModel "*" --> "1" ActuatorType
+Sensor "*" --> "1" SensorModel
+SensorModel "*" --> "1" SensorType
+Sensor "1" <-- "*" Reading
+Device "1" -R> "1" DeviceType
+
+@enduml

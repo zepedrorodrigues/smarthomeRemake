@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+title SmartHome (G6)\n(Logical View - Level 2)
+
+component "<<Container>>\nSmartHome" as SmartHome {
+portin " " as P1
+portin " " as P3
+
+component Backend{
+portin " " as BP1
+portout " " as BP2
+}
+
+component Frontend{
+portin " " as FP1
+portin " " as FP2
+Portin " " as BP3
+}
+
+component Weather\nService{
+portin " " as WP1
+portin " " as WP2
+}
+
+interface "SH API"
+interface "WS API"
+}
+
+/' External APIs '/
+P1 -u- "SmartHome API"
+P1 -- BP1
+
+
+P3 -u- "Web UI"
+P3 -- FP1
+
+/' Internal APIs '/
+BP2 -- "SH API"
+"SH API" )-- FP2
+
+BP3 --( "WS API"
+"WS API" -- WP2
+
+
+@enduml

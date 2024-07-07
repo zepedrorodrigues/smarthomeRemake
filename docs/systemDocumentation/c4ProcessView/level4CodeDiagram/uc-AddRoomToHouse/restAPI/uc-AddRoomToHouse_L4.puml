@@ -1,0 +1,107 @@
+@startuml
+
+title UC: Add a Room to the House\nREST API\n(Process View Level 4)
+autonumber
+
+participant "Routing" as RT
+participant ":HouseRESTController" as LC
+participant ":IHouseService" as HS
+participant ":HouseMapper" as M
+participant ":RoomRESTController" as ARC
+participant ":RoomMapper" as RM
+participant ":IRoomService" as RSVC
+participant ":IHouseRepository" as HR
+participant ":RoomFactory" as RF
+participant ":IRoomRepository" as RR
+participant "houseIdsDTO:HouseIdDTO" as DTO2
+participant "houseId:HouseName" as HID
+participant "roomName:RoomName" as RN
+participant "floor:Floor" as F
+participant "dimensions:Dimensions" as D
+participant "room:Room" as R
+participant "roomDTO:RoomDTO" as RD
+
+[o-> RT : GET /houses
+activate RT
+RT-> LC : getHouses()
+activate LC
+LC -> HS : getHouseIds()
+activate HS
+HS -> HR : findAllHouseIds()
+activate HR
+HR-->HS : houseIds
+deactivate HR
+HS-->LC : houseIds
+deactivate HS
+LC -> M : toHouseIdsDTO(houseIds)
+activate M
+M-->DTO2** : <create> (houseIds)
+M-->LC : houseIdsDTO
+deactivate M
+LC-->RT : houseIdsDTO,\nHttpStatus.OK
+deactivate LC
+[o<-- RT : houseIdsDTO,\nHttpStatus.OK
+deactivate RT
+
+[o-> RT : POST /rooms
+activate RT
+
+RT-> ARC : addRoom(houseId, roomDTO)
+activate ARC
+
+ARC --> HID** : <create>(houseId)
+ARC -> RM : toRoomName(roomDTO)
+activate RM
+RM --> RN** : <create>(roomName)
+RM --> ARC : roomName
+deactivate RM
+
+ARC ->  RM : toFloor(roomDTO)
+activate RM
+RM --> F** : <create>(floor)
+RM --> ARC : floor
+deactivate RM
+
+ARC -> RM : toDimensions(roomDTO)
+activate RM
+note right of RM : Also creates Width, Height and Length value objects
+RM --> D** : <create>(width, height, length)
+RM --> ARC : dimensions
+deactivate RM
+
+ARC ->  RSVC : addRoom(houseId, roomName, floor, dimensions)
+activate RSVC
+
+RSVC -> HR : containsIdentity(houseId)
+activate HR
+HR --> RSVC : boolean
+deactivate HR
+
+
+RSVC -> RF : createRoom(roomName, houseId, floor, dimensions)
+activate RF
+RF --> R** : <create>(roomName, houseId, floor, dimensions)
+RF --> RSVC : room
+deactivate RF
+
+RSVC -> RR : save(room)
+activate RR
+RR --> RSVC : savedRoom
+deactivate RR
+
+RSVC -> ARC : savedRoom
+deactivate RSVC
+
+ARC -> RM : toRoomDTO(savedRoom)
+activate RM
+RM --> RD** : <create>(roomId, houseId, roomName, floor, height, width, length)
+RM --> ARC : roomDTO
+deactivate RM
+RT <-- ARC : roomDTO,\nHttpStatus.CREATED
+deactivate ARC
+
+[o<- RT : roomDTO,\nHttpStatus.CREATED
+
+deactivate RT
+
+@enduml

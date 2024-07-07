@@ -1,0 +1,41 @@
+@startuml
+
+title Use Case Diagram - WebApp (G6)\n(Scenario View - Level 1)
+
+left to right direction
+
+actor "Room Owner\n[or Power User\n or Administrator]" as admin
+actor "User" as user
+actor "Power User" as powerUser
+
+package "WebApp" {
+
+usecase UC38 as "UC - To have today's sunrise and sunset hours on main page"
+usecase UC39 as "UC - To have a current outside temperature on main page"
+usecase UC40 as "UC - To add a new device to a room"
+usecase UC41 as "UC - To configure a device in a room"
+usecase UC42 as "UC - To have a list of all rooms in the house"
+usecase UC43 as "UC - To get a list of all devices in a room"
+usecase UC44 as "UC - To get a list of all measurements of a device"
+usecase UC45.1 as "UC - To know the current position of a blind roller"
+usecase UC45.2 as "UC - To open or close a blind roller"
+
+user ..> UC38
+user ..> UC39
+user ..> UC42
+
+powerUser ..> UC40
+powerUser ..> UC41
+
+admin ..> UC43
+admin ..> UC44
+admin ..> UC45.2
+UC45.2 ..> UC45.1 : <include>
+UC43 ..> UC42 : <include>
+UC40 ..> UC42 : <include>
+UC41 ..> UC43 : <include>
+UC44 ..> UC43 : <include>
+
+}
+
+@enduml

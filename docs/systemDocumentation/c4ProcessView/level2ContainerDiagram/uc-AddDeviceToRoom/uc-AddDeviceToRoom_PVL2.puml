@@ -1,0 +1,23 @@
+@startuml
+
+title UC: Add a Device To a Room\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nFrontend" as FE
+participant "<<system(C4)>>\nBackend" as BE
+
+[o-> FE: Request add device to room
+activate FE
+FE -> BE: (GET) Request add device to room
+activate BE
+BE --> FE: (OK, 200) Device types
+deactivate BE
+[o<-- FE: Provide device formulary
+[o-> FE: Provide device data
+FE -> BE: (POST) Device data
+activate BE
+BE --> FE: (201 Created) Added device
+deactivate BE
+[o<-- FE: Device added to room
+deactivate FE
+@enduml

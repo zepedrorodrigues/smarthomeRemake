@@ -1,0 +1,18 @@
+@startuml
+
+title UC: Get Rooms\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nFrontend" as FE
+participant "<<system(C4)>>\nBackend" as BE
+
+[o-> FE : Request rooms
+activate FE
+FE -> BE : (GET) Request rooms
+activate BE
+BE --> FE : (OK, 200) Provide rooms
+deactivate BE
+[o<-- FE : Provide rooms
+deactivate FE
+
+@enduml

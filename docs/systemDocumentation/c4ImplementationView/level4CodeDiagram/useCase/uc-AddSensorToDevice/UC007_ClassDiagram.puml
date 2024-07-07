@@ -1,0 +1,197 @@
+@startuml
+
+'skinparam linetype ortho
+skinparam linetype polyline
+
+title UC: Add Sensor to Device\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+/'
+As a Power User [or Administrator], I want to add a sensor to an existing device in
+a room. The sensor must be of a model of an existing type of sensor.
+'/
+
+class SensorTypeDTO {
+    - sensorTypeId : String
+    - sensorTypeName : String
+    - sensorTypeUnit : String
+    + SensorTypeDTO(...)
+    + getSensorTypeId() : String
+    + getSensorTypeName() : String
+    + getSensorTypeUnit() : String
+
+}
+
+class SensorModelDTO {
+    - sensorModelName : String
+    - sensorTypeId : String
+    + SensorModelDTO(...)
+    + getSensorModelName() : String
+    + getSensorTypeId() : String
+}
+
+class SensorDTO {
+    - sensorId: String
+    - sensorModelName: String
+    - deviceId: String
+    - value: String
+    + SensorDTO(...)
+    + getSensorId() : String
+    + getSensorModelName() : String
+    + getDeviceId() : String
+    + getValue() : String
+
+}
+
+class SensorTypeMapper {
+    + toSensorTypesIdDTO(...): List<SensorTypeDTO>
+}
+
+interface ISensorTypeRepository {
+    + findSensorTypeIds() : Iterable<SensorTypeId>
+}
+
+class SensorModelMapper {
+    + SensorModelMapper()
+    + toSensorModelNameDTO(...): List<SensorModelNameDTO>
+}
+
+interface ISensorModelRepository {
+    +findSensorModelsBySensorTypeId(...) : Iterable<SensorModel>
+}
+
+class SensorRESTController {
+     + SensorRESTController(...)
+     + addSensor(...) : sensorDTO
+}
+
+class SensorTypeRESTController {
+     + SensorTypeRESTController(...)
+     + getSensorTypes() : List<SensorTypeDTO>
+}
+
+class SensorModelRESTController {
+     + SensorModelRESTController(...)
+     + getSensorModelsBySensorTypeIdentity(...) : List<SensorModels>
+}
+
+interface ISensorService {
+     + addSensor(...) : Sensor
+}
+
+interface ISensorTypeService {
+     + getSensorTypes() : Iterable<SensorTypes>
+}
+
+interface ISensorModelService {
+     + getSensorModelsById(...) : List<SensorModelName>
+}
+
+class SensorMapper {
+    + toSensorDTO(Sensor): SensorDTO
+}
+
+class SensorFactory {
+    + createSensor(...) : Sensor
+}
+
+interface ISensorRepository {
+    + save(...) : Sensor
+}
+
+class SensorType {
+- sensorTypeId : SensorTypeId
+- sensorTypeName : SensorTypeName
+- sensorTypeUnit : SensorTypeUnit
++ SensorType(...)
++ getSensorTypeName() : SensorTypeName
++ getSensorTypeUnit() : SensorTypeUnit
++ getIdentity() : SensorTypeId
+}
+
+class SensorModel {
+- sensorModelName : SensorModelName
+- sensorTypeId : SensorTypeId
++ sensorModel(...)
++ getIdentity() : SensorModelName
++ getSensorTypeId() : SensorTypeId
+}
+
+interface Sensor {
++ getIdentity() : SensorId
++ getSensorModelName() : SensorModelName
++ getValue() : Value
++ getDeviceId() : DeviceId
+}
+
+class DeviceId {
+- id : String
++ DeviceId(...)
++ getIdentity() : String
+}
+
+class SensorId {
+- id : String
++ SensorId(...)
++ getId() : String
+}
+
+class SensorTypeId {
+- id : String
++ SensorTypeId(...)
++ getSensorTypeId() : String
+}
+
+class SensorModelName {
+- sensorModelName : String
++ SensorModelName(...)
++ getSensorModelName() : String
+}
+
+interface Value {
+valueToString() : String
+}
+
+interface IDeviceRepository {
+    + containsIdentity(...) : boolean
+}
+
+SensorTypeRESTController  ..>  ISensorTypeService : uses
+SensorTypeRESTController   ..>  SensorTypeMapper : use
+SensorTypeMapper   ..>  SensorTypeDTO : create
+ISensorTypeService   ..>  ISensorTypeRepository : use
+ISensorTypeRepository   *-- "*"  SensorType : contains
+
+
+SensorRESTController  ..>  SensorMapper : use
+SensorRESTController  ..>  ISensorService : use
+
+ISensorService  ..>  ISensorRepository : use
+ISensorService  .>  IDeviceRepository : use
+ISensorService   .>  SensorFactory : use
+
+SensorFactory   .>  Sensor : create
+
+Sensor  *--  Value : contains
+Sensor  *--  SensorId : contains
+Sensor  *--  DeviceId : contains
+
+SensorMapper   ..>  SensorDTO : create
+SensorMapper   ..>  DeviceId : create
+SensorMapper   .....>  SensorModelName : create
+
+SensorModelRESTController   ..>  SensorModelMapper : use
+SensorModelRESTController  ..>  ISensorModelService : uses
+SensorModelMapper  ..>  SensorTypeId : create
+
+ISensorModelService  ..>  ISensorModelRepository : use
+
+ISensorModelRepository   *-- "*"  SensorModel : contains
+
+ISensorRepository   *-  Sensor : contains
+
+SensorModelMapper   ..>  SensorModelDTO : create
+SensorModelMapper   .....>  SensorModelName : create
+
+SensorModel  --*  SensorModelName : knows
+
+@enduml

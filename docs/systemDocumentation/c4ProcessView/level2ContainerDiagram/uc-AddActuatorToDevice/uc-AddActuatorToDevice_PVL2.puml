@@ -1,0 +1,30 @@
+@startuml
+
+title UC: Add Actuator to Device\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nFrontend" as FE
+participant "<<system(C4)>>\nBackend" as BE
+
+[o-> FE : Request add actuator to device
+activate FE
+FE -> BE : (GET) Request actuator types
+activate BE
+FE <-- BE : (OK, 200) Actuator types
+deactivate BE
+[o<-- FE : Provide actuator types
+[o-> FE : Actuator type
+FE -> BE : (GET) Request actuator models(Actuator type)
+activate BE
+FE <-- BE : (OK, 200) Actuator models
+deactivate BE
+[o<-- FE : Provide actuator models
+[o-> FE : Actuator model
+FE -> BE : (POST) Request add actuator to device(Actuator model)
+activate BE
+FE <-- BE : (201 Created) Added actuator
+deactivate BE
+[o<-- FE : Added actuator
+deactivate FE
+
+@enduml

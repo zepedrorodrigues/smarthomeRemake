@@ -1,0 +1,30 @@
+@startuml
+
+title UC: Add Sensor to Device\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nFrontend" as FE
+participant "<<system(C4)>>\nBackend" as BE
+
+[o-> FE : Request add sensor to device
+activate FE
+FE -> BE : (GET) Request sensor types
+activate BE
+FE <-- BE : (OK, 200) Sensor types
+deactivate BE
+[o<-- FE : Provide sensor types
+[o-> FE : Sensor type
+FE -> BE : (GET) Request sensor models(Sensor type)
+activate BE
+FE <-- BE : (OK, 200) Sensor models
+deactivate BE
+[o<-- FE : Provide sensor models
+[o-> FE : Sensor model
+FE -> BE : (POST) Request add sensor to device(Sensor model)
+activate BE
+FE <-- BE : (201 Created) Added sensor
+deactivate BE
+[o<-- FE : Provide added sensor
+deactivate FE
+
+@enduml

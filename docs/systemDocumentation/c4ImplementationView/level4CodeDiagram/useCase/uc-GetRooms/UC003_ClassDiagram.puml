@@ -1,0 +1,43 @@
+@startuml
+
+title UC: Get Rooms\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+/'
+As an Administrator, I want to have a list of existing rooms, so that I can choose one to edit it.
+'/
+
+class RoomRESTController{
++ RoomRESTController(...)
++ getRooms() : ResponseEntity<List<RoomDTO>>
+}
+
+interface IRoomService{
+getRooms() : List<Room>
+}
+
+interface IRoomRepository {
++ findRoomIds() : Iterable<RoomId>
+}
+
+class RoomMapper {
++ RoomMapper(...)
++ toRoomDTO(...) : RoomDTO
++ toRoomsDTO(...) : List<RoomDTO>
+}
+
+class RoomDTO {
++ houseName: String
++ roomName: String
++ floor: int
++ width: double
++ height: double
++ length: double
++ RoomDTO(...)
+}
+
+RoomRESTController ..> IRoomService : uses
+IRoomService ..> IRoomRepository : uses
+RoomRESTController ..> RoomMapper : uses
+RoomMapper ..> RoomDTO : creates
+
+@enduml

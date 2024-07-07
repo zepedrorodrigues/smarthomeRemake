@@ -1,0 +1,18 @@
+@startuml
+
+title UC: Open or Close a Blind Roller in a Room\n(Process View Level 1)
+autonumber
+
+actor "Room Owner\nPower User\n Administrator" as CA
+participant "<<system(C4)>>\nSmartHome" as SH
+
+CA -> SH : Request open or close blind roller
+activate CA
+activate SH
+SH --> CA : Provide Blind roller position
+CA -> SH : Set Blind roller position
+SH --> CA : Provide Blind roller position
+deactivate SH
+deactivate CA
+
+@enduml

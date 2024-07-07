@@ -1,0 +1,15 @@
+@startuml
+
+title UC: Configure House Location\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nBackend" as BE
+
+[o-> BE: (GET) Request available countries
+activate BE
+[o<-- BE: (OK, 200) Provide available countries
+[o-> BE: (PUT) Provide location data
+[o<-- BE: (OK, 200) Provide updated house
+deactivate BE
+
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+
+title DOMAIN MODEL (G6)
+
+
+Object House {
+}
+Object Location {
+- GPS
+- Address
+}
+note left of Location
+Address necessarily
+includes ZipCode
+end note
+
+
+object Room {
+- Name
+- Floor
+- Dimensions
+}
+
+
+object Device {
+- Name
+- Type
+}
+
+
+object Sensor {
+}
+
+
+object SensorModel{
+- SensorType
+}
+
+
+object Actuator {
+}
+
+
+object ActuatorModel {
+- ActuatorType
+}
+
+object Reading {
+}
+
+House "1" - "*"  Room : contains
+Room "1" -- "*" Device : contains
+Device "1" -- "*" Sensor : contains
+Device "1" -- "*" Actuator : contains
+
+House "1" -down-"1" Location : has
+
+Sensor "*" -- "1" SensorModel : is of
+Actuator "*" -- "1"ActuatorModel : is of
+
+Sensor "1" -l- "*" Reading : provides
+
+@enduml

@@ -1,0 +1,31 @@
+@startuml
+/'
+US04:
+As an Administrator, I want to define a sensor type.
+'/
+
+skinparam ArrowColor DarkSlateBlue
+skinparam ParticipantBorderColor DarkSlateBlue
+skinparam ParticipantFontColor #DarkSlateBlue
+skinparam ActorBorderColor DarkSlateBlue
+skinparam LifeLineBorderColor DarkSlateBlue
+skinparam titleFontColor FireBrick
+skinparam titleBackgroundColor #F4E1D2
+skinparam titleBorderThickness 1
+skinparam titleBorderColor #F4E1D2
+skinparam titleBorderRoundCorner 15
+
+title US004 - DEPRECATED
+autonumber
+
+[o-> ": US004Controller": defineSensorType (sensorType)
+activate ": US004Controller"
+": US004Controller" -> ": House": defineSensorType (sensorType)
+deactivate ": US004Controller"
+activate ": House"
+": House" -> "sensorType : SensorType" **: createSensorType (sensorType)
+"sensorType : SensorType" --> ": House": sensorTypesList.add(SensorType)
+": House" --> ": US004Controller" :
+deactivate ": House"
+[o<--  ": US004Controller": boolean
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+
+title UC: Get Rooms\nREST API\n(Process View Level 3)
+autonumber
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repository" as R
+
+[o-> RC: (GET) Request rooms
+activate RC
+RC -> S: Get list of rooms
+activate S
+S -> R: Get rooms
+activate R
+R --> S: rooms
+deactivate R
+S --> RC: Provide rooms
+deactivate S
+[o<-- RC: OK 200, rooms
+deactivate RC
+
+@enduml

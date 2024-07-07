@@ -1,0 +1,145 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.home-container {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.cards-container {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.left-card {
+    flex: 1.5;
+    margin-right: 20px;
+}
+
+.right-cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-card {
+    background-color: #e0e0e0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+/* other specific styles */
+.room-view {
+    width: 100%;
+    margin-top: 60px;
+}
+
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.room-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.room-list-container {
+    background-color: rgba(224, 224, 224, 0.61);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.room-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.room-item {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Media queries for responsiveness */
+
+/* For screens smaller than 768px (typical tablets) */
+@media (max-width: 768px) {
+    .home-container {
+        padding: 10px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-card,
+    .right-cards {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* For screens smaller than 576px (typical mobile devices) */
+@media (max-width: 576px) {
+    .header {
+        padding: 10px 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .main-card {
+        height: auto; /* Adjust height as needed */
+    }
+
+    .room-header h2 {
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,131 @@
+@startuml
+
+title UC: Add Room to House\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+/'
+As an Administrator, I want to add a new room to the house, in order to
+configure it.
+'/
+
+class RoomRESTController {
++ RoomRESTController(...)
++ addRoom(...) : RoomDTO
+}
+
+interface IRoomService {
++ addRoom(...) : Room
+}
+
+class Room {
++ Room(...)
++ getIdentity() : RoomId
++ getHouseName() : HouseName
++ getRoomName() : RoomName
++ getFloor() : Floor
++ getDimensions() : Dimensions
+}
+
+class HouseName {
+- houseName: String
++ HouseName(...)
++ getHouseName() : String
+}
+
+class RoomId{
+- roomId: String
++ RoomId(...)
++ getRoomId() : String
+}
+
+class RoomName {
+- roomName: String
++ RoomName(...)
++ getRoomName() : String
+}
+
+class Floor {
+- floor: int
++ Floor(...)
++ getFloor() : int
+}
+
+class Dimensions {
+- width: Width
+- height: Height
+- length: Length
++ Dimensions(...)
++ getWidth() : Width
++ getHeight() : Height
++ getLength() : Length
+}
+
+interface IRoomFactory {
++ createRoom(...) : Room
+}
+
+class RoomDTO {
+- roomId: String
+- roomName: String
+- houseName: String
+- floor: int
+- width: double
+- height: double
+- length: double
++ RoomDTO(...)
++ getRoomId() : String
++ getRoomName() : String
++ getHouseName() : String
++ getFloor() : int
++ getWidth() : double
++ getHeight() : double
++ getLength() : double
+}
+
+interface IRoomRepository{
++ save(...) : Room
+}
+
+class RoomMapper {
++ toRoomName(...) : RoomName
++ toFloor(...) : Floor
++ toDimensions(...) : Dimensions
++ toRoomDTO(...) : RoomDTO
+}
+
+interface IHouseRepository{
++ containsIdentity(...) : boolean
+}
+
+class House{
++ House(...)
++ getIdentity() : HouseName
+}
+
+note left of Dimensions : RoomMapper also creates Width, \nHeight and Length value objects
+
+IRoomService ..> IRoomFactory : uses
+IRoomFactory ...> Room : creates
+
+IRoomService .left.> IRoomRepository : uses
+IRoomService .left.> IHouseRepository : uses
+
+IRoomRepository "1  "*--"*" Room : contains
+IHouseRepository "1  "*--"*" House : contains
+House "1 "*--"1   " HouseName : contains
+HouseName "1"--* "1 " Room : contains
+
+RoomMapper .up.> RoomDTO : creates
+
+RoomMapper .down.> RoomName : creates
+RoomMapper .down..> Floor : creates
+RoomMapper .down.> Dimensions : creates
+
+Floor "1    "-*"1" Room : contains
+RoomName "1   "---*"1 " Room : contains
+Dimensions "1 "-*"1 " Room : contains
+Room "1" *-right- "1" RoomId : contains
+
+IRoomService <.up. RoomRESTController : uses
+RoomMapper <.up.. RoomRESTController : uses
+
+@enduml

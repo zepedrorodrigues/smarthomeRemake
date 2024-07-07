@@ -1,0 +1,27 @@
+@startuml
+
+title UC- To get maximum temperature difference\nin a given period\nUse Case Diagram Excerpt\n(Scenario View - Level 1)
+
+top to bottom direction
+
+actor "Room Owner\n[or Power User\nor Administrator]" as ro
+
+package "Smart Home System"{
+
+usecase UC3 as "UC-To list existing rooms"
+usecase UC6 as "UC-To list devices in room"
+usecase UC33 as "UC-To get readings from a Device"
+usecase UC34 as "UC-To get maximum instantaneous temperature difference"
+
+ro ..> UC34
+
+UC6 ..> UC3 : <include>
+UC33 ..> UC6 : <include>
+UC34 ..> UC33 : <include>
+}
+
+@enduml
+
+
+
+@enduml

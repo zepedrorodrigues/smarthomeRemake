@@ -1,0 +1,107 @@
+@startuml
+
+title UC: Close a Blind Roller in a Room \nREST API\n(Process View Level 4)
+
+autonumber
+
+participant "Routing" as ROUT
+participant ":ActuatorRESTController" as C
+participant ":IActuatorService" as S
+participant ":IDeviceRepository" as DR
+participant "device:Device" as D
+participant ":IActuatorRepository" as AR
+participant ":ActuatorMapper" as AM
+participant "actuator:Actuator" as A
+participant ":ISensorRepository" as SR
+participant ":ReadingFactory" as RF
+participant ":IReadingRepository" as RR
+participant ":ValueMapper" as CBM
+participant "actuatorIdDTO:ActuatorIdDTO" as AIDT
+participant "actuatorIdVO:ActuatorId" as AI
+participant "percentageValue:ScalePercentageValue" as PV
+participant "reading:Reading" as R
+participant "valueDTO:ValueDTO" as CB
+
+
+[o-> ROUT : GET /actuators/device/{deviceId}
+activate ROUT
+ROUT -> C : getByDeviceIdentity\n(deviceId)
+activate C
+C -> S: getActuatorIdsByDeviceIdentity\n(deviceId)
+activate S
+S -> AR: findActuatorIdsByDeviceId\n(deviceId)
+activate AR
+AR --> S: actuatorIds
+deactivate AR
+S --> C: actuatorIds
+deactivate S
+C -> AM : toActuatorIdsDTO(actuatorIds)
+activate AM
+AM --> AIDT**: <create>(actuatorIds)
+AM --> C : actuatorIdsDTO
+deactivate AM
+C --> ROUT : actuatorIdsDTO,\n HttpStatus.OK
+deactivate C
+[o<-- ROUT : actuatorIdsDTO,\n HttpStatus.OK
+deactivate ROUT
+
+[o-> ROUT : PUT /actuators/{actuatorId}/operate-blind-roller?value={percentage}
+activate ROUT
+ROUT -> C : operateBlindRoller\n(actuatorId,percentage)
+activate C
+
+C-->AI** : <create> (actuatorId)
+C-->PV** : <create> (percentage)
+
+
+C -> S: operateBlindRoller\n(actuatorIdVO,\npercentageValue)
+activate S
+S -> AR : findByIdentity(actuatorId)
+activate AR
+AR --> S : actuator
+deactivate AR
+
+S -> A : getDeviceId()
+activate A
+A --> S : deviceId
+deactivate A
+
+S -> DR : findByIdentity(deviceId)
+activate DR
+DR --> S : device
+deactivate DR
+S -> D : getStatus()
+activate D
+D --> S : status
+deactivate D
+S-> A : operate(percentageValue)
+activate A
+A --> S : resultPercentageValue
+deactivate A
+S -> SR : findSensorIdsByDeviceIdAndSensorModelName(deviceId, sensorModelName)
+activate SR
+SR --> S : sensorIds
+deactivate SR
+S -> RF : createReading(resultPercentageValue, sensorId, timeStamp)
+activate RF
+RF --> R** : <create> (resultPercentageValue, sensorId, timeStamp)
+RF --> S : reading
+deactivate RF
+S --> RR : save(reading)
+activate RR
+deactivate RR
+
+
+S --> C : resultPercentageValue
+deactivate S
+C -> CBM : toDTO(resultPercentageValue)
+activate CBM
+CBM --> CB**: <create> (resultPercentageValue)
+CBM --> C : valueDTO
+deactivate CBM
+C --> ROUT : valueDTO,\n HttpStatus.OK
+deactivate C
+[o<-- ROUT : valueDTO,\n HttpStatus.OK
+deactivate ROUT
+
+@enduml

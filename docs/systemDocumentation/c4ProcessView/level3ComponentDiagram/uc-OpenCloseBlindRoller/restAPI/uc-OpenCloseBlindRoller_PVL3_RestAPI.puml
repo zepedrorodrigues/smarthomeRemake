@@ -1,0 +1,44 @@
+@startuml
+
+title UC: Open or Close a Blind Roller in a Room\nREST API\n(Process View Level 3)
+autonumber
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repository" as R
+participant "Domain" as D
+
+[o-> RC : (GET) Request actuators by device id
+activate RC
+RC -> S: Get actuators by device id
+activate S
+S -> R: Get actuators by device id
+activate R
+R --> S: actuators
+deactivate R
+S --> RC: actuators
+deactivate S
+[o<-- RC : 200 OK, actuators
+deactivate RC
+
+
+[o-> RC :(PUT) Set Blind roller (percentage)
+activate RC
+RC -> S: Open/Close blind roller
+activate S
+
+S -> R: Validate data
+activate R
+R --> S: Data validated
+deactivate R
+
+S -> D: Open/Close blind roller
+activate D
+D --> S: opened/closed percentage
+deactivate D
+S --> RC: opened/closed percentage
+deactivate S
+[o<-- RC: 200 OK, opened/closed percentage
+deactivate RC
+
+@enduml

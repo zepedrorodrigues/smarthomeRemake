@@ -1,0 +1,130 @@
+@startuml
+
+title UC: Get Readings From Device In A Given Period\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+/'US33 As a Room Owner [or Power User, or Administrator],
+I want to get a list of all measurement of a device in a room, in a given period.'/
+
+class ReadingRESTController{
++ getReadingsFromDeviceInAGivenPeriod(...) : List<ReadingDTO>
+}
+
+class IReadingService{
++ getReadingsFromDeviceInAGivenPeriod(...) : List<Reading>
+}
+
+interface ISensorRepository{
++ findSensorsByDeviceId(...) : List<Sensor>
+}
+
+interface IReadingsRepository{
++ findReadingsBySensorIdInAGivenPeriod(...) : List<Reading>
+}
+
+class ReadingMapper{
++ toReadingDTO(...) : ReadingDTO
++ toReadingsDTO(...) : List<ReadingDTO>
+}
+
+class Reading{
++ Reading(...)
++ getIdentity() : ReadingId
++ getTimeStamp() : TimeStamp
++ getValue() : ReadingValue
++ getSensorId() : SensorId
+}
+
+
+class TimeStamp{
+- localDateTime : LocalDateTime
++ TimeStamp(...)
++ getTimeStamp() : LocalDateTime
+}
+
+class ReadingId{
+- id : String
++ ReadingId(...)
++ getIdentity() : String
+}
+
+class Sensor{
+- id : SensorId
++ getIdentity() : SensorId
+}
+
+class PeriodMapper{
++ toStart(...) : TimeStamp
++ toEnd(...) : TimeStamp
+}
+
+class SensorId{
+- id : String
++ SensorId(...)
++ getIdentity() : String
+}
+
+class ReadingValue{
+- ReadingValue : String
++ ReadingValue(...)
++ getReadingValue(): String
+}
+
+class ReadingDTO{
+- id: String
+- timeStamp: String
+- readingValue: String
+- sensorId : String
++ ReadingDTO(...)
++ getIdentity() : String
++ getTimeStamp() : String
++ getValue() : String
++ getSensorId() : String
+}
+
+class DeviceDTO{
+- deviceId: String
+}
+
+class DeviceMapper{
++ toDeviceId(...) : DeviceId
+}
+
+
+class DeviceId {
+- id: String
++ DeviceId(...)
++ getIdentity() : String
+}
+
+class PeriodDTO {
+- start: String
+- end: String
+}
+
+ReadingRESTController ..> IReadingService : uses
+IReadingService  ..>  ISensorRepository : uses
+IReadingService ..>  IReadingsRepository : uses
+ReadingRESTController .> ReadingMapper : uses
+ReadingRESTController ..> DeviceMapper : uses
+ReadingRESTController ..> PeriodMapper : uses
+
+ReadingMapper  ..>  ReadingDTO : creates
+
+IReadingsRepository *-- "*" Reading : contains
+ISensorRepository *-- "*" Sensor : contains
+
+Reading *-- "1" TimeStamp : contains
+Reading *-- "1" ReadingId : contains
+Reading *-- "1" ReadingValue : contains
+Reading *-- "1" SensorId : contains
+
+Sensor *-- "1" SensorId : contains
+Sensor *-- "1" DeviceId : contains
+
+DeviceMapper ..> DeviceDTO : uses
+DeviceMapper ..> DeviceId : creates
+
+PeriodMapper ..> PeriodDTO : uses
+PeriodMapper ..> TimeStamp : creates
+
+@enduml

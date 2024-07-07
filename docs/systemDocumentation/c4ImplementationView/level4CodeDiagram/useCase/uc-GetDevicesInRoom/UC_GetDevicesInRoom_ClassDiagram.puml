@@ -1,0 +1,98 @@
+@startuml
+
+title UC: Get Devices in Room\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+/'
+As a Room Owner [or Power User, or Administrator], I want to get a list of all
+devices in a room.
+'/
+
+interface IDeviceService {
+    + getDevicesInRoom(...) : Iterable<Device>
+}
+
+class DeviceRESTController {
+    - deviceService : IDeviceService
+    + DeviceRESTController(...)
+    + getDevicesInRoom(...) : List<DeviceIdDTO>
+}
+
+class Device{
+    + Device(...)
+}
+
+class DeviceIdDTO {
+    - deviceId : String
+    + getDeviceId() : String
+}
+
+class DeviceMapper {
+    + DeviceMapper(...)
+    + toDeviceIdsDTO(...) : List<DeviceIdDTO>
+}
+
+class DeviceId{
+    - deviceId: String
+    + DeviceId(...)
+    + getDeviceId(): String
+}
+
+class DeviceName {
+    - name : String
+    + DeviceName(...)
+    + getDeviceName()
+}
+
+class DeviceTypeName {
+    - type : String
+    + DeviceTypeName(...)
+    + getDeviceTypeName()
+}
+
+class RoomId {
+    - roomId : String
+    + RoomId(...)
+    + getRoomId()
+}
+
+class DeviceStatus{
+    - deviceStatus: boolean
+    + DeviceStatus(...)
+    + getDeviceStatus(): boolean
+}
+
+interface IDeviceRepository {
+    + findDeviceIdsByRoomId(...) : Iterable<DeviceId>
+}
+
+interface IRoomRepository {
+    + containsIdentity(...) : boolean
+}
+
+class RoomMapper {
+    + RoomMapper(...)
+    + toRoomId(...) : RoomId
+}
+
+DeviceRESTController ..> DeviceMapper : uses
+DeviceMapper .up.> DeviceIdDTO : uses
+DeviceRESTController ..> IDeviceService : uses
+DeviceRESTController .left.> DeviceIdDTO : uses
+DeviceRESTController ..> RoomMapper : uses
+
+DeviceMapper ..> DeviceId : creates
+DeviceMapper ..> DeviceName : creates
+DeviceMapper ..> DeviceTypeName : creates
+DeviceMapper ..> RoomId : creates
+DeviceMapper ..> DeviceStatus : creates
+IDeviceService ..> IDeviceRepository : uses
+IDeviceService .up.> IRoomRepository : uses
+
+Device *-up- "1" DeviceId : contains
+Device *-up- "1" DeviceName : contains
+Device *-up- "1" DeviceTypeName : contains
+Device *-up- "1" RoomId : knows
+Device *-up- "1" DeviceStatus : contains
+IDeviceRepository  *-- "*" Device : contains
+
+@enduml

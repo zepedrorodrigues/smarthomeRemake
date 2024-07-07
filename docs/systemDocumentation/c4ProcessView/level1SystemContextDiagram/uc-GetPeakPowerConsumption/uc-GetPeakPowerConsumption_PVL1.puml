@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title UC: Get Peak Power Consumption in a Given Period\n(Process View Level 1)
+autonumber
+
+actor "Admin/\nPowerUser" as A
+participant "<<system(C4)>>\nSmartHome" as SH
+
+A -> SH : Request Peak Power Consumption (Period)
+activate A
+activate SH
+SH --> A : Peak Power Consumption
+deactivate SH
+deactivate A
+
+
+
+
+
+@enduml

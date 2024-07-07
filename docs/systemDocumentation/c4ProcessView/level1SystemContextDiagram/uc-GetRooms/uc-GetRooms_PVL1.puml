@@ -1,0 +1,16 @@
+@startuml
+
+title UC: Get Rooms \n (Process View Level  1)
+autonumber
+
+actor "Administrator" as A
+participant "<<system(C4)>>\nSmartHome" as SH
+
+A -> SH : Request rooms
+activate A
+activate SH
+SH --> A : Provide rooms
+deactivate SH
+deactivate A
+
+@enduml

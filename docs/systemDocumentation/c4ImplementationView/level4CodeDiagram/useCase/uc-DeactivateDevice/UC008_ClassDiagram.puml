@@ -1,0 +1,66 @@
+@startuml
+
+title UC: Deactivate Device\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+/'
+As a Power User [or Administrator], I want to deactivate a device, so that it is no
+longer used. Nevertheless, it should be possible to access its configuration and
+activity log.
+'/
+
+class DeviceRESTController {
+    + deactivateDevice(...) : DeviceDTO
+}
+interface IDeviceService {
+    + deactivateDevice(...) : Device
+}
+class DeviceMapper {
+    + toDeviceId(...) : DeviceId
+    + toDeviceDTO(...) : DeviceDTO
+}
+interface IDeviceRepository {
+    + findByIdentity(...) : Optional<Device>
+    + update(...) : Device
+}
+class DeviceDTO {
+    - deviceId : String
+    - deviceName : String
+    - deviceType : String
+    - deviceStatus : boolean
+    - roomId : String
+    + DeviceDTO(...)
+    + getDeviceId() : String
+    + getDeviceName() : String
+    + getDeviceType() : String
+    + getDeviceStatus() : boolean
+    + getRoomId() : String
+}
+class DeviceId {
+    - id : String
+    + DeviceId(...)
+    + getIdentity() : String
+}
+class Device {
+    + deactivateDevice()
+}
+class DeviceStatus {
+    - status : boolean
+    + DeviceStatus(...)
+    + getStatus() : boolean
+}
+
+DeviceRESTController .> DeviceMapper : uses
+DeviceRESTController ..> IDeviceService : uses
+DeviceRESTController .> DeviceId : creates
+
+IDeviceService  ..>  Device : uses
+IDeviceService  ..>  IDeviceRepository : uses
+
+DeviceMapper  ..>  DeviceDTO : creates
+
+IDeviceRepository  *- "*" Device : contains
+
+Device  *-- "1" DeviceId : contains
+Device  *-- "1" DeviceStatus : contains
+
+@enduml

@@ -1,0 +1,23 @@
+ @startuml
+
+title UC: Add an Actuator to Device \n (Process View Level 1)
+autonumber
+
+actor "Power User/\nAdministrator" as A
+participant "<<system(C4)>>\nSmartHome" as AH
+
+
+A -> AH : Request add actuator to device
+activate A
+activate AH
+AH --> A : Provide actuator types
+A -> AH : Choose actuator type
+AH --> A : Provide actuator models
+A -> AH : Choose actuator model
+AH --> A : Actuator added
+deactivate AH
+deactivate A
+
+@enduml
+
+/´ syntax mais específica'/

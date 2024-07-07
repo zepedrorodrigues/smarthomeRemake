@@ -1,0 +1,136 @@
+@startuml
+
+title UC: Add Device To Room\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+/'
+As a Power User [or Administrator], I want to add a new device to a room, in order to configure it.
+'/
+
+
+class DeviceRESTController {
+    + addDeviceToRoom(deviceDTO) : DeviceDTO
+}
+
+class DeviceTypeRESTController {
+    + getDeviceTypes() : List<DeviceTypeName>
+}
+
+interface IDeviceTypeService {
+    + getDeviceTypeNames() : List<DeviceTypeName>
+}
+
+class DeviceTypeMapper {
+    + toDeviceTypeNamesDTO(...) : List<DeviceTypeNameDTO>
+    + toDeviceTypeNameDTO(...) : DeviceTypeNameDTO
+}
+
+interface IDeviceTypeRepository {
+    + containsIdentity(...) : boolean
+    + findDeviceTypeNames() : Iterable<DeviceTypeName>
+}
+
+class DeviceTypeNameDTO {
+    - deviceTypeName : String
+    + DeviceTypeNameDTO(...)
+    + getDeviceTypeName() : String
+}
+
+
+
+
+
+
+interface IDeviceService {
+    + addDeviceToRoom(...) : Device
+}
+
+class Device{
+    + Device(...)
+}
+
+interface IDeviceFactory {
+    + createDevice(...) : Device
+}
+
+class DeviceDTO {
+    - deviceName : String
+    - deviceId : String
+    - deviceType : String
+    - deviceStatus : String
+    - roomId : String
+    + DeviceDTO(...)
+    + getDeviceName() : String
+    + getDeviceId() : String
+    + getDeviceType() : String
+    + getDeviceStatus() : boolean
+    + getRoomId() : String
+}
+
+
+class DeviceMapper {
+    + toDeviceName(...) : DeviceName
+    + toDeviceDTO(...) : DeviceDTO
+}
+
+class DeviceName {
+    - name : String
+    + DeviceName(...)
+    + getDeviceName()
+}
+
+class DeviceType {
+    - type : String
+    + DeviceType(...)
+    + getDeviceType()
+}
+
+class RoomId {
+    - roomId : String
+    + RoomId(...)
+    + getIdentity()
+}
+
+class DeviceId {
+    - id : String
+    + getIdentity()
+}
+
+class DeviceStatus {
+    - status : boolean
+    + getDeviceStatus()
+}
+
+interface IDeviceRepository {
+    + save(...) : Device
+}
+
+interface IRoomRepository {
+    + containsIdentity(...) : boolean
+}
+
+DeviceRESTController ..> IDeviceService : uses
+DeviceRESTController .> DeviceMapper : uses
+DeviceMapper ..> DeviceDTO : uses
+IDeviceService .> IRoomRepository : uses
+IDeviceService ..> IDeviceFactory : uses
+IDeviceFactory ..> Device : creates
+DeviceMapper ..> DeviceName : creates
+DeviceMapper ..> DeviceType : creates
+DeviceMapper ..> RoomId : creates
+IDeviceService ..> IDeviceRepository : uses
+Device *-up- "1" DeviceName : contains
+Device *-up- "1" DeviceType : contains
+Device *- "1" DeviceStatus : contains
+Device *-l "1" DeviceId : contains
+Device *-up- "1" RoomId : contains
+IDeviceRepository  *-- "*" Device : contains
+
+DeviceTypeRESTController ..> IDeviceTypeService : uses
+DeviceTypeRESTController ..> DeviceTypeMapper : uses
+IDeviceTypeService ..> IDeviceTypeRepository : uses
+DeviceTypeMapper ..> DeviceTypeNameDTO : creates
+IDeviceService ..> IDeviceTypeRepository : uses
+
+DeviceRESTController ..> DeviceTypeMapper : uses
+
+@enduml

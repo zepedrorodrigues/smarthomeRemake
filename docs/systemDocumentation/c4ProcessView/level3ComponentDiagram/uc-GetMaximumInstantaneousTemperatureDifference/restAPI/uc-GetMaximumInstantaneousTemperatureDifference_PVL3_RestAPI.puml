@@ -1,0 +1,33 @@
+@startuml
+
+title UC: Get Maximum Instantaneous Temperature Difference\nREST API\n(Process View Level 3)
+autonumber
+
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repository" as R
+
+[o-> RC: (GET) Request maximum instantaneous \ntemperature difference (Devices, Period)
+activate RC
+RC -> S: Get maximum instantaneous \ntemperature difference
+activate S
+
+S -> R: Get temperature sensors
+activate R
+R --> S: Temperature sensors
+deactivate R
+
+S -> R: Get temperature readings
+activate R
+R --> S: Temperature readings
+deactivate R
+
+S --> S: Calculate maximum instantaneous \ntemperature difference in the given period
+
+S --> RC: Maximum instantaneous \ntemperature difference
+deactivate S
+[o<-- RC: 200 OK, Maximum instantaneous \ntemperature difference
+deactivate RC
+
+@enduml

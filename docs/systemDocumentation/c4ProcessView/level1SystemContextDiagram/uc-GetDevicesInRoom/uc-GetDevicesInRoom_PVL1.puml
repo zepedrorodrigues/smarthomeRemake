@@ -1,0 +1,22 @@
+@startuml
+
+title UC: Get Devices in Room \n(Process View Level 1)
+/'
+As a Room Owner [or Power User, or Administrator], I want to get a list of all
+devices in a room.
+'/
+autonumber
+
+actor "Room Owner/\nPower User/\nAdmin" as A
+participant "<<system(C4)>>\nSmartHome" as SH
+
+
+A -> SH : Request Devices in a Room
+activate A
+activate SH
+SH --> A : Provide Devices in a Room
+deactivate SH
+deactivate A
+
+
+@enduml

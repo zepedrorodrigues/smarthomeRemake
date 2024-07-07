@@ -1,0 +1,57 @@
+@startuml
+
+title Aggregate Sensor Class Diagram\nSystem / BackEnd / Domain\n(Implementation View - Level 4)
+
+class DeviceId{
+- deviceId : String
++ DeviceId(...)
++ getIdentity() : String
+}
+
+package "Sensor Ag" {
+interface Sensor {
++ getIdentity() : SensorId
++ getSensorModelName() : SensorModelName
++ getDeviceId() : DeviceId
++ getValue() : Value
+}
+
+class SensorId{
+- sensorId : String
++ SensorId(...)
++ getSensorId() : String
+}
+}
+
+class SensorModelName{
+- sensorModelName : String
++ SensorModelName(...)
++ getSensorModelName() : String
+}
+
+package Repositories {
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+interface ISensorRepository {
++ findSensorsByDeviceId(...) : Iterable<Sensor>
++ findSensorsByDeviceIdAndSensorModelName(...) : Iterable<Sensor>
++ findSensorIdsByDeviceIdAndSensorModelName(...) : Iterable<SensorId>
+}
+}
+
+Sensor ..> DeviceId : knows
+Sensor .right.> SensorModelName : knows
+
+Sensor "1" *-- "1" SensorId : contains
+
+ISensorRepository "1" -up-|> IRepository : extends
+
+ISensorRepository "1" *-- "*" Sensor : contains
+
+
+@enduml

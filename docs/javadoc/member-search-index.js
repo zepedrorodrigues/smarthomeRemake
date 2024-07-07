@@ -1,0 +1,5020 @@
+memberSearchIndex = [{
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "ActuatorDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "ActuatorDataModel(Actuator)",
+    "u": "%3Cinit%3E(smarthome.domain.actuator.Actuator)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorDataModelMapper",
+    "l": "ActuatorDataModelMapper(ActuatorFactory, ActuatorMapper)",
+    "u": "%3Cinit%3E(smarthome.domain.actuator.ActuatorFactory,smarthome.mapper.mapper.ActuatorMapper)"
+}, {"p": "smarthome.mapper", "c": "ActuatorDTO", "l": "ActuatorDTO()", "u": "%3Cinit%3E()"}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorDTO",
+    "l": "ActuatorDTO(String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorDTO",
+    "l": "ActuatorDTO(String, String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorDTO",
+    "l": "ActuatorDTO(String, String, String, Integer, Integer, Double, Double, Integer)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Double,java.lang.Double,java.lang.Integer)"
+}, {"p": "smarthome", "c": "FactoryConfig", "l": "actuatorFactory()"}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorFactoryImpl",
+    "l": "ActuatorFactoryImpl(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorId",
+    "l": "ActuatorId(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorIdDTO",
+    "l": "ActuatorIdDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorMap",
+    "l": "ActuatorMap(ActuatorId, DeviceId, ActuatorModelName, IntLimit, IntLimit, DecimalLimit, DecimalLimit, Precision)",
+    "u": "%3Cinit%3E(smarthome.domain.actuator.vo.ActuatorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.actuatormodel.vo.ActuatorModelName,smarthome.domain.actuator.vo.IntLimit,smarthome.domain.actuator.vo.IntLimit,smarthome.domain.actuator.vo.DecimalLimit,smarthome.domain.actuator.vo.DecimalLimit,smarthome.domain.actuator.vo.Precision)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "ActuatorMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.actuatormodel",
+    "c": "ActuatorModel",
+    "l": "ActuatorModel(ActuatorModelName, ActuatorTypeName)",
+    "u": "%3Cinit%3E(smarthome.domain.actuatormodel.vo.ActuatorModelName,smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorModelDataModel",
+    "l": "ActuatorModelDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorModelDataModel",
+    "l": "ActuatorModelDataModel(ActuatorModel)",
+    "u": "%3Cinit%3E(smarthome.domain.actuatormodel.ActuatorModel)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorModelDataModelMapper",
+    "l": "ActuatorModelDataModelMapper(ActuatorModelFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.actuatormodel.ActuatorModelFactory)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorModelDTO",
+    "l": "ActuatorModelDTO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorModelDTO",
+    "l": "ActuatorModelDTO(String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.domain.actuatormodel",
+    "c": "ActuatorModelFactoryImpl",
+    "l": "ActuatorModelFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorModelMapper",
+    "l": "ActuatorModelMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.actuatormodel.vo",
+    "c": "ActuatorModelName",
+    "l": "ActuatorModelName(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorModelNameDTO",
+    "l": "ActuatorModelNameDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorModelRepositoryJPAImpl",
+    "l": "ActuatorModelRepositoryJPAImpl(ActuatorModelDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.ActuatorModelDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorModelRepositoryMemImpl",
+    "l": "ActuatorModelRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorModelRepositorySpringDataImpl",
+    "l": "ActuatorModelRepositorySpringDataImpl(ActuatorModelDataModelMapper, IActuatorModelRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.ActuatorModelDataModelMapper,smarthome.persistence.spring.IActuatorModelRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorModelRESTController",
+    "l": "ActuatorModelRESTController(IActuatorModelService, ActuatorModelMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IActuatorModelService,smarthome.mapper.mapper.ActuatorModelMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorModelServiceImpl",
+    "l": "ActuatorModelServiceImpl(IActuatorModelRepository)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.IActuatorModelRepository)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRoller",
+    "l": "ActuatorOfBlindRoller(ActuatorId, DeviceId, ActuatorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.actuator.vo.ActuatorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRoller",
+    "l": "ActuatorOfBlindRoller(DeviceId, ActuatorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRollerFactory",
+    "l": "ActuatorOfBlindRollerFactory()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "ActuatorOfDecimalLimiter(ActuatorId, DeviceId, ActuatorModelName, DecimalLimit, DecimalLimit, Precision)",
+    "u": "%3Cinit%3E(smarthome.domain.actuator.vo.ActuatorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.actuatormodel.vo.ActuatorModelName,smarthome.domain.actuator.vo.DecimalLimit,smarthome.domain.actuator.vo.DecimalLimit,smarthome.domain.actuator.vo.Precision)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "ActuatorOfDecimalLimiter(DeviceId, ActuatorModelName, DecimalLimit, DecimalLimit, Precision)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.actuatormodel.vo.ActuatorModelName,smarthome.domain.actuator.vo.DecimalLimit,smarthome.domain.actuator.vo.DecimalLimit,smarthome.domain.actuator.vo.Precision)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiterFactory",
+    "l": "ActuatorOfDecimalLimiterFactory()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiter",
+    "l": "ActuatorOfLimiter(ActuatorId, IntLimit, IntLimit, ActuatorModelName, DeviceId)",
+    "u": "%3Cinit%3E(smarthome.domain.actuator.vo.ActuatorId,smarthome.domain.actuator.vo.IntLimit,smarthome.domain.actuator.vo.IntLimit,smarthome.domain.actuatormodel.vo.ActuatorModelName,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiter",
+    "l": "ActuatorOfLimiter(IntLimit, IntLimit, ActuatorModelName, DeviceId)",
+    "u": "%3Cinit%3E(smarthome.domain.actuator.vo.IntLimit,smarthome.domain.actuator.vo.IntLimit,smarthome.domain.actuatormodel.vo.ActuatorModelName,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiterFactory",
+    "l": "ActuatorOfLimiterFactory()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitch",
+    "l": "ActuatorOfOnOffSwitch(ActuatorId, DeviceId, ActuatorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.actuator.vo.ActuatorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitch",
+    "l": "ActuatorOfOnOffSwitch(DeviceId, ActuatorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitchFactory",
+    "l": "ActuatorOfOnOffSwitchFactory()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorRepositoryJPAImpl",
+    "l": "ActuatorRepositoryJPAImpl(ActuatorDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.ActuatorDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorRepositoryMemImpl",
+    "l": "ActuatorRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorRepositorySpringDataImpl",
+    "l": "ActuatorRepositorySpringDataImpl(IActuatorRepositorySpringData, ActuatorDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.spring.IActuatorRepositorySpringData,smarthome.persistence.datamodel.mapper.ActuatorDataModelMapper)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorRESTController",
+    "l": "ActuatorRESTController(IActuatorService, ActuatorMapper, ValueMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IActuatorService,smarthome.mapper.mapper.ActuatorMapper,smarthome.mapper.mapper.ValueMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorServiceImpl",
+    "l": "ActuatorServiceImpl(IActuatorRepository, IDeviceRepository, ISensorRepository, IReadingRepository, ActuatorFactory, String)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.IActuatorRepository,smarthome.domain.repository.IDeviceRepository,smarthome.domain.repository.ISensorRepository,smarthome.domain.repository.IReadingRepository,smarthome.domain.actuator.ActuatorFactory,java.lang.String)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "actuatorToDTO(Actuator)",
+    "u": "actuatorToDTO(smarthome.domain.actuator.Actuator)"
+}, {
+    "p": "smarthome.domain.actuatortype",
+    "c": "ActuatorType",
+    "l": "ActuatorType(ActuatorTypeName)",
+    "u": "%3Cinit%3E(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorTypeDataModel",
+    "l": "ActuatorTypeDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorTypeDataModel",
+    "l": "ActuatorTypeDataModel(ActuatorType)",
+    "u": "%3Cinit%3E(smarthome.domain.actuatortype.ActuatorType)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorTypeDataModelMapper",
+    "l": "ActuatorTypeDataModelMapper(ActuatorTypeFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.actuatortype.ActuatorTypeFactory)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorTypeDTO",
+    "l": "ActuatorTypeDTO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorTypeDTO",
+    "l": "ActuatorTypeDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.domain.actuatortype",
+    "c": "ActuatorTypeFactoryImpl",
+    "l": "ActuatorTypeFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorTypeMapper",
+    "l": "ActuatorTypeMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.actuatortype.vo",
+    "c": "ActuatorTypeName",
+    "l": "ActuatorTypeName(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorTypeRepositoryJPAImpl",
+    "l": "ActuatorTypeRepositoryJPAImpl(ActuatorTypeDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.ActuatorTypeDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorTypeRepositoryMemImpl",
+    "l": "ActuatorTypeRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorTypeRepositorySpringDataImpl",
+    "l": "ActuatorTypeRepositorySpringDataImpl(ActuatorTypeDataModelMapper, IActuatorTypeRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.ActuatorTypeDataModelMapper,smarthome.persistence.spring.IActuatorTypeRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorTypeRESTController",
+    "l": "ActuatorTypeRESTController(IActuatorTypeService, ActuatorTypeMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IActuatorTypeService,smarthome.mapper.mapper.ActuatorTypeMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorTypeServiceImpl",
+    "l": "ActuatorTypeServiceImpl(IActuatorTypeRepository)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.IActuatorTypeRepository)"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddActuatorToDeviceController",
+    "l": "addActuator(ActuatorDTO, DeviceId)",
+    "u": "addActuator(smarthome.mapper.ActuatorDTO,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.service",
+    "c": "IActuatorService",
+    "l": "addActuator(ActuatorMap, DeviceId)",
+    "u": "addActuator(smarthome.domain.actuator.vo.ActuatorMap,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorServiceImpl",
+    "l": "addActuator(ActuatorMap, DeviceId)",
+    "u": "addActuator(smarthome.domain.actuator.vo.ActuatorMap,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorRESTController",
+    "l": "addActuator(String, ActuatorDTO)",
+    "u": "addActuator(java.lang.String,smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddActuatorToDeviceController",
+    "l": "AddActuatorToDeviceController(IActuatorService, IActuatorTypeService, IActuatorModelService, ActuatorTypeMapper, ActuatorModelMapper, ActuatorMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IActuatorService,smarthome.service.IActuatorTypeService,smarthome.service.IActuatorModelService,smarthome.mapper.mapper.ActuatorTypeMapper,smarthome.mapper.mapper.ActuatorModelMapper,smarthome.mapper.mapper.ActuatorMapper)"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddDeviceToRoomController",
+    "l": "addDeviceToRoom(DeviceDTO)",
+    "u": "addDeviceToRoom(smarthome.mapper.DeviceDTO)"
+}, {
+    "p": "smarthome.service",
+    "c": "IDeviceService",
+    "l": "addDeviceToRoom(DeviceName, DeviceTypeName, RoomId)",
+    "u": "addDeviceToRoom(smarthome.domain.device.vo.DeviceName,smarthome.domain.deviceType.vo.DeviceTypeName,smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceServiceImpl",
+    "l": "addDeviceToRoom(DeviceName, DeviceTypeName, RoomId)",
+    "u": "addDeviceToRoom(smarthome.domain.device.vo.DeviceName,smarthome.domain.deviceType.vo.DeviceTypeName,smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "DeviceRESTController",
+    "l": "addDeviceToRoom(String, DeviceDTO)",
+    "u": "addDeviceToRoom(java.lang.String,smarthome.mapper.DeviceDTO)"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddDeviceToRoomController",
+    "l": "AddDeviceToRoomController(IDeviceService, DeviceMapper, DeviceTypeMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IDeviceService,smarthome.mapper.mapper.DeviceMapper,smarthome.mapper.mapper.DeviceTypeMapper)"
+}, {
+    "p": "smarthome.controller",
+    "c": "HouseRESTController",
+    "l": "addHouse(HouseDTO)",
+    "u": "addHouse(smarthome.mapper.HouseDTO)"
+}, {
+    "p": "smarthome.service",
+    "c": "IHouseService",
+    "l": "addHouse(HouseName, Location)",
+    "u": "addHouse(smarthome.domain.house.vo.HouseName,smarthome.domain.house.vo.Location)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "HouseServiceImpl",
+    "l": "addHouse(HouseName, Location)",
+    "u": "addHouse(smarthome.domain.house.vo.HouseName,smarthome.domain.house.vo.Location)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Address",
+    "l": "Address(StreetName, StreetNumber, ZipCode, City, Country)",
+    "u": "%3Cinit%3E(smarthome.domain.house.vo.StreetName,smarthome.domain.house.vo.StreetNumber,smarthome.domain.house.vo.ZipCode,smarthome.domain.house.vo.City,smarthome.domain.house.vo.Country)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "RoomServiceImpl",
+    "l": "addRoom(HouseName, RoomName, Floor, Dimensions)",
+    "u": "addRoom(smarthome.domain.house.vo.HouseName,smarthome.domain.room.vo.RoomName,smarthome.domain.room.vo.Floor,smarthome.domain.room.vo.Dimensions)"
+}, {
+    "p": "smarthome.service",
+    "c": "IRoomService",
+    "l": "addRoom(HouseName, RoomName, Floor, Dimensions)",
+    "u": "addRoom(smarthome.domain.house.vo.HouseName,smarthome.domain.room.vo.RoomName,smarthome.domain.room.vo.Floor,smarthome.domain.room.vo.Dimensions)"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddRoomController",
+    "l": "addRoom(RoomDTO)",
+    "u": "addRoom(smarthome.mapper.RoomDTO)"
+}, {
+    "p": "smarthome.controller",
+    "c": "RoomRESTController",
+    "l": "addRoom(String, RoomDTO)",
+    "u": "addRoom(java.lang.String,smarthome.mapper.RoomDTO)"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddRoomController",
+    "l": "AddRoomController(IRoomService, RoomMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IRoomService,smarthome.mapper.mapper.RoomMapper)"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddSensorToDeviceController",
+    "l": "addSensor(SensorDTO)",
+    "u": "addSensor(smarthome.mapper.SensorDTO)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "SensorServiceImpl",
+    "l": "addSensor(SensorModelName, DeviceId)",
+    "u": "addSensor(smarthome.domain.sensormodel.vo.SensorModelName,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.service",
+    "c": "ISensorService",
+    "l": "addSensor(SensorModelName, DeviceId)",
+    "u": "addSensor(smarthome.domain.sensormodel.vo.SensorModelName,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "SensorRESTController",
+    "l": "addSensor(String, SensorDTO)",
+    "u": "addSensor(java.lang.String,smarthome.mapper.SensorDTO)"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddSensorToDeviceController",
+    "l": "AddSensorToDeviceController(ISensorService, ISensorTypeService, ISensorModelService, SensorTypeMapper, SensorModelMapper, SensorMapper)",
+    "u": "%3Cinit%3E(smarthome.service.ISensorService,smarthome.service.ISensorTypeService,smarthome.service.ISensorModelService,smarthome.mapper.mapper.SensorTypeMapper,smarthome.mapper.mapper.SensorModelMapper,smarthome.mapper.mapper.SensorMapper)"
+}, {"p": "smarthome", "c": "AppConfig", "l": "AppConfig()", "u": "%3Cinit%3E()"}, {
+    "p": "smarthome",
+    "c": "AppSmarthome",
+    "l": "AppSmarthome()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "AveragePowerConsumptionValue",
+    "l": "AveragePowerConsumptionValue(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "City",
+    "l": "City(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.service",
+    "c": "IActuatorService",
+    "l": "closeBlindRoller(ActuatorId, Value)",
+    "u": "closeBlindRoller(smarthome.domain.actuator.vo.ActuatorId,smarthome.domain.sensor.vo.values.Value)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorServiceImpl",
+    "l": "closeBlindRoller(ActuatorId, Value)",
+    "u": "closeBlindRoller(smarthome.domain.actuator.vo.ActuatorId,smarthome.domain.sensor.vo.values.Value)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorRESTController",
+    "l": "closeBlindRoller(String, String)",
+    "u": "closeBlindRoller(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ConfigHouseLocationController",
+    "l": "configHouseLocation(HouseDTO)",
+    "u": "configHouseLocation(smarthome.mapper.HouseDTO)"
+}, {
+    "p": "smarthome.service",
+    "c": "IHouseService",
+    "l": "configHouseLocation(HouseName, Location)",
+    "u": "configHouseLocation(smarthome.domain.house.vo.HouseName,smarthome.domain.house.vo.Location)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "HouseServiceImpl",
+    "l": "configHouseLocation(HouseName, Location)",
+    "u": "configHouseLocation(smarthome.domain.house.vo.HouseName,smarthome.domain.house.vo.Location)"
+}, {
+    "p": "smarthome.controller",
+    "c": "HouseRESTController",
+    "l": "configHouseLocation(String, HouseDTO)",
+    "u": "configHouseLocation(java.lang.String,smarthome.mapper.HouseDTO)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ConfigHouseLocationController",
+    "l": "ConfigHouseLocationController(IHouseService, HouseMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IHouseService,smarthome.mapper.mapper.HouseMapper)"
+}, {
+    "p": "smarthome.domain.house",
+    "c": "House",
+    "l": "configLocation(Location)",
+    "u": "configLocation(smarthome.domain.house.vo.Location)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorRepositoryJPAImpl",
+    "l": "containsIdentity(ActuatorId)",
+    "u": "containsIdentity(smarthome.domain.actuator.vo.ActuatorId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorRepositoryMemImpl",
+    "l": "containsIdentity(ActuatorId)",
+    "u": "containsIdentity(smarthome.domain.actuator.vo.ActuatorId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorRepositorySpringDataImpl",
+    "l": "containsIdentity(ActuatorId)",
+    "u": "containsIdentity(smarthome.domain.actuator.vo.ActuatorId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorModelRepositoryJPAImpl",
+    "l": "containsIdentity(ActuatorModelName)",
+    "u": "containsIdentity(smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorModelRepositoryMemImpl",
+    "l": "containsIdentity(ActuatorModelName)",
+    "u": "containsIdentity(smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorModelRepositorySpringDataImpl",
+    "l": "containsIdentity(ActuatorModelName)",
+    "u": "containsIdentity(smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorTypeRepositoryJPAImpl",
+    "l": "containsIdentity(ActuatorTypeName)",
+    "u": "containsIdentity(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorTypeRepositoryMemImpl",
+    "l": "containsIdentity(ActuatorTypeName)",
+    "u": "containsIdentity(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorTypeRepositorySpringDataImpl",
+    "l": "containsIdentity(ActuatorTypeName)",
+    "u": "containsIdentity(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "containsIdentity(DeviceId)",
+    "u": "containsIdentity(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "containsIdentity(DeviceId)",
+    "u": "containsIdentity(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "containsIdentity(DeviceId)",
+    "u": "containsIdentity(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceTypeRepositoryJPAImpl",
+    "l": "containsIdentity(DeviceTypeName)",
+    "u": "containsIdentity(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceTypeRepositoryMemImpl",
+    "l": "containsIdentity(DeviceTypeName)",
+    "u": "containsIdentity(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceTypeRepositorySpringDataImpl",
+    "l": "containsIdentity(DeviceTypeName)",
+    "u": "containsIdentity(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "HouseRepositoryJPAImpl",
+    "l": "containsIdentity(HouseName)",
+    "u": "containsIdentity(smarthome.domain.house.vo.HouseName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "HouseRepositoryMemImpl",
+    "l": "containsIdentity(HouseName)",
+    "u": "containsIdentity(smarthome.domain.house.vo.HouseName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "HouseRepositorySpringDataImpl",
+    "l": "containsIdentity(HouseName)",
+    "u": "containsIdentity(smarthome.domain.house.vo.HouseName)"
+}, {"p": "smarthome.ddd", "c": "IRepository", "l": "containsIdentity(ID)"}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ReadingRepositoryJPAImpl",
+    "l": "containsIdentity(ReadingId)",
+    "u": "containsIdentity(smarthome.domain.reading.vo.ReadingId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ReadingRepositoryMemImpl",
+    "l": "containsIdentity(ReadingId)",
+    "u": "containsIdentity(smarthome.domain.reading.vo.ReadingId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ReadingRepositorySpringDataImpl",
+    "l": "containsIdentity(ReadingId)",
+    "u": "containsIdentity(smarthome.domain.reading.vo.ReadingId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "RoomRepositoryJPAImpl",
+    "l": "containsIdentity(RoomId)",
+    "u": "containsIdentity(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "RoomRepositoryMemImpl",
+    "l": "containsIdentity(RoomId)",
+    "u": "containsIdentity(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "RoomRepositorySpringDataImpl",
+    "l": "containsIdentity(RoomId)",
+    "u": "containsIdentity(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorRepositoryJPAImpl",
+    "l": "containsIdentity(SensorId)",
+    "u": "containsIdentity(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorRepositoryMemImpl",
+    "l": "containsIdentity(SensorId)",
+    "u": "containsIdentity(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorRepositorySpringDataImpl",
+    "l": "containsIdentity(SensorId)",
+    "u": "containsIdentity(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorModelRepositoryJPAImpl",
+    "l": "containsIdentity(SensorModelName)",
+    "u": "containsIdentity(smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorModelRepositoryMemImpl",
+    "l": "containsIdentity(SensorModelName)",
+    "u": "containsIdentity(smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorModelRepositorySpringDataImpl",
+    "l": "containsIdentity(SensorModelName)",
+    "u": "containsIdentity(smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorTypeRepositoryJPAImpl",
+    "l": "containsIdentity(SensorTypeId)",
+    "u": "containsIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorTypeRepositoryMemImpl",
+    "l": "containsIdentity(SensorTypeId)",
+    "u": "containsIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorTypeRepositorySpringDataImpl",
+    "l": "containsIdentity(SensorTypeId)",
+    "u": "containsIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Country",
+    "l": "Country(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorFactory",
+    "l": "createActuator(ActuatorMap)",
+    "u": "createActuator(smarthome.domain.actuator.vo.ActuatorMap)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorFactoryImpl",
+    "l": "createActuator(ActuatorMap)",
+    "u": "createActuator(smarthome.domain.actuator.vo.ActuatorMap)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRollerFactory",
+    "l": "createActuator(ActuatorMap)",
+    "u": "createActuator(smarthome.domain.actuator.vo.ActuatorMap)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiterFactory",
+    "l": "createActuator(ActuatorMap)",
+    "u": "createActuator(smarthome.domain.actuator.vo.ActuatorMap)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiterFactory",
+    "l": "createActuator(ActuatorMap)",
+    "u": "createActuator(smarthome.domain.actuator.vo.ActuatorMap)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitchFactory",
+    "l": "createActuator(ActuatorMap)",
+    "u": "createActuator(smarthome.domain.actuator.vo.ActuatorMap)"
+}, {
+    "p": "smarthome.domain.actuatormodel",
+    "c": "ActuatorModelFactory",
+    "l": "createActuatorModel(ActuatorModelName, ActuatorTypeName)",
+    "u": "createActuatorModel(smarthome.domain.actuatormodel.vo.ActuatorModelName,smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.domain.actuatormodel",
+    "c": "ActuatorModelFactoryImpl",
+    "l": "createActuatorModel(ActuatorModelName, ActuatorTypeName)",
+    "u": "createActuatorModel(smarthome.domain.actuatormodel.vo.ActuatorModelName,smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.domain.actuatortype",
+    "c": "ActuatorTypeFactory",
+    "l": "createActuatorType(ActuatorTypeName)",
+    "u": "createActuatorType(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.domain.actuatortype",
+    "c": "ActuatorTypeFactoryImpl",
+    "l": "createActuatorType(ActuatorTypeName)",
+    "u": "createActuatorType(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.domain.device",
+    "c": "DeviceFactory",
+    "l": "createDevice(DeviceId, DeviceName, DeviceTypeName, RoomId, DeviceStatus)",
+    "u": "createDevice(smarthome.domain.device.vo.DeviceId,smarthome.domain.device.vo.DeviceName,smarthome.domain.deviceType.vo.DeviceTypeName,smarthome.domain.room.vo.RoomId,smarthome.domain.device.vo.DeviceStatus)"
+}, {
+    "p": "smarthome.domain.device",
+    "c": "DeviceFactoryImpl",
+    "l": "createDevice(DeviceId, DeviceName, DeviceTypeName, RoomId, DeviceStatus)",
+    "u": "createDevice(smarthome.domain.device.vo.DeviceId,smarthome.domain.device.vo.DeviceName,smarthome.domain.deviceType.vo.DeviceTypeName,smarthome.domain.room.vo.RoomId,smarthome.domain.device.vo.DeviceStatus)"
+}, {
+    "p": "smarthome.domain.device",
+    "c": "DeviceFactory",
+    "l": "createDevice(DeviceName, DeviceTypeName, RoomId)",
+    "u": "createDevice(smarthome.domain.device.vo.DeviceName,smarthome.domain.deviceType.vo.DeviceTypeName,smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.domain.device",
+    "c": "DeviceFactoryImpl",
+    "l": "createDevice(DeviceName, DeviceTypeName, RoomId)",
+    "u": "createDevice(smarthome.domain.device.vo.DeviceName,smarthome.domain.deviceType.vo.DeviceTypeName,smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.domain.deviceType",
+    "c": "DeviceTypeFactory",
+    "l": "createDeviceType(DeviceTypeName)",
+    "u": "createDeviceType(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.domain.deviceType",
+    "c": "DeviceTypeFactoryImpl",
+    "l": "createDeviceType(DeviceTypeName)",
+    "u": "createDeviceType(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.domain.house",
+    "c": "HouseFactory",
+    "l": "createHouse(HouseName, Location)",
+    "u": "createHouse(smarthome.domain.house.vo.HouseName,smarthome.domain.house.vo.Location)"
+}, {
+    "p": "smarthome.domain.house",
+    "c": "HouseFactoryImpl",
+    "l": "createHouse(HouseName, Location)",
+    "u": "createHouse(smarthome.domain.house.vo.HouseName,smarthome.domain.house.vo.Location)"
+}, {
+    "p": "smarthome.domain.reading",
+    "c": "ReadingFactory",
+    "l": "createReading(ReadingId, Value, SensorId, TimeStamp)",
+    "u": "createReading(smarthome.domain.reading.vo.ReadingId,smarthome.domain.sensor.vo.values.Value,smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.domain.reading",
+    "c": "ReadingFactoryImpl",
+    "l": "createReading(ReadingId, Value, SensorId, TimeStamp)",
+    "u": "createReading(smarthome.domain.reading.vo.ReadingId,smarthome.domain.sensor.vo.values.Value,smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.domain.reading",
+    "c": "ReadingFactory",
+    "l": "createReading(Value, SensorId, TimeStamp)",
+    "u": "createReading(smarthome.domain.sensor.vo.values.Value,smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.domain.reading",
+    "c": "ReadingFactoryImpl",
+    "l": "createReading(Value, SensorId, TimeStamp)",
+    "u": "createReading(smarthome.domain.sensor.vo.values.Value,smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.domain.room",
+    "c": "RoomFactory",
+    "l": "createRoom(RoomId, RoomName, HouseName, Floor, Dimensions)",
+    "u": "createRoom(smarthome.domain.room.vo.RoomId,smarthome.domain.room.vo.RoomName,smarthome.domain.house.vo.HouseName,smarthome.domain.room.vo.Floor,smarthome.domain.room.vo.Dimensions)"
+}, {
+    "p": "smarthome.domain.room",
+    "c": "RoomFactoryImpl",
+    "l": "createRoom(RoomId, RoomName, HouseName, Floor, Dimensions)",
+    "u": "createRoom(smarthome.domain.room.vo.RoomId,smarthome.domain.room.vo.RoomName,smarthome.domain.house.vo.HouseName,smarthome.domain.room.vo.Floor,smarthome.domain.room.vo.Dimensions)"
+}, {
+    "p": "smarthome.domain.room",
+    "c": "RoomFactory",
+    "l": "createRoom(RoomName, HouseName, Floor, Dimensions)",
+    "u": "createRoom(smarthome.domain.room.vo.RoomName,smarthome.domain.house.vo.HouseName,smarthome.domain.room.vo.Floor,smarthome.domain.room.vo.Dimensions)"
+}, {
+    "p": "smarthome.domain.room",
+    "c": "RoomFactoryImpl",
+    "l": "createRoom(RoomName, HouseName, Floor, Dimensions)",
+    "u": "createRoom(smarthome.domain.room.vo.RoomName,smarthome.domain.house.vo.HouseName,smarthome.domain.room.vo.Floor,smarthome.domain.room.vo.Dimensions)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorFactory",
+    "l": "createSensor(SensorId, SensorModelName, DeviceId)",
+    "u": "createSensor(smarthome.domain.sensor.vo.SensorId,smarthome.domain.sensormodel.vo.SensorModelName,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorFactoryImpl",
+    "l": "createSensor(SensorId, SensorModelName, DeviceId)",
+    "u": "createSensor(smarthome.domain.sensor.vo.SensorId,smarthome.domain.sensormodel.vo.SensorModelName,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorFactory",
+    "l": "createSensor(SensorModelName, DeviceId)",
+    "u": "createSensor(smarthome.domain.sensormodel.vo.SensorModelName,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorFactoryImpl",
+    "l": "createSensor(SensorModelName, DeviceId)",
+    "u": "createSensor(smarthome.domain.sensormodel.vo.SensorModelName,smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.domain.sensormodel",
+    "c": "SensorModelFactory",
+    "l": "createSensorModel(SensorModelName, SensorTypeId)",
+    "u": "createSensorModel(smarthome.domain.sensormodel.vo.SensorModelName,smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.domain.sensormodel",
+    "c": "SensorModelFactoryImpl",
+    "l": "createSensorModel(SensorModelName, SensorTypeId)",
+    "u": "createSensorModel(smarthome.domain.sensormodel.vo.SensorModelName,smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorTypeFactory",
+    "l": "createSensorType(SensorTypeId, SensorTypeName, SensorTypeUnit)",
+    "u": "createSensorType(smarthome.domain.sensortype.vo.SensorTypeId,smarthome.domain.sensortype.vo.SensorTypeName,smarthome.domain.sensortype.vo.SensorTypeUnit)"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorTypeFactoryImpl",
+    "l": "createSensorType(SensorTypeId, SensorTypeName, SensorTypeUnit)",
+    "u": "createSensorType(smarthome.domain.sensortype.vo.SensorTypeId,smarthome.domain.sensortype.vo.SensorTypeName,smarthome.domain.sensortype.vo.SensorTypeUnit)"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorTypeFactory",
+    "l": "createSensorType(SensorTypeName, SensorTypeUnit)",
+    "u": "createSensorType(smarthome.domain.sensortype.vo.SensorTypeName,smarthome.domain.sensortype.vo.SensorTypeUnit)"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorTypeFactoryImpl",
+    "l": "createSensorType(SensorTypeName, SensorTypeUnit)",
+    "u": "createSensorType(smarthome.domain.sensortype.vo.SensorTypeName,smarthome.domain.sensortype.vo.SensorTypeUnit)"
+}, {"p": "smarthome.domain.device", "c": "Device", "l": "deactivateDevice()"}, {
+    "p": "smarthome.controller",
+    "c": "DeactivateDeviceController",
+    "l": "deactivateDevice(DeviceDTO)",
+    "u": "deactivateDevice(smarthome.mapper.DeviceDTO)"
+}, {
+    "p": "smarthome.service",
+    "c": "IDeviceService",
+    "l": "deactivateDevice(DeviceId)",
+    "u": "deactivateDevice(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceServiceImpl",
+    "l": "deactivateDevice(DeviceId)",
+    "u": "deactivateDevice(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "DeviceRESTController",
+    "l": "deactivateDevice(String)",
+    "u": "deactivateDevice(java.lang.String)"
+}, {
+    "p": "smarthome.controller",
+    "c": "DeactivateDeviceController",
+    "l": "DeactivateDeviceController(IDeviceService, DeviceMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IDeviceService,smarthome.mapper.mapper.DeviceMapper)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "DecimalLimit",
+    "l": "DecimalLimit(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "DecimalValue",
+    "l": "DecimalValue(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.device",
+    "c": "Device",
+    "l": "Device(DeviceId, DeviceName, DeviceTypeName, RoomId, DeviceStatus)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.device.vo.DeviceName,smarthome.domain.deviceType.vo.DeviceTypeName,smarthome.domain.room.vo.RoomId,smarthome.domain.device.vo.DeviceStatus)"
+}, {
+    "p": "smarthome.domain.device",
+    "c": "Device",
+    "l": "Device(DeviceName, DeviceTypeName, RoomId)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceName,smarthome.domain.deviceType.vo.DeviceTypeName,smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "DeviceDataModel",
+    "l": "DeviceDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "DeviceDataModel",
+    "l": "DeviceDataModel(Device)",
+    "u": "%3Cinit%3E(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "DeviceDataModelMapper",
+    "l": "DeviceDataModelMapper(DeviceFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.device.DeviceFactory)"
+}, {"p": "smarthome.mapper", "c": "DeviceDTO", "l": "DeviceDTO()", "u": "%3Cinit%3E()"}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceDTO",
+    "l": "DeviceDTO(String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceDTO",
+    "l": "DeviceDTO(String, String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceDTO",
+    "l": "DeviceDTO(String, String, String, String, boolean)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,java.lang.String,boolean)"
+}, {
+    "p": "smarthome.domain.device",
+    "c": "DeviceFactoryImpl",
+    "l": "DeviceFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.device.vo",
+    "c": "DeviceId",
+    "l": "DeviceId(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceIdDTO",
+    "l": "DeviceIdDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceMapper",
+    "l": "DeviceMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.device.vo",
+    "c": "DeviceName",
+    "l": "DeviceName(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "DeviceRepositoryJPAImpl(DeviceDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.DeviceDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "DeviceRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "DeviceRepositorySpringDataImpl(DeviceDataModelMapper, IDeviceRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.DeviceDataModelMapper,smarthome.persistence.spring.IDeviceRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "DeviceRESTController",
+    "l": "DeviceRESTController(IDeviceService, DeviceMapper, DeviceTypeMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IDeviceService,smarthome.mapper.mapper.DeviceMapper,smarthome.mapper.mapper.DeviceTypeMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceServiceImpl",
+    "l": "DeviceServiceImpl(IRoomRepository, DeviceFactory, IDeviceRepository, ISensorTypeRepository, ISensorModelRepository, ISensorRepository, IDeviceTypeRepository)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.IRoomRepository,smarthome.domain.device.DeviceFactory,smarthome.domain.repository.IDeviceRepository,smarthome.domain.repository.ISensorTypeRepository,smarthome.domain.repository.ISensorModelRepository,smarthome.domain.repository.ISensorRepository,smarthome.domain.repository.IDeviceTypeRepository)"
+}, {
+    "p": "smarthome.domain.device.vo",
+    "c": "DeviceStatus",
+    "l": "DeviceStatus(boolean)",
+    "u": "%3Cinit%3E(boolean)"
+}, {
+    "p": "smarthome.domain.deviceType",
+    "c": "DeviceType",
+    "l": "DeviceType(DeviceTypeName)",
+    "u": "%3Cinit%3E(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "DeviceTypeDataModel",
+    "l": "DeviceTypeDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "DeviceTypeDataModel",
+    "l": "DeviceTypeDataModel(DeviceType)",
+    "u": "%3Cinit%3E(smarthome.domain.deviceType.DeviceType)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "DeviceTypeDataModelMapper",
+    "l": "DeviceTypeDataModelMapper(DeviceTypeFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.deviceType.DeviceTypeFactory)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceTypeDTO",
+    "l": "DeviceTypeDTO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceTypeDTO",
+    "l": "DeviceTypeDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.domain.deviceType",
+    "c": "DeviceTypeFactoryImpl",
+    "l": "DeviceTypeFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceTypeMapper",
+    "l": "DeviceTypeMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.deviceType.vo",
+    "c": "DeviceTypeName",
+    "l": "DeviceTypeName(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceTypeNameDTO",
+    "l": "DeviceTypeNameDTO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceTypeNameDTO",
+    "l": "DeviceTypeNameDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceTypeRepositoryJPAImpl",
+    "l": "DeviceTypeRepositoryJPAImpl(DeviceTypeDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.DeviceTypeDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceTypeRepositoryMemImpl",
+    "l": "DeviceTypeRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceTypeRepositorySpringDataImpl",
+    "l": "DeviceTypeRepositorySpringDataImpl(DeviceTypeDataModelMapper, IDeviceTypeRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.DeviceTypeDataModelMapper,smarthome.persistence.spring.IDeviceTypeRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "DeviceTypeRESTController",
+    "l": "DeviceTypeRESTController(IDeviceTypeService, DeviceTypeMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IDeviceTypeService,smarthome.mapper.mapper.DeviceTypeMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceTypeServiceImpl",
+    "l": "DeviceTypeServiceImpl(IDeviceTypeRepository)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.IDeviceTypeRepository)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "DewPointValue",
+    "l": "DewPointValue(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Dimensions",
+    "l": "Dimensions(Width, Height, Length)",
+    "u": "%3Cinit%3E(smarthome.domain.room.vo.Width,smarthome.domain.room.vo.Height,smarthome.domain.room.vo.Length)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "ElectricEnergyConsumptionValue",
+    "l": "ElectricEnergyConsumptionValue(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "SpringDataConfig",
+    "l": "entityManagerFactory()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRoller",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiter",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitch",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorId",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorMap",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "DecimalLimit",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "DecimalValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "IntegerValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "IntLimit",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "LoadState",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "Precision",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuatormodel",
+    "c": "ActuatorModel",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuatormodel.vo",
+    "c": "ActuatorModelName",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuatortype",
+    "c": "ActuatorType",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.actuatortype.vo",
+    "c": "ActuatorTypeName",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.device",
+    "c": "Device",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.device.vo",
+    "c": "DeviceId",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.device.vo",
+    "c": "DeviceName",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.device.vo",
+    "c": "DeviceStatus",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.deviceType",
+    "c": "DeviceType",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.deviceType.vo",
+    "c": "DeviceTypeName",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house",
+    "c": "House",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Address",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "City",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Country",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Gps",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "HouseName",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Latitude",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Location",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Longitude",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "StreetName",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "StreetNumber",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "ZipCode",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.reading",
+    "c": "Reading",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingId",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "TimeStamp",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.room",
+    "c": "Room",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Dimensions",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Floor",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Height",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Length",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "RoomId",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "RoomName",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Width",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfAveragePowerConsumption",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfDewPoint",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfElectricEnergyConsumption",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfHumidity",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfOnOff",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfPowerConsumption",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfScalePercentage",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSolarIrradiance",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunrise",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunset",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfTemperature",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfWind",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo",
+    "c": "SensorId",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "AveragePowerConsumptionValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "DewPointValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "ElectricEnergyConsumptionValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "HumidityValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "OnOffValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "PowerConsumptionValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "ScalePercentageValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SolarIrradianceValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SunriseValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SunsetValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "TemperatureValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "WindValue",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensormodel",
+    "c": "SensorModel",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensormodel.vo",
+    "c": "SensorModelName",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorType",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensortype.vo",
+    "c": "SensorTypeId",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensortype.vo",
+    "c": "SensorTypeName",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.sensortype.vo",
+    "c": "SensorTypeUnit",
+    "l": "equals(Object)",
+    "u": "equals(java.lang.Object)"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "equalsReturnsFalseWhenObjectIsDifferent()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "equalsReturnsFalseWhenObjectIsNull()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "equalsReturnsFalseWhenValueIsDifferent()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "equalsReturnsTrueWhenObjectIsEqualToValue()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "equalsReturnsTrueWhenObjectIsSameAsValue()"
+}, {"p": "smarthome", "c": "FactoryConfig", "l": "FactoryConfig()", "u": "%3Cinit%3E()"}, {
+    "p": "smarthome",
+    "c": "AppConfig",
+    "l": "filePathDelta()"
+}, {"p": "smarthome", "c": "AppConfig", "l": "filePathModels()"}, {
+    "p": "smarthome.domain.repository",
+    "c": "IActuatorRepository",
+    "l": "findActuatorIdsByDeviceId(DeviceId)",
+    "u": "findActuatorIdsByDeviceId(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorRepositoryJPAImpl",
+    "l": "findActuatorIdsByDeviceId(DeviceId)",
+    "u": "findActuatorIdsByDeviceId(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorRepositoryMemImpl",
+    "l": "findActuatorIdsByDeviceId(DeviceId)",
+    "u": "findActuatorIdsByDeviceId(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorRepositorySpringDataImpl",
+    "l": "findActuatorIdsByDeviceId(DeviceId)",
+    "u": "findActuatorIdsByDeviceId(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IActuatorRepositorySpringData",
+    "l": "findActuatorIdsByDeviceId(String)",
+    "u": "findActuatorIdsByDeviceId(java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IActuatorModelRepository",
+    "l": "findActuatorModelNamesByActuatorTypeName(ActuatorTypeName)",
+    "u": "findActuatorModelNamesByActuatorTypeName(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorModelRepositoryJPAImpl",
+    "l": "findActuatorModelNamesByActuatorTypeName(ActuatorTypeName)",
+    "u": "findActuatorModelNamesByActuatorTypeName(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorModelRepositoryMemImpl",
+    "l": "findActuatorModelNamesByActuatorTypeName(ActuatorTypeName)",
+    "u": "findActuatorModelNamesByActuatorTypeName(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorModelRepositorySpringDataImpl",
+    "l": "findActuatorModelNamesByActuatorTypeName(ActuatorTypeName)",
+    "u": "findActuatorModelNamesByActuatorTypeName(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IActuatorModelRepositorySpringData",
+    "l": "findActuatorModelNamesByActuatorTypeName(String)",
+    "u": "findActuatorModelNamesByActuatorTypeName(java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IActuatorModelRepository",
+    "l": "findActuatorModelsByActuatorTypeName(ActuatorTypeName)",
+    "u": "findActuatorModelsByActuatorTypeName(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorModelRepositoryJPAImpl",
+    "l": "findActuatorModelsByActuatorTypeName(ActuatorTypeName)",
+    "u": "findActuatorModelsByActuatorTypeName(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorModelRepositoryMemImpl",
+    "l": "findActuatorModelsByActuatorTypeName(ActuatorTypeName)",
+    "u": "findActuatorModelsByActuatorTypeName(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorModelRepositorySpringDataImpl",
+    "l": "findActuatorModelsByActuatorTypeName(ActuatorTypeName)",
+    "u": "findActuatorModelsByActuatorTypeName(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IActuatorModelRepositorySpringData",
+    "l": "findActuatorModelsByActuatorTypeName(String)",
+    "u": "findActuatorModelsByActuatorTypeName(java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IActuatorTypeRepository",
+    "l": "findActuatorTypeNames()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorTypeRepositoryJPAImpl",
+    "l": "findActuatorTypeNames()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorTypeRepositoryMemImpl",
+    "l": "findActuatorTypeNames()"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IActuatorTypeRepositorySpringData",
+    "l": "findActuatorTypeNames()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorTypeRepositorySpringDataImpl",
+    "l": "findActuatorTypeNames()"
+}, {"p": "smarthome.ddd", "c": "IRepository", "l": "findAll()"}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorModelRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorTypeRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceTypeRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "HouseRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ReadingRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "RoomRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorModelRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorTypeRepositoryJPAImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorModelRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorTypeRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceTypeRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "HouseRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ReadingRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "RoomRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorModelRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorTypeRepositoryMemImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorModelRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorTypeRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceTypeRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "HouseRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ReadingRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "RoomRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorModelRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorTypeRepositorySpringDataImpl",
+    "l": "findAll()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorRepositoryJPAImpl",
+    "l": "findByIdentity(ActuatorId)",
+    "u": "findByIdentity(smarthome.domain.actuator.vo.ActuatorId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorRepositoryMemImpl",
+    "l": "findByIdentity(ActuatorId)",
+    "u": "findByIdentity(smarthome.domain.actuator.vo.ActuatorId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorRepositorySpringDataImpl",
+    "l": "findByIdentity(ActuatorId)",
+    "u": "findByIdentity(smarthome.domain.actuator.vo.ActuatorId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorModelRepositoryJPAImpl",
+    "l": "findByIdentity(ActuatorModelName)",
+    "u": "findByIdentity(smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorModelRepositoryMemImpl",
+    "l": "findByIdentity(ActuatorModelName)",
+    "u": "findByIdentity(smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorModelRepositorySpringDataImpl",
+    "l": "findByIdentity(ActuatorModelName)",
+    "u": "findByIdentity(smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorTypeRepositoryJPAImpl",
+    "l": "findByIdentity(ActuatorTypeName)",
+    "u": "findByIdentity(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorTypeRepositoryMemImpl",
+    "l": "findByIdentity(ActuatorTypeName)",
+    "u": "findByIdentity(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorTypeRepositorySpringDataImpl",
+    "l": "findByIdentity(ActuatorTypeName)",
+    "u": "findByIdentity(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "findByIdentity(DeviceId)",
+    "u": "findByIdentity(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "findByIdentity(DeviceId)",
+    "u": "findByIdentity(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "findByIdentity(DeviceId)",
+    "u": "findByIdentity(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceTypeRepositoryJPAImpl",
+    "l": "findByIdentity(DeviceTypeName)",
+    "u": "findByIdentity(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceTypeRepositoryMemImpl",
+    "l": "findByIdentity(DeviceTypeName)",
+    "u": "findByIdentity(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceTypeRepositorySpringDataImpl",
+    "l": "findByIdentity(DeviceTypeName)",
+    "u": "findByIdentity(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "HouseRepositoryJPAImpl",
+    "l": "findByIdentity(HouseName)",
+    "u": "findByIdentity(smarthome.domain.house.vo.HouseName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "HouseRepositoryMemImpl",
+    "l": "findByIdentity(HouseName)",
+    "u": "findByIdentity(smarthome.domain.house.vo.HouseName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "HouseRepositorySpringDataImpl",
+    "l": "findByIdentity(HouseName)",
+    "u": "findByIdentity(smarthome.domain.house.vo.HouseName)"
+}, {"p": "smarthome.ddd", "c": "IRepository", "l": "findByIdentity(ID)"}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ReadingRepositoryJPAImpl",
+    "l": "findByIdentity(ReadingId)",
+    "u": "findByIdentity(smarthome.domain.reading.vo.ReadingId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ReadingRepositoryMemImpl",
+    "l": "findByIdentity(ReadingId)",
+    "u": "findByIdentity(smarthome.domain.reading.vo.ReadingId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ReadingRepositorySpringDataImpl",
+    "l": "findByIdentity(ReadingId)",
+    "u": "findByIdentity(smarthome.domain.reading.vo.ReadingId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "RoomRepositoryJPAImpl",
+    "l": "findByIdentity(RoomId)",
+    "u": "findByIdentity(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "RoomRepositoryMemImpl",
+    "l": "findByIdentity(RoomId)",
+    "u": "findByIdentity(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "RoomRepositorySpringDataImpl",
+    "l": "findByIdentity(RoomId)",
+    "u": "findByIdentity(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorRepositoryJPAImpl",
+    "l": "findByIdentity(SensorId)",
+    "u": "findByIdentity(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorRepositoryMemImpl",
+    "l": "findByIdentity(SensorId)",
+    "u": "findByIdentity(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorRepositorySpringDataImpl",
+    "l": "findByIdentity(SensorId)",
+    "u": "findByIdentity(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorModelRepositoryJPAImpl",
+    "l": "findByIdentity(SensorModelName)",
+    "u": "findByIdentity(smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorModelRepositoryMemImpl",
+    "l": "findByIdentity(SensorModelName)",
+    "u": "findByIdentity(smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorModelRepositorySpringDataImpl",
+    "l": "findByIdentity(SensorModelName)",
+    "u": "findByIdentity(smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorTypeRepositoryJPAImpl",
+    "l": "findByIdentity(SensorTypeId)",
+    "u": "findByIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorTypeRepositoryMemImpl",
+    "l": "findByIdentity(SensorTypeId)",
+    "u": "findByIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorTypeRepositorySpringDataImpl",
+    "l": "findByIdentity(SensorTypeId)",
+    "u": "findByIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IDeviceRepository",
+    "l": "findDeviceIds()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "findDeviceIds()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "findDeviceIds()"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IDeviceRepositorySpringData",
+    "l": "findDeviceIds()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "findDeviceIds()"
+}, {"p": "smarthome.service", "c": "IDeviceService", "l": "findDeviceIds()"}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceServiceImpl",
+    "l": "findDeviceIds()"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IDeviceRepository",
+    "l": "findDeviceIdsByDeviceTypeName(DeviceTypeName)",
+    "u": "findDeviceIdsByDeviceTypeName(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "findDeviceIdsByDeviceTypeName(DeviceTypeName)",
+    "u": "findDeviceIdsByDeviceTypeName(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "findDeviceIdsByDeviceTypeName(DeviceTypeName)",
+    "u": "findDeviceIdsByDeviceTypeName(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "findDeviceIdsByDeviceTypeName(DeviceTypeName)",
+    "u": "findDeviceIdsByDeviceTypeName(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IDeviceRepositorySpringData",
+    "l": "findDeviceIdsByDeviceTypeName(String)",
+    "u": "findDeviceIdsByDeviceTypeName(java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IDeviceRepository",
+    "l": "findDeviceIdsByRoomId(RoomId)",
+    "u": "findDeviceIdsByRoomId(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "findDeviceIdsByRoomId(RoomId)",
+    "u": "findDeviceIdsByRoomId(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "findDeviceIdsByRoomId(RoomId)",
+    "u": "findDeviceIdsByRoomId(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "findDeviceIdsByRoomId(RoomId)",
+    "u": "findDeviceIdsByRoomId(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IDeviceRepositorySpringData",
+    "l": "findDeviceIdsByRoomIdentity(String)",
+    "u": "findDeviceIdsByRoomIdentity(java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IDeviceRepository",
+    "l": "findDevicesByRoomId(RoomId)",
+    "u": "findDevicesByRoomId(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "findDevicesByRoomId(RoomId)",
+    "u": "findDevicesByRoomId(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "findDevicesByRoomId(RoomId)",
+    "u": "findDevicesByRoomId(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "findDevicesByRoomId(RoomId)",
+    "u": "findDevicesByRoomId(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IDeviceRepositorySpringData",
+    "l": "findDevicesByRoomIdentity(String)",
+    "u": "findDevicesByRoomIdentity(java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IDeviceTypeRepository",
+    "l": "findDeviceTypeNames()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceTypeRepositoryJPAImpl",
+    "l": "findDeviceTypeNames()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceTypeRepositoryMemImpl",
+    "l": "findDeviceTypeNames()"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IDeviceTypeRepositorySpringData",
+    "l": "findDeviceTypeNames()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceTypeRepositorySpringDataImpl",
+    "l": "findDeviceTypeNames()"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IHouseRepository",
+    "l": "findHouseIds()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "HouseRepositoryJPAImpl",
+    "l": "findHouseIds()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "HouseRepositoryMemImpl",
+    "l": "findHouseIds()"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IHouseRepositorySpringData",
+    "l": "findHouseIds()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "HouseRepositorySpringDataImpl",
+    "l": "findHouseIds()"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IReadingRepository",
+    "l": "findLastReadingBySensorId(SensorId)",
+    "u": "findLastReadingBySensorId(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ReadingRepositoryJPAImpl",
+    "l": "findLastReadingBySensorId(SensorId)",
+    "u": "findLastReadingBySensorId(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ReadingRepositoryMemImpl",
+    "l": "findLastReadingBySensorId(SensorId)",
+    "u": "findLastReadingBySensorId(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ReadingRepositorySpringDataImpl",
+    "l": "findLastReadingBySensorId(SensorId)",
+    "u": "findLastReadingBySensorId(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IReadingRepositorySpringData",
+    "l": "findReadingIdsBySensorIdAndTimeStamp(String, LocalDateTime, LocalDateTime)",
+    "u": "findReadingIdsBySensorIdAndTimeStamp(java.lang.String,java.time.LocalDateTime,java.time.LocalDateTime)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IReadingRepository",
+    "l": "findReadingIdsBySensorIdInAGivenPeriod(SensorId, TimeStamp, TimeStamp)",
+    "u": "findReadingIdsBySensorIdInAGivenPeriod(smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ReadingRepositoryJPAImpl",
+    "l": "findReadingIdsBySensorIdInAGivenPeriod(SensorId, TimeStamp, TimeStamp)",
+    "u": "findReadingIdsBySensorIdInAGivenPeriod(smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ReadingRepositoryMemImpl",
+    "l": "findReadingIdsBySensorIdInAGivenPeriod(SensorId, TimeStamp, TimeStamp)",
+    "u": "findReadingIdsBySensorIdInAGivenPeriod(smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ReadingRepositorySpringDataImpl",
+    "l": "findReadingIdsBySensorIdInAGivenPeriod(SensorId, TimeStamp, TimeStamp)",
+    "u": "findReadingIdsBySensorIdInAGivenPeriod(smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IReadingRepositorySpringData",
+    "l": "findReadingsBySensorIdAndTimeStamp(String, LocalDateTime, LocalDateTime)",
+    "u": "findReadingsBySensorIdAndTimeStamp(java.lang.String,java.time.LocalDateTime,java.time.LocalDateTime)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IReadingRepository",
+    "l": "findReadingsBySensorIdInAGivenPeriod(SensorId, TimeStamp, TimeStamp)",
+    "u": "findReadingsBySensorIdInAGivenPeriod(smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ReadingRepositoryJPAImpl",
+    "l": "findReadingsBySensorIdInAGivenPeriod(SensorId, TimeStamp, TimeStamp)",
+    "u": "findReadingsBySensorIdInAGivenPeriod(smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ReadingRepositoryMemImpl",
+    "l": "findReadingsBySensorIdInAGivenPeriod(SensorId, TimeStamp, TimeStamp)",
+    "u": "findReadingsBySensorIdInAGivenPeriod(smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ReadingRepositorySpringDataImpl",
+    "l": "findReadingsBySensorIdInAGivenPeriod(SensorId, TimeStamp, TimeStamp)",
+    "u": "findReadingsBySensorIdInAGivenPeriod(smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IRoomRepository",
+    "l": "findRoomIds()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "RoomRepositoryJPAImpl",
+    "l": "findRoomIds()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "RoomRepositoryMemImpl",
+    "l": "findRoomIds()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "RoomRepositorySpringDataImpl",
+    "l": "findRoomIds()"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IRoomRepositorySpringData",
+    "l": "findRoomIds()"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "ISensorRepository",
+    "l": "findSensorIdsByDeviceIdAndSensorModelName(DeviceId, SensorModelName)",
+    "u": "findSensorIdsByDeviceIdAndSensorModelName(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorRepositoryJPAImpl",
+    "l": "findSensorIdsByDeviceIdAndSensorModelName(DeviceId, SensorModelName)",
+    "u": "findSensorIdsByDeviceIdAndSensorModelName(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorRepositoryMemImpl",
+    "l": "findSensorIdsByDeviceIdAndSensorModelName(DeviceId, SensorModelName)",
+    "u": "findSensorIdsByDeviceIdAndSensorModelName(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorRepositorySpringDataImpl",
+    "l": "findSensorIdsByDeviceIdAndSensorModelName(DeviceId, SensorModelName)",
+    "u": "findSensorIdsByDeviceIdAndSensorModelName(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "ISensorRepositorySpringData",
+    "l": "findSensorIdsByDeviceIdAndSensorModelName(String, String)",
+    "u": "findSensorIdsByDeviceIdAndSensorModelName(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "ISensorModelRepository",
+    "l": "findSensorModelNamesBySensorTypeId(SensorTypeId)",
+    "u": "findSensorModelNamesBySensorTypeId(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorModelRepositoryJPAImpl",
+    "l": "findSensorModelNamesBySensorTypeId(SensorTypeId)",
+    "u": "findSensorModelNamesBySensorTypeId(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorModelRepositoryMemImpl",
+    "l": "findSensorModelNamesBySensorTypeId(SensorTypeId)",
+    "u": "findSensorModelNamesBySensorTypeId(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorModelRepositorySpringDataImpl",
+    "l": "findSensorModelNamesBySensorTypeId(SensorTypeId)",
+    "u": "findSensorModelNamesBySensorTypeId(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "ISensorModelRepositorySpringData",
+    "l": "findSensorModelNamesBySensorTypeId(String)",
+    "u": "findSensorModelNamesBySensorTypeId(java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "ISensorModelRepository",
+    "l": "findSensorModelsBySensorTypeId(SensorTypeId)",
+    "u": "findSensorModelsBySensorTypeId(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorModelRepositoryJPAImpl",
+    "l": "findSensorModelsBySensorTypeId(SensorTypeId)",
+    "u": "findSensorModelsBySensorTypeId(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorModelRepositoryMemImpl",
+    "l": "findSensorModelsBySensorTypeId(SensorTypeId)",
+    "u": "findSensorModelsBySensorTypeId(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorModelRepositorySpringDataImpl",
+    "l": "findSensorModelsBySensorTypeId(SensorTypeId)",
+    "u": "findSensorModelsBySensorTypeId(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "ISensorModelRepositorySpringData",
+    "l": "findSensorModelsBySensorTypeId(String)",
+    "u": "findSensorModelsBySensorTypeId(java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "ISensorRepository",
+    "l": "findSensorsByDeviceId(DeviceId)",
+    "u": "findSensorsByDeviceId(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorRepositoryJPAImpl",
+    "l": "findSensorsByDeviceId(DeviceId)",
+    "u": "findSensorsByDeviceId(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorRepositoryMemImpl",
+    "l": "findSensorsByDeviceId(DeviceId)",
+    "u": "findSensorsByDeviceId(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorRepositorySpringDataImpl",
+    "l": "findSensorsByDeviceId(DeviceId)",
+    "u": "findSensorsByDeviceId(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "ISensorRepositorySpringData",
+    "l": "findSensorsByDeviceId(String)",
+    "u": "findSensorsByDeviceId(java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "ISensorRepository",
+    "l": "findSensorsByDeviceIdAndSensorModelName(DeviceId, SensorModelName)",
+    "u": "findSensorsByDeviceIdAndSensorModelName(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorRepositoryJPAImpl",
+    "l": "findSensorsByDeviceIdAndSensorModelName(DeviceId, SensorModelName)",
+    "u": "findSensorsByDeviceIdAndSensorModelName(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorRepositoryMemImpl",
+    "l": "findSensorsByDeviceIdAndSensorModelName(DeviceId, SensorModelName)",
+    "u": "findSensorsByDeviceIdAndSensorModelName(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorRepositorySpringDataImpl",
+    "l": "findSensorsByDeviceIdAndSensorModelName(DeviceId, SensorModelName)",
+    "u": "findSensorsByDeviceIdAndSensorModelName(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "ISensorRepositorySpringData",
+    "l": "findSensorsByDeviceIdAndSensorModelName(String, String)",
+    "u": "findSensorsByDeviceIdAndSensorModelName(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "ISensorTypeRepository",
+    "l": "findSensorTypeIds()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorTypeRepositoryJPAImpl",
+    "l": "findSensorTypeIds()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorTypeRepositoryMemImpl",
+    "l": "findSensorTypeIds()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorTypeRepositorySpringDataImpl",
+    "l": "findSensorTypeIds()"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "ISensorTypeRepositorySpringData",
+    "l": "findSensorTypeIds()"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "IReadingRepositorySpringData",
+    "l": "findTopBySensorIdOrderByTimeStampDesc(String)",
+    "u": "findTopBySensorIdOrderByTimeStampDesc(java.lang.String)"
+}, {"p": "smarthome.domain.room.vo", "c": "Floor", "l": "Floor(int)", "u": "%3Cinit%3E(int)"}, {
+    "p": "smarthome.utils",
+    "c": "AvailableCountries",
+    "l": "FRANCE"
+}, {
+    "p": "smarthome.service",
+    "c": "IActuatorService",
+    "l": "getActuatorById(ActuatorId)",
+    "u": "getActuatorById(smarthome.domain.actuator.vo.ActuatorId)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorServiceImpl",
+    "l": "getActuatorById(ActuatorId)",
+    "u": "getActuatorById(smarthome.domain.actuator.vo.ActuatorId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorRESTController",
+    "l": "getActuatorByIdentity(String)",
+    "u": "getActuatorByIdentity(java.lang.String)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorId",
+    "l": "getActuatorId()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "ActuatorMap", "l": "getActuatorId()"}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorDTO",
+    "l": "getActuatorId()"
+}, {"p": "smarthome.mapper", "c": "ActuatorIdDTO", "l": "getActuatorId()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "getActuatorId()"
+}, {
+    "p": "smarthome.service",
+    "c": "IActuatorService",
+    "l": "getActuatorIdsByDeviceIdentity(DeviceId)",
+    "u": "getActuatorIdsByDeviceIdentity(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorServiceImpl",
+    "l": "getActuatorIdsByDeviceIdentity(DeviceId)",
+    "u": "getActuatorIdsByDeviceIdentity(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.service",
+    "c": "IActuatorModelService",
+    "l": "getActuatorModelByName(ActuatorModelName)",
+    "u": "getActuatorModelByName(smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorModelServiceImpl",
+    "l": "getActuatorModelByName(ActuatorModelName)",
+    "u": "getActuatorModelByName(smarthome.domain.actuatormodel.vo.ActuatorModelName)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorModelRESTController",
+    "l": "getActuatorModelByName(String)",
+    "u": "getActuatorModelByName(java.lang.String)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "Actuator",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRoller",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiter",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitch",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorMap",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.domain.actuatormodel.vo",
+    "c": "ActuatorModelName",
+    "l": "getActuatorModelName()"
+}, {"p": "smarthome.mapper", "c": "ActuatorDTO", "l": "getActuatorModelName()"}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorModelDTO",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorModelNameDTO",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorModelDataModel",
+    "l": "getActuatorModelName()"
+}, {
+    "p": "smarthome.service",
+    "c": "IActuatorModelService",
+    "l": "getActuatorModels(ActuatorTypeName)",
+    "u": "getActuatorModels(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorModelServiceImpl",
+    "l": "getActuatorModels(ActuatorTypeName)",
+    "u": "getActuatorModels(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddActuatorToDeviceController",
+    "l": "getActuatorModelsByActuatorType(ActuatorTypeDTO)",
+    "u": "getActuatorModelsByActuatorType(smarthome.mapper.ActuatorTypeDTO)"
+}, {
+    "p": "smarthome.service",
+    "c": "IActuatorModelService",
+    "l": "getActuatorModelsByActuatorTypeIdentity(ActuatorTypeName)",
+    "u": "getActuatorModelsByActuatorTypeIdentity(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorModelServiceImpl",
+    "l": "getActuatorModelsByActuatorTypeIdentity(ActuatorTypeName)",
+    "u": "getActuatorModelsByActuatorTypeIdentity(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorModelRESTController",
+    "l": "getActuatorModelsByActuatorTypeIdentity(String)",
+    "u": "getActuatorModelsByActuatorTypeIdentity(java.lang.String)"
+}, {
+    "p": "smarthome.service",
+    "c": "IActuatorTypeService",
+    "l": "getActuatorTypeById(ActuatorTypeName)",
+    "u": "getActuatorTypeById(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorTypeServiceImpl",
+    "l": "getActuatorTypeById(ActuatorTypeName)",
+    "u": "getActuatorTypeById(smarthome.domain.actuatortype.vo.ActuatorTypeName)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorTypeRESTController",
+    "l": "getActuatorTypeById(String)",
+    "u": "getActuatorTypeById(java.lang.String)"
+}, {"p": "smarthome.service", "c": "IActuatorTypeService", "l": "getActuatorTypeIds()"}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorTypeServiceImpl",
+    "l": "getActuatorTypeIds()"
+}, {
+    "p": "smarthome.domain.actuatormodel",
+    "c": "ActuatorModel",
+    "l": "getActuatorTypeName()"
+}, {
+    "p": "smarthome.domain.actuatortype.vo",
+    "c": "ActuatorTypeName",
+    "l": "getActuatorTypeName()"
+}, {"p": "smarthome.mapper", "c": "ActuatorModelDTO", "l": "getActuatorTypeName()"}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorTypeDTO",
+    "l": "getActuatorTypeName()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorModelDataModel",
+    "l": "getActuatorTypeName()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorTypeDataModel",
+    "l": "getActuatorTypeName()"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorTypeRESTController",
+    "l": "getActuatorTypes()"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddActuatorToDeviceController",
+    "l": "getActuatorTypes()"
+}, {"p": "smarthome.service", "c": "IActuatorTypeService", "l": "getActuatorTypes()"}, {
+    "p": "smarthome.service.impl",
+    "c": "ActuatorTypeServiceImpl",
+    "l": "getActuatorTypes()"
+}, {"p": "smarthome.domain.house.vo", "c": "Location", "l": "getAddress()"}, {
+    "p": "smarthome.controller",
+    "c": "ConfigHouseLocationController",
+    "l": "getAvailableCountries()"
+}, {"p": "smarthome.controller", "c": "HouseRESTController", "l": "getAvailableCountries()"}, {
+    "p": "smarthome.service",
+    "c": "IHouseService",
+    "l": "getAvailableCountries()"
+}, {"p": "smarthome.service.impl", "c": "HouseServiceImpl", "l": "getAvailableCountries()"}, {
+    "p": "smarthome.utils",
+    "c": "AvailableCountries",
+    "l": "getAvailableCountries()"
+}, {
+    "p": "smarthome.controller",
+    "c": "ActuatorRESTController",
+    "l": "getByDeviceIdentity(String)",
+    "u": "getByDeviceIdentity(java.lang.String)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "SensorServiceImpl",
+    "l": "getByIdentity(SensorId)",
+    "u": "getByIdentity(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.service",
+    "c": "ISensorService",
+    "l": "getByIdentity(SensorId)",
+    "u": "getByIdentity(smarthome.domain.sensor.vo.SensorId)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "SensorTypeServiceImpl",
+    "l": "getByIdentity(SensorTypeId)",
+    "u": "getByIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.service",
+    "c": "ISensorTypeService",
+    "l": "getByIdentity(SensorTypeId)",
+    "u": "getByIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {"p": "smarthome.domain.house.vo", "c": "Address", "l": "getCity()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "City",
+    "l": "getCity()"
+}, {"p": "smarthome.mapper", "c": "HouseDTO", "l": "getCity()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "getCity()"
+}, {"p": "smarthome.domain.house.vo", "c": "Address", "l": "getCountry()"}, {
+    "p": "smarthome.mapper",
+    "c": "HouseDTO",
+    "l": "getCountry()"
+}, {"p": "smarthome.persistence.datamodel", "c": "HouseDataModel", "l": "getCountry()"}, {
+    "p": "smarthome.utils",
+    "c": "AvailableCountries",
+    "l": "getCountry()"
+}, {"p": "smarthome.domain.house.vo", "c": "Country", "l": "getCountryName()"}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorMap",
+    "l": "getDecimalLowerLimit()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "ActuatorMap", "l": "getDecimalUpperLimit()"}, {
+    "p": "smarthome.service",
+    "c": "IDeviceService",
+    "l": "getDeviceById(DeviceId)",
+    "u": "getDeviceById(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceServiceImpl",
+    "l": "getDeviceById(DeviceId)",
+    "u": "getDeviceById(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "DeviceRESTController",
+    "l": "getDeviceById(String)",
+    "u": "getDeviceById(java.lang.String)"
+}, {"p": "smarthome.domain.actuator", "c": "Actuator", "l": "getDeviceId()"}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRoller",
+    "l": "getDeviceId()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "getDeviceId()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiter",
+    "l": "getDeviceId()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitch",
+    "l": "getDeviceId()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "ActuatorMap", "l": "getDeviceId()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "Sensor",
+    "l": "getDeviceId()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfAveragePowerConsumption",
+    "l": "getDeviceId()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfDewPoint", "l": "getDeviceId()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfElectricEnergyConsumption",
+    "l": "getDeviceId()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfHumidity", "l": "getDeviceId()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfOnOff",
+    "l": "getDeviceId()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfPowerConsumption",
+    "l": "getDeviceId()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfScalePercentage",
+    "l": "getDeviceId()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSolarIrradiance",
+    "l": "getDeviceId()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfSunrise", "l": "getDeviceId()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunset",
+    "l": "getDeviceId()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfTemperature", "l": "getDeviceId()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfWind",
+    "l": "getDeviceId()"
+}, {"p": "smarthome.mapper", "c": "ActuatorDTO", "l": "getDeviceId()"}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceDTO",
+    "l": "getDeviceId()"
+}, {"p": "smarthome.mapper", "c": "DeviceIdDTO", "l": "getDeviceId()"}, {
+    "p": "smarthome.mapper",
+    "c": "SensorDTO",
+    "l": "getDeviceId()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "getDeviceId()"
+}, {"p": "smarthome.persistence.datamodel", "c": "SensorDataModel", "l": "getDeviceId()"}, {
+    "p": "smarthome.service",
+    "c": "IDeviceService",
+    "l": "getDeviceIdsInRoom(RoomId)",
+    "u": "getDeviceIdsInRoom(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceServiceImpl",
+    "l": "getDeviceIdsInRoom(RoomId)",
+    "u": "getDeviceIdsInRoom(smarthome.domain.room.vo.RoomId)"
+}, {"p": "smarthome.domain.device.vo", "c": "DeviceName", "l": "getDeviceName()"}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceDTO",
+    "l": "getDeviceName()"
+}, {"p": "smarthome.controller", "c": "DeviceRESTController", "l": "getDevices()"}, {
+    "p": "smarthome.controller",
+    "c": "DeviceRESTController",
+    "l": "getDevicesByFunctionality()"
+}, {
+    "p": "smarthome.controller",
+    "c": "GetListOfDevicesByFunctionalityController",
+    "l": "getDevicesBySensorType()"
+}, {"p": "smarthome.service", "c": "IDeviceService", "l": "getDevicesBySensorType()"}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceServiceImpl",
+    "l": "getDevicesBySensorType()"
+}, {
+    "p": "smarthome.controller",
+    "c": "GetDevicesInRoomController",
+    "l": "getDevicesInRoom(RoomDTO)",
+    "u": "getDevicesInRoom(smarthome.mapper.RoomDTO)"
+}, {
+    "p": "smarthome.service",
+    "c": "IDeviceService",
+    "l": "getDevicesInRoom(RoomId)",
+    "u": "getDevicesInRoom(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceServiceImpl",
+    "l": "getDevicesInRoom(RoomId)",
+    "u": "getDevicesInRoom(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "DeviceRESTController",
+    "l": "getDevicesInRoom(String)",
+    "u": "getDevicesInRoom(java.lang.String)"
+}, {
+    "p": "smarthome.controller",
+    "c": "GetDevicesInRoomController",
+    "l": "GetDevicesInRoomController(IDeviceService, DeviceMapper, RoomMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IDeviceService,smarthome.mapper.mapper.DeviceMapper,smarthome.mapper.mapper.RoomMapper)"
+}, {"p": "smarthome.mapper", "c": "DeviceDTO", "l": "getDeviceStatus()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "DeviceDataModel",
+    "l": "getDeviceStatus()"
+}, {
+    "p": "smarthome.service",
+    "c": "IDeviceTypeService",
+    "l": "getDeviceTypeById(DeviceTypeName)",
+    "u": "getDeviceTypeById(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceTypeServiceImpl",
+    "l": "getDeviceTypeById(DeviceTypeName)",
+    "u": "getDeviceTypeById(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.controller",
+    "c": "DeviceTypeRESTController",
+    "l": "getDeviceTypeById(String)",
+    "u": "getDeviceTypeById(java.lang.String)"
+}, {"p": "smarthome.domain.deviceType.vo", "c": "DeviceTypeName", "l": "getDeviceTypeName()"}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceDTO",
+    "l": "getDeviceTypeName()"
+}, {"p": "smarthome.mapper", "c": "DeviceTypeDTO", "l": "getDeviceTypeName()"}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceTypeNameDTO",
+    "l": "getDeviceTypeName()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "DeviceTypeDataModel",
+    "l": "getDeviceTypeName()"
+}, {"p": "smarthome.service", "c": "IDeviceTypeService", "l": "getDeviceTypeNames()"}, {
+    "p": "smarthome.service.impl",
+    "c": "DeviceTypeServiceImpl",
+    "l": "getDeviceTypeNames()"
+}, {
+    "p": "smarthome.controller",
+    "c": "DeviceTypeRESTController",
+    "l": "getDeviceTypes()"
+}, {"p": "smarthome.domain.room", "c": "Room", "l": "getDimensions()"}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorDTO",
+    "l": "getDoubleLimitPrecision()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "getDoubleLimitPrecision()"
+}, {"p": "smarthome.mapper", "c": "ActuatorDTO", "l": "getDoubleLowerLimit()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "getDoubleLowerLimit()"
+}, {"p": "smarthome.mapper", "c": "ActuatorDTO", "l": "getDoubleUpperLimit()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "getDoubleUpperLimit()"
+}, {"p": "smarthome.mapper", "c": "PeriodDTO", "l": "getEnd()"}, {
+    "p": "smarthome.domain.room",
+    "c": "Room",
+    "l": "getFloor()"
+}, {"p": "smarthome.domain.room.vo", "c": "Floor", "l": "getFloor()"}, {
+    "p": "smarthome.mapper",
+    "c": "RoomDTO",
+    "l": "getFloor()"
+}, {"p": "smarthome.persistence.datamodel", "c": "RoomDataModel", "l": "getFloor()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Location",
+    "l": "getGps()"
+}, {"p": "smarthome.domain.room.vo", "c": "Dimensions", "l": "getHeight()"}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Height",
+    "l": "getHeight()"
+}, {"p": "smarthome.mapper", "c": "RoomDTO", "l": "getHeight()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "RoomDataModel",
+    "l": "getHeight()"
+}, {
+    "p": "smarthome.service",
+    "c": "IHouseService",
+    "l": "getHouse(HouseName)",
+    "u": "getHouse(smarthome.domain.house.vo.HouseName)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "HouseServiceImpl",
+    "l": "getHouse(HouseName)",
+    "u": "getHouse(smarthome.domain.house.vo.HouseName)"
+}, {
+    "p": "smarthome.controller",
+    "c": "HouseRESTController",
+    "l": "getHouseById(String)",
+    "u": "getHouseById(java.lang.String)"
+}, {"p": "smarthome.mapper", "c": "HouseIdDTO", "l": "getHouseId()"}, {
+    "p": "smarthome.service",
+    "c": "IHouseService",
+    "l": "getHouseIds()"
+}, {"p": "smarthome.service.impl", "c": "HouseServiceImpl", "l": "getHouseIds()"}, {
+    "p": "smarthome.domain.room",
+    "c": "Room",
+    "l": "getHouseName()"
+}, {"p": "smarthome.mapper", "c": "HouseDTO", "l": "getHouseName()"}, {
+    "p": "smarthome.mapper",
+    "c": "RoomDTO",
+    "l": "getHouseName()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "getHouseName()"
+}, {"p": "smarthome.persistence.datamodel", "c": "RoomDataModel", "l": "getHouseName()"}, {
+    "p": "smarthome.controller",
+    "c": "HouseRESTController",
+    "l": "getHouses()"
+}, {"p": "smarthome.domain.reading.vo", "c": "ReadingId", "l": "getId()"}, {
+    "p": "smarthome.mapper",
+    "c": "ReadingDTO",
+    "l": "getId()"
+}, {"p": "smarthome.ddd", "c": "DomainEntity", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRoller",
+    "l": "getIdentity()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "getIdentity()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiter",
+    "l": "getIdentity()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitch",
+    "l": "getIdentity()"
+}, {
+    "p": "smarthome.domain.actuatormodel",
+    "c": "ActuatorModel",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.actuatortype", "c": "ActuatorType", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.device",
+    "c": "Device",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.device.vo", "c": "DeviceId", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.deviceType",
+    "c": "DeviceType",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.house", "c": "House", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.reading",
+    "c": "Reading",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.room", "c": "Room", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfAveragePowerConsumption",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfDewPoint", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfElectricEnergyConsumption",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfHumidity", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfOnOff",
+    "l": "getIdentity()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfPowerConsumption",
+    "l": "getIdentity()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfScalePercentage",
+    "l": "getIdentity()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSolarIrradiance",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfSunrise", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunset",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfTemperature", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfWind",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.sensormodel", "c": "SensorModel", "l": "getIdentity()"}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorType",
+    "l": "getIdentity()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "ActuatorMap", "l": "getIntegerLowerLimit()"}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorDTO",
+    "l": "getIntegerLowerLimit()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "getIntegerLowerLimit()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "ActuatorMap", "l": "getIntegerUpperLimit()"}, {
+    "p": "smarthome.mapper",
+    "c": "ActuatorDTO",
+    "l": "getIntegerUpperLimit()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ActuatorDataModel",
+    "l": "getIntegerUpperLimit()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "IntLimit", "l": "getIntLimit()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Gps",
+    "l": "getLatitude()"
+}, {"p": "smarthome.domain.house.vo", "c": "Latitude", "l": "getLatitude()"}, {
+    "p": "smarthome.mapper",
+    "c": "HouseDTO",
+    "l": "getLatitude()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "getLatitude()"
+}, {"p": "smarthome.domain.room.vo", "c": "Dimensions", "l": "getLength()"}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Length",
+    "l": "getLength()"
+}, {"p": "smarthome.mapper", "c": "RoomDTO", "l": "getLength()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "RoomDataModel",
+    "l": "getLength()"
+}, {
+    "p": "smarthome.controller",
+    "c": "GetListOfDevicesByFunctionalityController",
+    "l": "GetListOfDevicesByFunctionalityController(IDeviceService, DeviceMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IDeviceService,smarthome.mapper.mapper.DeviceMapper)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitch",
+    "l": "getLoadState()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "LoadState", "l": "getLoadState()"}, {
+    "p": "smarthome.domain.house",
+    "c": "House",
+    "l": "getLocation()"
+}, {"p": "smarthome.domain.house.vo", "c": "Gps", "l": "getLongitude()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Longitude",
+    "l": "getLongitude()"
+}, {"p": "smarthome.mapper", "c": "HouseDTO", "l": "getLongitude()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "getLongitude()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "getLowerLimit()"
+}, {"p": "smarthome.domain.actuator", "c": "ActuatorOfLimiter", "l": "getLowerLimit()"}, {
+    "p": "smarthome.controller",
+    "c": "GetMaxInstantaneousTempDifferenceController",
+    "l": "GetMaxInstantaneousTempDifferenceController(IReadingService, PeriodMapper, ValueMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IReadingService,smarthome.mapper.mapper.PeriodMapper,smarthome.mapper.mapper.ValueMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ReadingServiceImpl",
+    "l": "getMaxInstantTemperatureDifferenceInAGivenPeriod(DeviceId, DeviceId, TimeStamp, TimeStamp)",
+    "u": "getMaxInstantTemperatureDifferenceInAGivenPeriod(smarthome.domain.device.vo.DeviceId,smarthome.domain.device.vo.DeviceId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.service",
+    "c": "IReadingService",
+    "l": "getMaxInstantTemperatureDifferenceInAGivenPeriod(DeviceId, DeviceId, TimeStamp, TimeStamp)",
+    "u": "getMaxInstantTemperatureDifferenceInAGivenPeriod(smarthome.domain.device.vo.DeviceId,smarthome.domain.device.vo.DeviceId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.controller",
+    "c": "GetMaxInstantaneousTempDifferenceController",
+    "l": "getMaxTemperatureDifference(String, String, PeriodDTO)",
+    "u": "getMaxTemperatureDifference(java.lang.String,java.lang.String,smarthome.mapper.PeriodDTO)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ReadingRESTController",
+    "l": "getMaxTemperatureDifference(String, String, String, String)",
+    "u": "getMaxTemperatureDifference(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+}, {"p": "smarthome.domain.house.vo", "c": "HouseName", "l": "getName()"}, {
+    "p": "smarthome.controller",
+    "c": "ReadingRESTController",
+    "l": "getPeakPowerConsumptionInAGivenPeriod(String, String)",
+    "u": "getPeakPowerConsumptionInAGivenPeriod(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ReadingServiceImpl",
+    "l": "getPeakPowerConsumptionInAGivenPeriod(TimeStamp, TimeStamp)",
+    "u": "getPeakPowerConsumptionInAGivenPeriod(smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.service",
+    "c": "IReadingService",
+    "l": "getPeakPowerConsumptionInAGivenPeriod(TimeStamp, TimeStamp)",
+    "u": "getPeakPowerConsumptionInAGivenPeriod(smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence",
+    "c": "PersistenceUnitName",
+    "l": "getPersistenceUnitName()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "getPrecision()"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorMap",
+    "l": "getPrecision()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "Precision", "l": "getPrecision()"}, {
+    "p": "smarthome.service.impl",
+    "c": "ReadingServiceImpl",
+    "l": "getReading(ReadingId)",
+    "u": "getReading(smarthome.domain.reading.vo.ReadingId)"
+}, {
+    "p": "smarthome.service",
+    "c": "IReadingService",
+    "l": "getReading(ReadingId)",
+    "u": "getReading(smarthome.domain.reading.vo.ReadingId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ReadingRESTController",
+    "l": "getReading(String)",
+    "u": "getReading(java.lang.String)"
+}, {"p": "smarthome.mapper", "c": "ReadingIdDTO", "l": "getReadingId()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ReadingDataModel",
+    "l": "getReadingId()"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ReadingServiceImpl",
+    "l": "getReadingIdsFromDeviceInAGivenPeriod(DeviceId, TimeStamp, TimeStamp)",
+    "u": "getReadingIdsFromDeviceInAGivenPeriod(smarthome.domain.device.vo.DeviceId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.service",
+    "c": "IReadingService",
+    "l": "getReadingIdsFromDeviceInAGivenPeriod(DeviceId, TimeStamp, TimeStamp)",
+    "u": "getReadingIdsFromDeviceInAGivenPeriod(smarthome.domain.device.vo.DeviceId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.controller",
+    "c": "GetReadingsFromDeviceController",
+    "l": "GetReadingsFromDeviceController(IReadingService, ReadingMapper, PeriodMapper, DeviceMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IReadingService,smarthome.mapper.mapper.ReadingMapper,smarthome.mapper.mapper.PeriodMapper,smarthome.mapper.mapper.DeviceMapper)"
+}, {
+    "p": "smarthome.controller",
+    "c": "GetReadingsFromDeviceController",
+    "l": "getReadingsFromDeviceInAGivenPeriod(DeviceDTO, PeriodDTO)",
+    "u": "getReadingsFromDeviceInAGivenPeriod(smarthome.mapper.DeviceDTO,smarthome.mapper.PeriodDTO)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ReadingServiceImpl",
+    "l": "getReadingsFromDeviceInAGivenPeriod(DeviceId, TimeStamp, TimeStamp)",
+    "u": "getReadingsFromDeviceInAGivenPeriod(smarthome.domain.device.vo.DeviceId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.service",
+    "c": "IReadingService",
+    "l": "getReadingsFromDeviceInAGivenPeriod(DeviceId, TimeStamp, TimeStamp)",
+    "u": "getReadingsFromDeviceInAGivenPeriod(smarthome.domain.device.vo.DeviceId,smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ReadingRESTController",
+    "l": "getReadingsFromDeviceInAGivenPeriod(String, String, String)",
+    "u": "getReadingsFromDeviceInAGivenPeriod(java.lang.String,java.lang.String,java.lang.String)"
+}, {"p": "smarthome.mapper", "c": "ReadingDTO", "l": "getReadingValue()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ReadingDataModel",
+    "l": "getReadingValue()"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "RoomServiceImpl",
+    "l": "getRoomById(RoomId)",
+    "u": "getRoomById(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.service",
+    "c": "IRoomService",
+    "l": "getRoomById(RoomId)",
+    "u": "getRoomById(smarthome.domain.room.vo.RoomId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "RoomRESTController",
+    "l": "getRoomById(String)",
+    "u": "getRoomById(java.lang.String)"
+}, {"p": "smarthome.domain.room.vo", "c": "RoomId", "l": "getRoomId()"}, {
+    "p": "smarthome.mapper",
+    "c": "DeviceDTO",
+    "l": "getRoomId()"
+}, {"p": "smarthome.mapper", "c": "RoomDTO", "l": "getRoomId()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "RoomDataModel",
+    "l": "getRoomId()"
+}, {"p": "smarthome.service.impl", "c": "RoomServiceImpl", "l": "getRoomIds()"}, {
+    "p": "smarthome.service",
+    "c": "IRoomService",
+    "l": "getRoomIds()"
+}, {"p": "smarthome.domain.room", "c": "Room", "l": "getRoomName()"}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "RoomName",
+    "l": "getRoomName()"
+}, {"p": "smarthome.mapper", "c": "RoomDTO", "l": "getRoomName()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "RoomDataModel",
+    "l": "getRoomName()"
+}, {"p": "smarthome.controller", "c": "GetRoomsController", "l": "getRooms()"}, {
+    "p": "smarthome.controller",
+    "c": "RoomRESTController",
+    "l": "getRooms()"
+}, {"p": "smarthome.service.impl", "c": "RoomServiceImpl", "l": "getRooms()"}, {
+    "p": "smarthome.service",
+    "c": "IRoomService",
+    "l": "getRooms()"
+}, {
+    "p": "smarthome.controller",
+    "c": "GetRoomsController",
+    "l": "GetRoomsController(IRoomService, RoomMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IRoomService,smarthome.mapper.mapper.RoomMapper)"
+}, {
+    "p": "smarthome.controller",
+    "c": "SensorRESTController",
+    "l": "getSensorByIdentity(String)",
+    "u": "getSensorByIdentity(java.lang.String)"
+}, {"p": "smarthome.domain.reading", "c": "Reading", "l": "getSensorId()"}, {
+    "p": "smarthome.domain.sensor.vo",
+    "c": "SensorId",
+    "l": "getSensorId()"
+}, {"p": "smarthome.mapper", "c": "ReadingDTO", "l": "getSensorId()"}, {
+    "p": "smarthome.mapper",
+    "c": "SensorDTO",
+    "l": "getSensorId()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ReadingDataModel",
+    "l": "getSensorId()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorDataModel",
+    "l": "getSensorId()"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "SensorModelServiceImpl",
+    "l": "getSensorModelByName(SensorModelName)",
+    "u": "getSensorModelByName(smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.service",
+    "c": "ISensorModelService",
+    "l": "getSensorModelByName(SensorModelName)",
+    "u": "getSensorModelByName(smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.controller",
+    "c": "SensorModelRESTController",
+    "l": "getSensorModelByName(String)",
+    "u": "getSensorModelByName(java.lang.String)"
+}, {"p": "smarthome.domain.sensor", "c": "Sensor", "l": "getSensorModelName()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfAveragePowerConsumption",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfDewPoint",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfElectricEnergyConsumption",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfHumidity",
+    "l": "getSensorModelName()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfOnOff", "l": "getSensorModelName()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfPowerConsumption",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfScalePercentage",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSolarIrradiance",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunrise",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunset",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfTemperature",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfWind",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.domain.sensormodel.vo",
+    "c": "SensorModelName",
+    "l": "getSensorModelName()"
+}, {"p": "smarthome.mapper", "c": "SensorDTO", "l": "getSensorModelName()"}, {
+    "p": "smarthome.mapper",
+    "c": "SensorModelDTO",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorModelNameDTO",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorDataModel",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorModelDataModel",
+    "l": "getSensorModelName()"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddSensorToDeviceController",
+    "l": "getSensorModelsBySensorTypeIdentity(SensorTypeDTO)",
+    "u": "getSensorModelsBySensorTypeIdentity(smarthome.mapper.SensorTypeDTO)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "SensorModelServiceImpl",
+    "l": "getSensorModelsBySensorTypeIdentity(SensorTypeId)",
+    "u": "getSensorModelsBySensorTypeIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.service",
+    "c": "ISensorModelService",
+    "l": "getSensorModelsBySensorTypeIdentity(SensorTypeId)",
+    "u": "getSensorModelsBySensorTypeIdentity(smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.controller",
+    "c": "SensorModelRESTController",
+    "l": "getSensorModelsBySensorTypeIdentity(String)",
+    "u": "getSensorModelsBySensorTypeIdentity(java.lang.String)"
+}, {
+    "p": "smarthome.controller",
+    "c": "SensorTypeRESTController",
+    "l": "getSensorTypeByIdentity(String)",
+    "u": "getSensorTypeByIdentity(java.lang.String)"
+}, {
+    "p": "smarthome.domain.sensormodel",
+    "c": "SensorModel",
+    "l": "getSensorTypeId()"
+}, {"p": "smarthome.domain.sensortype.vo", "c": "SensorTypeId", "l": "getSensorTypeId()"}, {
+    "p": "smarthome.mapper",
+    "c": "SensorModelDTO",
+    "l": "getSensorTypeId()"
+}, {"p": "smarthome.mapper", "c": "SensorTypeDTO", "l": "getSensorTypeId()"}, {
+    "p": "smarthome.mapper",
+    "c": "SensorTypeIdDTO",
+    "l": "getSensorTypeId()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorModelDataModel",
+    "l": "getSensorTypeId()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorTypeDataModel",
+    "l": "getSensorTypeId()"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorType",
+    "l": "getSensorTypeName()"
+}, {"p": "smarthome.domain.sensortype.vo", "c": "SensorTypeName", "l": "getSensorTypeName()"}, {
+    "p": "smarthome.mapper",
+    "c": "SensorTypeDTO",
+    "l": "getSensorTypeName()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorTypeDataModel",
+    "l": "getSensorTypeName()"
+}, {
+    "p": "smarthome.controller",
+    "c": "AddSensorToDeviceController",
+    "l": "getSensorTypes()"
+}, {
+    "p": "smarthome.controller",
+    "c": "SensorTypeRESTController",
+    "l": "getSensorTypes()"
+}, {"p": "smarthome.service.impl", "c": "SensorTypeServiceImpl", "l": "getSensorTypesIds()"}, {
+    "p": "smarthome.service",
+    "c": "ISensorTypeService",
+    "l": "getSensorTypesIds()"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorType",
+    "l": "getSensorTypeUnit()"
+}, {"p": "smarthome.domain.sensortype.vo", "c": "SensorTypeUnit", "l": "getSensorTypeUnit()"}, {
+    "p": "smarthome.mapper",
+    "c": "SensorTypeDTO",
+    "l": "getSensorTypeUnit()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorTypeDataModel",
+    "l": "getSensorTypeUnit()"
+}, {"p": "smarthome.mapper", "c": "PeriodDTO", "l": "getStart()"}, {
+    "p": "smarthome.domain.device.vo",
+    "c": "DeviceStatus",
+    "l": "getStatus()"
+}, {"p": "smarthome.domain.house.vo", "c": "Address", "l": "getStreetName()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "StreetName",
+    "l": "getStreetName()"
+}, {"p": "smarthome.mapper", "c": "HouseDTO", "l": "getStreetName()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "getStreetName()"
+}, {"p": "smarthome.domain.house.vo", "c": "Address", "l": "getStreetNumber()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "StreetNumber",
+    "l": "getStreetNumber()"
+}, {"p": "smarthome.mapper", "c": "HouseDTO", "l": "getStreetNumber()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "getStreetNumber()"
+}, {"p": "smarthome.domain.reading", "c": "Reading", "l": "getTime()"}, {
+    "p": "smarthome.mapper",
+    "c": "ReadingDTO",
+    "l": "getTimestamp()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ReadingDataModel",
+    "l": "getTimeStamp()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "getUpperLimit()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiter",
+    "l": "getUpperLimit()"
+}, {"p": "smarthome.domain.reading", "c": "Reading", "l": "getValue()"}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "TimeStamp",
+    "l": "getValue()"
+}, {"p": "smarthome.domain.sensor", "c": "Sensor", "l": "getValue()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfAveragePowerConsumption",
+    "l": "getValue()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfDewPoint", "l": "getValue()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfElectricEnergyConsumption",
+    "l": "getValue()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfHumidity", "l": "getValue()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfOnOff",
+    "l": "getValue()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfPowerConsumption",
+    "l": "getValue()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfScalePercentage", "l": "getValue()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSolarIrradiance",
+    "l": "getValue()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfSunrise", "l": "getValue()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunset",
+    "l": "getValue()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfTemperature", "l": "getValue()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfWind",
+    "l": "getValue()"
+}, {"p": "smarthome.mapper", "c": "SensorDTO", "l": "getValue()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunrise",
+    "l": "getValue(LocalDate)",
+    "u": "getValue(java.time.LocalDate)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunset",
+    "l": "getValue(LocalDate)",
+    "u": "getValue(java.time.LocalDate)"
+}, {"p": "smarthome.domain.room.vo", "c": "Dimensions", "l": "getWidth()"}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Width",
+    "l": "getWidth()"
+}, {"p": "smarthome.mapper", "c": "RoomDTO", "l": "getWidth()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "RoomDataModel",
+    "l": "getWidth()"
+}, {"p": "smarthome.domain.house.vo", "c": "Address", "l": "getZipCode()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "ZipCode",
+    "l": "getZipCode()"
+}, {"p": "smarthome.mapper", "c": "HouseDTO", "l": "getZipCode()"}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "getZipCode()"
+}, {"p": "smarthome.utils", "c": "AvailableCountries", "l": "getZipCodeFormat()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Gps",
+    "l": "Gps(Latitude, Longitude)",
+    "u": "%3Cinit%3E(smarthome.domain.house.vo.Latitude,smarthome.domain.house.vo.Longitude)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRoller",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.actuator", "c": "ActuatorOfLimiter", "l": "hashCode()"}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitch",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "ActuatorId", "l": "hashCode()"}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorMap",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "DecimalLimit", "l": "hashCode()"}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "DecimalValue",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "IntegerValue", "l": "hashCode()"}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "IntLimit",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.actuator.vo", "c": "LoadState", "l": "hashCode()"}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "Precision",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.actuatormodel",
+    "c": "ActuatorModel",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.actuatormodel.vo",
+    "c": "ActuatorModelName",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.actuatortype",
+    "c": "ActuatorType",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.actuatortype.vo",
+    "c": "ActuatorTypeName",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.device", "c": "Device", "l": "hashCode()"}, {
+    "p": "smarthome.domain.device.vo",
+    "c": "DeviceId",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.device.vo", "c": "DeviceName", "l": "hashCode()"}, {
+    "p": "smarthome.domain.device.vo",
+    "c": "DeviceStatus",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.deviceType", "c": "DeviceType", "l": "hashCode()"}, {
+    "p": "smarthome.domain.deviceType.vo",
+    "c": "DeviceTypeName",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.house", "c": "House", "l": "hashCode()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Address",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.house.vo", "c": "City", "l": "hashCode()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Country",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.house.vo", "c": "Gps", "l": "hashCode()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "HouseName",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.house.vo", "c": "Latitude", "l": "hashCode()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Location",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.house.vo", "c": "Longitude", "l": "hashCode()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "StreetName",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.house.vo", "c": "StreetNumber", "l": "hashCode()"}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "ZipCode",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.reading", "c": "Reading", "l": "hashCode()"}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingId",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.reading.vo", "c": "ReadingValue", "l": "hashCode()"}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "TimeStamp",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.room", "c": "Room", "l": "hashCode()"}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Dimensions",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.room.vo", "c": "Floor", "l": "hashCode()"}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Height",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.room.vo", "c": "Length", "l": "hashCode()"}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "RoomId",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.room.vo", "c": "RoomName", "l": "hashCode()"}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Width",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfAveragePowerConsumption",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfDewPoint", "l": "hashCode()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfElectricEnergyConsumption",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfHumidity", "l": "hashCode()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfOnOff",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfPowerConsumption",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfScalePercentage", "l": "hashCode()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSolarIrradiance",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfSunrise", "l": "hashCode()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunset",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.sensor", "c": "SensorOfTemperature", "l": "hashCode()"}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfWind",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.sensor.vo", "c": "SensorId", "l": "hashCode()"}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "AveragePowerConsumptionValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "DewPointValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "ElectricEnergyConsumptionValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "HumidityValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "OnOffValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "PowerConsumptionValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "ScalePercentageValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SolarIrradianceValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SunriseValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SunsetValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "TemperatureValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "WindValue",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensormodel",
+    "c": "SensorModel",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensormodel.vo",
+    "c": "SensorModelName",
+    "l": "hashCode()"
+}, {"p": "smarthome.domain.sensortype", "c": "SensorType", "l": "hashCode()"}, {
+    "p": "smarthome.domain.sensortype.vo",
+    "c": "SensorTypeId",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensortype.vo",
+    "c": "SensorTypeName",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.sensortype.vo",
+    "c": "SensorTypeUnit",
+    "l": "hashCode()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "hashCodeReturnsDifferentHashCodesForDifferentValues()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "hashCodeReturnsSameHashCodeForSameValue()"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Height",
+    "l": "Height(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.house",
+    "c": "House",
+    "l": "House(HouseName, Location)",
+    "u": "%3Cinit%3E(smarthome.domain.house.vo.HouseName,smarthome.domain.house.vo.Location)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "HouseDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "HouseDataModel(House)",
+    "u": "%3Cinit%3E(smarthome.domain.house.House)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "HouseDataModelMapper",
+    "l": "HouseDataModelMapper(HouseFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.house.HouseFactory)"
+}, {"p": "smarthome.mapper", "c": "HouseDTO", "l": "HouseDTO()", "u": "%3Cinit%3E()"}, {
+    "p": "smarthome.mapper",
+    "c": "HouseDTO",
+    "l": "HouseDTO(String, String, String, String, String, double, double)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,double,double)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "HouseDTO",
+    "l": "HouseDTO(String, String, String, String, String, String, double, double)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,double,double)"
+}, {
+    "p": "smarthome.domain.house",
+    "c": "HouseFactoryImpl",
+    "l": "HouseFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "HouseIdDTO",
+    "l": "HouseIdDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "HouseMapper",
+    "l": "HouseMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "HouseName",
+    "l": "HouseName(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "HouseRepositoryJPAImpl",
+    "l": "HouseRepositoryJPAImpl(HouseDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.HouseDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "HouseRepositoryMemImpl",
+    "l": "HouseRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "HouseRepositorySpringDataImpl",
+    "l": "HouseRepositorySpringDataImpl(HouseDataModelMapper, IHouseRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.HouseDataModelMapper,smarthome.persistence.spring.IHouseRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "HouseRESTController",
+    "l": "HouseRESTController(IHouseService, HouseMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IHouseService,smarthome.mapper.mapper.HouseMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "HouseServiceImpl",
+    "l": "HouseServiceImpl(IHouseRepository, HouseFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.IHouseRepository,smarthome.domain.house.HouseFactory)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "HumidityValue",
+    "l": "HumidityValue(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "IntegerValue",
+    "l": "IntegerValue(int)",
+    "u": "%3Cinit%3E(int)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "IntLimit",
+    "l": "IntLimit(int)",
+    "u": "%3Cinit%3E(int)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Latitude",
+    "l": "Latitude(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Length",
+    "l": "Length(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.utils",
+    "c": "RepositoryLoader",
+    "l": "loadActuatorModelRepository(IActuatorModelRepository)",
+    "u": "loadActuatorModelRepository(smarthome.domain.repository.IActuatorModelRepository)"
+}, {
+    "p": "smarthome.utils",
+    "c": "RepositoryLoader",
+    "l": "loadActuatorTypeRepository(IActuatorTypeRepository)",
+    "u": "loadActuatorTypeRepository(smarthome.domain.repository.IActuatorTypeRepository)"
+}, {
+    "p": "smarthome.utils",
+    "c": "RepositoryLoader",
+    "l": "loadDeviceTypeRepository(IDeviceTypeRepository)",
+    "u": "loadDeviceTypeRepository(smarthome.domain.repository.IDeviceTypeRepository)"
+}, {
+    "p": "smarthome.utils",
+    "c": "RepositoryLoader",
+    "l": "loadSensorModelRepository(ISensorModelRepository)",
+    "u": "loadSensorModelRepository(smarthome.domain.repository.ISensorModelRepository)"
+}, {
+    "p": "smarthome.utils",
+    "c": "RepositoryLoader",
+    "l": "loadSensorTypeRepository(ISensorTypeRepository)",
+    "u": "loadSensorTypeRepository(smarthome.domain.repository.ISensorTypeRepository)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "LoadState",
+    "l": "LoadState(boolean)",
+    "u": "%3Cinit%3E(boolean)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Location",
+    "l": "Location(Address, Gps)",
+    "u": "%3Cinit%3E(smarthome.domain.house.vo.Address,smarthome.domain.house.vo.Gps)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "Longitude",
+    "l": "Longitude(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome",
+    "c": "AppSmarthome",
+    "l": "main(String[])",
+    "u": "main(java.lang.String[])"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "OnOffValue",
+    "l": "OnOffValue(boolean)",
+    "u": "%3Cinit%3E(boolean)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfBlindRoller",
+    "l": "operate(Value)",
+    "u": "operate(smarthome.domain.sensor.vo.values.Value)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfDecimalLimiter",
+    "l": "operate(Value)",
+    "u": "operate(smarthome.domain.sensor.vo.values.Value)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfLimiter",
+    "l": "operate(Value)",
+    "u": "operate(smarthome.domain.sensor.vo.values.Value)"
+}, {
+    "p": "smarthome.domain.actuator",
+    "c": "ActuatorOfOnOffSwitch",
+    "l": "operate(Value)",
+    "u": "operate(smarthome.domain.sensor.vo.values.Value)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "PeriodDTO",
+    "l": "PeriodDTO(String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "PeriodMapper",
+    "l": "PeriodMapper()",
+    "u": "%3Cinit%3E()"
+}, {"p": "smarthome.persistence", "c": "PersistenceUnitName", "l": "PERSISTENCE_UNIT_NAME"}, {
+    "p": "smarthome.utils",
+    "c": "AvailableCountries",
+    "l": "PORTUGAL"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "PowerConsumptionValue",
+    "l": "PowerConsumptionValue(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "Precision",
+    "l": "Precision(int)",
+    "u": "%3Cinit%3E(int)"
+}, {
+    "p": "smarthome.domain.reading",
+    "c": "Reading",
+    "l": "Reading(ReadingId, Value, SensorId, TimeStamp)",
+    "u": "%3Cinit%3E(smarthome.domain.reading.vo.ReadingId,smarthome.domain.sensor.vo.values.Value,smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.domain.reading",
+    "c": "Reading",
+    "l": "Reading(Value, SensorId, TimeStamp)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.values.Value,smarthome.domain.sensor.vo.SensorId,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ReadingDataModel",
+    "l": "ReadingDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "ReadingDataModel",
+    "l": "ReadingDataModel(Reading)",
+    "u": "%3Cinit%3E(smarthome.domain.reading.Reading)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ReadingDataModelMapper",
+    "l": "ReadingDataModelMapper(ReadingFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.reading.ReadingFactory)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ReadingDTO",
+    "l": "ReadingDTO(String, String, String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.domain.reading",
+    "c": "ReadingFactoryImpl",
+    "l": "ReadingFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingId",
+    "l": "ReadingId(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "ReadingIdDTO",
+    "l": "ReadingIdDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ReadingMapper",
+    "l": "ReadingMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ReadingRepositoryJPAImpl",
+    "l": "ReadingRepositoryJPAImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ReadingRepositoryMemImpl",
+    "l": "ReadingRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ReadingRepositorySpringDataImpl",
+    "l": "ReadingRepositorySpringDataImpl(ReadingDataModelMapper, IReadingRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.ReadingDataModelMapper,smarthome.persistence.spring.IReadingRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "ReadingRESTController",
+    "l": "ReadingRESTController(IReadingService, ReadingMapper, ValueMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IReadingService,smarthome.mapper.mapper.ReadingMapper,smarthome.mapper.mapper.ValueMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "ReadingServiceImpl",
+    "l": "ReadingServiceImpl(IReadingRepository, ISensorRepository, IDeviceRepository, String, String)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.IReadingRepository,smarthome.domain.repository.ISensorRepository,smarthome.domain.repository.IDeviceRepository,java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "ReadingValue()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValue",
+    "l": "ReadingValue(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "ReadingValueTest()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "ReadingValueThrowsExceptionWhenValueIsNull()"
+}, {
+    "p": "smarthome.utils",
+    "c": "RepositoryLoader",
+    "l": "RepositoryLoader(String, SensorTypeFactory, SensorModelFactory, ActuatorTypeFactory, ActuatorModelFactory, DeviceTypeFactory)",
+    "u": "%3Cinit%3E(java.lang.String,smarthome.domain.sensortype.SensorTypeFactory,smarthome.domain.sensormodel.SensorModelFactory,smarthome.domain.actuatortype.ActuatorTypeFactory,smarthome.domain.actuatormodel.ActuatorModelFactory,smarthome.domain.deviceType.DeviceTypeFactory)"
+}, {
+    "p": "smarthome.domain.room",
+    "c": "Room",
+    "l": "Room(RoomId, RoomName, HouseName, Floor, Dimensions)",
+    "u": "%3Cinit%3E(smarthome.domain.room.vo.RoomId,smarthome.domain.room.vo.RoomName,smarthome.domain.house.vo.HouseName,smarthome.domain.room.vo.Floor,smarthome.domain.room.vo.Dimensions)"
+}, {
+    "p": "smarthome.domain.room",
+    "c": "Room",
+    "l": "Room(RoomName, HouseName, Floor, Dimensions)",
+    "u": "%3Cinit%3E(smarthome.domain.room.vo.RoomName,smarthome.domain.house.vo.HouseName,smarthome.domain.room.vo.Floor,smarthome.domain.room.vo.Dimensions)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "RoomDataModel",
+    "l": "RoomDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "RoomDataModel",
+    "l": "RoomDataModel(Room)",
+    "u": "%3Cinit%3E(smarthome.domain.room.Room)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "RoomDataModelMapper",
+    "l": "RoomDataModelMapper(RoomFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.room.RoomFactory)"
+}, {"p": "smarthome.mapper", "c": "RoomDTO", "l": "RoomDTO()", "u": "%3Cinit%3E()"}, {
+    "p": "smarthome.mapper",
+    "c": "RoomDTO",
+    "l": "RoomDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "RoomDTO",
+    "l": "RoomDTO(String, Integer, Double, Double, Double)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Double,java.lang.Double)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "RoomDTO",
+    "l": "RoomDTO(String, String, int, double, double, double)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,int,double,double,double)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "RoomDTO",
+    "l": "RoomDTO(String, String, String, Integer, Double, Double, Double)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Double,java.lang.Double)"
+}, {
+    "p": "smarthome.domain.room",
+    "c": "RoomFactoryImpl",
+    "l": "RoomFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "RoomId",
+    "l": "RoomId(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "RoomMapper",
+    "l": "RoomMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "RoomName",
+    "l": "RoomName(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "RoomRepositoryJPAImpl",
+    "l": "RoomRepositoryJPAImpl(RoomDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.RoomDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "RoomRepositoryMemImpl",
+    "l": "RoomRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "RoomRepositorySpringDataImpl",
+    "l": "RoomRepositorySpringDataImpl(RoomDataModelMapper, IRoomRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.RoomDataModelMapper,smarthome.persistence.spring.IRoomRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "RoomRESTController",
+    "l": "RoomRESTController(IRoomService, RoomMapper)",
+    "u": "%3Cinit%3E(smarthome.service.IRoomService,smarthome.mapper.mapper.RoomMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "RoomServiceImpl",
+    "l": "RoomServiceImpl(IHouseRepository, IRoomRepository, RoomFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.IHouseRepository,smarthome.domain.repository.IRoomRepository,smarthome.domain.room.RoomFactory)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorRepositoryJPAImpl",
+    "l": "save(Actuator)",
+    "u": "save(smarthome.domain.actuator.Actuator)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorRepositoryMemImpl",
+    "l": "save(Actuator)",
+    "u": "save(smarthome.domain.actuator.Actuator)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorRepositorySpringDataImpl",
+    "l": "save(Actuator)",
+    "u": "save(smarthome.domain.actuator.Actuator)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorModelRepositoryJPAImpl",
+    "l": "save(ActuatorModel)",
+    "u": "save(smarthome.domain.actuatormodel.ActuatorModel)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorModelRepositoryMemImpl",
+    "l": "save(ActuatorModel)",
+    "u": "save(smarthome.domain.actuatormodel.ActuatorModel)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorModelRepositorySpringDataImpl",
+    "l": "save(ActuatorModel)",
+    "u": "save(smarthome.domain.actuatormodel.ActuatorModel)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ActuatorTypeRepositoryJPAImpl",
+    "l": "save(ActuatorType)",
+    "u": "save(smarthome.domain.actuatortype.ActuatorType)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ActuatorTypeRepositoryMemImpl",
+    "l": "save(ActuatorType)",
+    "u": "save(smarthome.domain.actuatortype.ActuatorType)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ActuatorTypeRepositorySpringDataImpl",
+    "l": "save(ActuatorType)",
+    "u": "save(smarthome.domain.actuatortype.ActuatorType)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "save(Device)",
+    "u": "save(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "save(Device)",
+    "u": "save(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "save(Device)",
+    "u": "save(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceTypeRepositoryJPAImpl",
+    "l": "save(DeviceType)",
+    "u": "save(smarthome.domain.deviceType.DeviceType)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceTypeRepositoryMemImpl",
+    "l": "save(DeviceType)",
+    "u": "save(smarthome.domain.deviceType.DeviceType)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceTypeRepositorySpringDataImpl",
+    "l": "save(DeviceType)",
+    "u": "save(smarthome.domain.deviceType.DeviceType)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "HouseRepositoryJPAImpl",
+    "l": "save(House)",
+    "u": "save(smarthome.domain.house.House)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "HouseRepositoryMemImpl",
+    "l": "save(House)",
+    "u": "save(smarthome.domain.house.House)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "HouseRepositorySpringDataImpl",
+    "l": "save(House)",
+    "u": "save(smarthome.domain.house.House)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "ReadingRepositoryJPAImpl",
+    "l": "save(Reading)",
+    "u": "save(smarthome.domain.reading.Reading)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "ReadingRepositoryMemImpl",
+    "l": "save(Reading)",
+    "u": "save(smarthome.domain.reading.Reading)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "ReadingRepositorySpringDataImpl",
+    "l": "save(Reading)",
+    "u": "save(smarthome.domain.reading.Reading)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "RoomRepositoryJPAImpl",
+    "l": "save(Room)",
+    "u": "save(smarthome.domain.room.Room)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "RoomRepositoryMemImpl",
+    "l": "save(Room)",
+    "u": "save(smarthome.domain.room.Room)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "RoomRepositorySpringDataImpl",
+    "l": "save(Room)",
+    "u": "save(smarthome.domain.room.Room)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorRepositoryJPAImpl",
+    "l": "save(Sensor)",
+    "u": "save(smarthome.domain.sensor.Sensor)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorRepositoryMemImpl",
+    "l": "save(Sensor)",
+    "u": "save(smarthome.domain.sensor.Sensor)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorRepositorySpringDataImpl",
+    "l": "save(Sensor)",
+    "u": "save(smarthome.domain.sensor.Sensor)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorModelRepositoryJPAImpl",
+    "l": "save(SensorModel)",
+    "u": "save(smarthome.domain.sensormodel.SensorModel)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorModelRepositoryMemImpl",
+    "l": "save(SensorModel)",
+    "u": "save(smarthome.domain.sensormodel.SensorModel)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorModelRepositorySpringDataImpl",
+    "l": "save(SensorModel)",
+    "u": "save(smarthome.domain.sensormodel.SensorModel)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorTypeRepositoryJPAImpl",
+    "l": "save(SensorType)",
+    "u": "save(smarthome.domain.sensortype.SensorType)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorTypeRepositoryMemImpl",
+    "l": "save(SensorType)",
+    "u": "save(smarthome.domain.sensortype.SensorType)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorTypeRepositorySpringDataImpl",
+    "l": "save(SensorType)",
+    "u": "save(smarthome.domain.sensortype.SensorType)"
+}, {"p": "smarthome.ddd", "c": "IRepository", "l": "save(T)"}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "ScalePercentageValue",
+    "l": "ScalePercentageValue(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorDataModel",
+    "l": "SensorDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorDataModel",
+    "l": "SensorDataModel(Sensor)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.Sensor)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorDataModelMapper",
+    "l": "SensorDataModelMapper(SensorFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.SensorFactory)"
+}, {"p": "smarthome.mapper", "c": "SensorDTO", "l": "SensorDTO()", "u": "%3Cinit%3E()"}, {
+    "p": "smarthome.mapper",
+    "c": "SensorDTO",
+    "l": "SensorDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorDTO",
+    "l": "SensorDTO(String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorDTO",
+    "l": "SensorDTO(String, String, String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorFactoryImpl",
+    "l": "SensorFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.sensor.vo",
+    "c": "SensorId",
+    "l": "SensorId(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorMapper",
+    "l": "SensorMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.sensormodel",
+    "c": "SensorModel",
+    "l": "SensorModel(SensorModelName, SensorTypeId)",
+    "u": "%3Cinit%3E(smarthome.domain.sensormodel.vo.SensorModelName,smarthome.domain.sensortype.vo.SensorTypeId)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorModelDataModel",
+    "l": "SensorModelDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorModelDataModel",
+    "l": "SensorModelDataModel(SensorModel)",
+    "u": "%3Cinit%3E(smarthome.domain.sensormodel.SensorModel)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorModelDataModelMapper",
+    "l": "SensorModelDataModelMapper(SensorModelFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.sensormodel.SensorModelFactory)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorModelDTO",
+    "l": "SensorModelDTO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorModelDTO",
+    "l": "SensorModelDTO(String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.domain.sensormodel",
+    "c": "SensorModelFactoryImpl",
+    "l": "SensorModelFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorModelMapper",
+    "l": "SensorModelMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.sensormodel.vo",
+    "c": "SensorModelName",
+    "l": "SensorModelName(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorModelNameDTO",
+    "l": "SensorModelNameDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorModelRepositoryJPAImpl",
+    "l": "SensorModelRepositoryJPAImpl(SensorModelDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.SensorModelDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorModelRepositoryMemImpl",
+    "l": "SensorModelRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorModelRepositorySpringDataImpl",
+    "l": "SensorModelRepositorySpringDataImpl(SensorModelDataModelMapper, ISensorModelRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.SensorModelDataModelMapper,smarthome.persistence.spring.ISensorModelRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "SensorModelRESTController",
+    "l": "SensorModelRESTController(ISensorModelService, SensorModelMapper)",
+    "u": "%3Cinit%3E(smarthome.service.ISensorModelService,smarthome.mapper.mapper.SensorModelMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "SensorModelServiceImpl",
+    "l": "SensorModelServiceImpl(ISensorModelRepository)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.ISensorModelRepository)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfAveragePowerConsumption",
+    "l": "SensorOfAveragePowerConsumption(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfAveragePowerConsumption",
+    "l": "SensorOfAveragePowerConsumption(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfDewPoint",
+    "l": "SensorOfDewPoint(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfDewPoint",
+    "l": "SensorOfDewPoint(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfElectricEnergyConsumption",
+    "l": "SensorOfElectricEnergyConsumption(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfElectricEnergyConsumption",
+    "l": "SensorOfElectricEnergyConsumption(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfHumidity",
+    "l": "SensorOfHumidity(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfHumidity",
+    "l": "SensorOfHumidity(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfOnOff",
+    "l": "SensorOfOnOff(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfOnOff",
+    "l": "SensorOfOnOff(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfPowerConsumption",
+    "l": "SensorOfPowerConsumption(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfPowerConsumption",
+    "l": "SensorOfPowerConsumption(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfScalePercentage",
+    "l": "SensorOfScalePercentage(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfScalePercentage",
+    "l": "SensorOfScalePercentage(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSolarIrradiance",
+    "l": "SensorOfSolarIrradiance(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSolarIrradiance",
+    "l": "SensorOfSolarIrradiance(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunrise",
+    "l": "SensorOfSunrise(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunrise",
+    "l": "SensorOfSunrise(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunset",
+    "l": "SensorOfSunset(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfSunset",
+    "l": "SensorOfSunset(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfTemperature",
+    "l": "SensorOfTemperature(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfTemperature",
+    "l": "SensorOfTemperature(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfWind",
+    "l": "SensorOfWind(DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.domain.sensor",
+    "c": "SensorOfWind",
+    "l": "SensorOfWind(SensorId, DeviceId, SensorModelName)",
+    "u": "%3Cinit%3E(smarthome.domain.sensor.vo.SensorId,smarthome.domain.device.vo.DeviceId,smarthome.domain.sensormodel.vo.SensorModelName)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorRepositoryJPAImpl",
+    "l": "SensorRepositoryJPAImpl(SensorDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.SensorDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorRepositoryMemImpl",
+    "l": "SensorRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorRepositorySpringDataImpl",
+    "l": "SensorRepositorySpringDataImpl(SensorDataModelMapper, ISensorRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.SensorDataModelMapper,smarthome.persistence.spring.ISensorRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "SensorRESTController",
+    "l": "SensorRESTController(ISensorService, SensorMapper)",
+    "u": "%3Cinit%3E(smarthome.service.ISensorService,smarthome.mapper.mapper.SensorMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "SensorServiceImpl",
+    "l": "SensorServiceImpl(ISensorRepository, SensorFactory, IDeviceRepository)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.ISensorRepository,smarthome.domain.sensor.SensorFactory,smarthome.domain.repository.IDeviceRepository)"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorType",
+    "l": "SensorType(SensorTypeId, SensorTypeName, SensorTypeUnit)",
+    "u": "%3Cinit%3E(smarthome.domain.sensortype.vo.SensorTypeId,smarthome.domain.sensortype.vo.SensorTypeName,smarthome.domain.sensortype.vo.SensorTypeUnit)"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorType",
+    "l": "SensorType(SensorTypeName, SensorTypeUnit)",
+    "u": "%3Cinit%3E(smarthome.domain.sensortype.vo.SensorTypeName,smarthome.domain.sensortype.vo.SensorTypeUnit)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorTypeDataModel",
+    "l": "SensorTypeDataModel()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "SensorTypeDataModel",
+    "l": "SensorTypeDataModel(SensorType)",
+    "u": "%3Cinit%3E(smarthome.domain.sensortype.SensorType)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorTypeDataModelMapper",
+    "l": "SensorTypeDataModelMapper(SensorTypeFactory)",
+    "u": "%3Cinit%3E(smarthome.domain.sensortype.SensorTypeFactory)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorTypeDTO",
+    "l": "SensorTypeDTO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorTypeDTO",
+    "l": "SensorTypeDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorTypeDTO",
+    "l": "SensorTypeDTO(String, String, String)",
+    "u": "%3Cinit%3E(java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "smarthome.domain.sensortype",
+    "c": "SensorTypeFactoryImpl",
+    "l": "SensorTypeFactoryImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.sensortype.vo",
+    "c": "SensorTypeId",
+    "l": "SensorTypeId(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorTypeIdDTO",
+    "l": "SensorTypeIdDTO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.mapper",
+    "c": "SensorTypeIdDTO",
+    "l": "SensorTypeIdDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorTypeMapper",
+    "l": "SensorTypeMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.sensortype.vo",
+    "c": "SensorTypeName",
+    "l": "SensorTypeName(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "SensorTypeRepositoryJPAImpl",
+    "l": "SensorTypeRepositoryJPAImpl(SensorTypeDataModelMapper)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.SensorTypeDataModelMapper)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "SensorTypeRepositoryMemImpl",
+    "l": "SensorTypeRepositoryMemImpl()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "SensorTypeRepositorySpringDataImpl",
+    "l": "SensorTypeRepositorySpringDataImpl(SensorTypeDataModelMapper, ISensorTypeRepositorySpringData)",
+    "u": "%3Cinit%3E(smarthome.persistence.datamodel.mapper.SensorTypeDataModelMapper,smarthome.persistence.spring.ISensorTypeRepositorySpringData)"
+}, {
+    "p": "smarthome.controller",
+    "c": "SensorTypeRESTController",
+    "l": "SensorTypeRESTController(ISensorTypeService, SensorTypeMapper)",
+    "u": "%3Cinit%3E(smarthome.service.ISensorTypeService,smarthome.mapper.mapper.SensorTypeMapper)"
+}, {
+    "p": "smarthome.service.impl",
+    "c": "SensorTypeServiceImpl",
+    "l": "SensorTypeServiceImpl(ISensorTypeRepository)",
+    "u": "%3Cinit%3E(smarthome.domain.repository.ISensorTypeRepository)"
+}, {
+    "p": "smarthome.domain.sensortype.vo",
+    "c": "SensorTypeUnit",
+    "l": "SensorTypeUnit(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "ActuatorMap",
+    "l": "setDeviceId(DeviceId)",
+    "u": "setDeviceId(smarthome.domain.device.vo.DeviceId)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SolarIrradianceValue",
+    "l": "SolarIrradianceValue(double)",
+    "u": "%3Cinit%3E(double)"
+}, {"p": "smarthome.utils", "c": "AvailableCountries", "l": "SPAIN"}, {
+    "p": "smarthome.service.impl",
+    "c": "ReadingServiceImpl",
+    "l": "splitTimePeriod(TimeStamp, TimeStamp)",
+    "u": "splitTimePeriod(smarthome.domain.reading.vo.TimeStamp,smarthome.domain.reading.vo.TimeStamp)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "SpringDataConfig",
+    "l": "SpringDataConfig()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "StreetName",
+    "l": "StreetName(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.domain.house.vo",
+    "c": "StreetNumber",
+    "l": "StreetNumber(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SunriseValue",
+    "l": "SunriseValue(LocalDateTime)",
+    "u": "%3Cinit%3E(java.time.LocalDateTime)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SunsetValue",
+    "l": "SunsetValue(LocalDateTime)",
+    "u": "%3Cinit%3E(java.time.LocalDateTime)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "TemperatureValue",
+    "l": "TemperatureValue(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "TimeStamp",
+    "l": "TimeStamp(LocalDateTime)",
+    "u": "%3Cinit%3E(java.time.LocalDateTime)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorDataModelMapper",
+    "l": "toActuatorDomain(ActuatorDataModel)",
+    "u": "toActuatorDomain(smarthome.persistence.datamodel.ActuatorDataModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toActuatorId(ActuatorDTO)",
+    "u": "toActuatorId(smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toActuatorIdsDTO(Iterable<ActuatorId>)",
+    "u": "toActuatorIdsDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toActuatorMap(ActuatorDTO)",
+    "u": "toActuatorMap(smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorModelDataModelMapper",
+    "l": "toActuatorModelDomain(ActuatorModelDataModel)",
+    "u": "toActuatorModelDomain(smarthome.persistence.datamodel.ActuatorModelDataModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorModelMapper",
+    "l": "toActuatorModelDTO(ActuatorModel)",
+    "u": "toActuatorModelDTO(smarthome.domain.actuatormodel.ActuatorModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toActuatorModelName(ActuatorDTO)",
+    "u": "toActuatorModelName(smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorModelDataModelMapper",
+    "l": "toActuatorModelNamesDomain(Iterable<ActuatorModelDataModel>)",
+    "u": "toActuatorModelNamesDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorModelMapper",
+    "l": "toActuatorModelNamesDTO(List<ActuatorModelName>)",
+    "u": "toActuatorModelNamesDTO(java.util.List)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorModelDataModelMapper",
+    "l": "toActuatorModelsDomain(Iterable<ActuatorModelDataModel>)",
+    "u": "toActuatorModelsDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorModelMapper",
+    "l": "toActuatorModelsDTO(Iterable<ActuatorModel>)",
+    "u": "toActuatorModelsDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorDataModelMapper",
+    "l": "toActuatorsDomain(List<ActuatorDataModel>)",
+    "u": "toActuatorsDomain(java.util.List)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorTypeMapper",
+    "l": "toActuatorTypeDTO(ActuatorType)",
+    "u": "toActuatorTypeDTO(smarthome.domain.actuatortype.ActuatorType)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorTypeMapper",
+    "l": "toActuatorTypeIdsDTO(List<ActuatorTypeName>)",
+    "u": "toActuatorTypeIdsDTO(java.util.List)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorTypeMapper",
+    "l": "toActuatorTypeName(ActuatorTypeDTO)",
+    "u": "toActuatorTypeName(smarthome.mapper.ActuatorTypeDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorTypeMapper",
+    "l": "toActuatorTypesDTO(Iterable<ActuatorType>)",
+    "u": "toActuatorTypesDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toDecimalLowerLimit(ActuatorDTO)",
+    "u": "toDecimalLowerLimit(smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toDecimalUpperLimit(ActuatorDTO)",
+    "u": "toDecimalUpperLimit(smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "DeviceDataModelMapper",
+    "l": "toDeviceDomain(DeviceDataModel)",
+    "u": "toDeviceDomain(smarthome.persistence.datamodel.DeviceDataModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceMapper",
+    "l": "toDeviceDTO(Device)",
+    "u": "toDeviceDTO(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toDeviceId(ActuatorDTO)",
+    "u": "toDeviceId(smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceMapper",
+    "l": "toDeviceId(DeviceDTO)",
+    "u": "toDeviceId(smarthome.mapper.DeviceDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorMapper",
+    "l": "toDeviceId(SensorDTO)",
+    "u": "toDeviceId(smarthome.mapper.SensorDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceMapper",
+    "l": "toDeviceIdsDTO(Iterable<DeviceId>)",
+    "u": "toDeviceIdsDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceMapper",
+    "l": "toDeviceName(DeviceDTO)",
+    "u": "toDeviceName(smarthome.mapper.DeviceDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "DeviceDataModelMapper",
+    "l": "toDevicesDomain(Iterable<DeviceDataModel>)",
+    "u": "toDevicesDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceMapper",
+    "l": "toDevicesDTO(Iterable<Device>)",
+    "u": "toDevicesDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceTypeMapper",
+    "l": "toDeviceTypeDTO(DeviceType)",
+    "u": "toDeviceTypeDTO(smarthome.domain.deviceType.DeviceType)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceTypeMapper",
+    "l": "toDeviceTypeName(DeviceDTO)",
+    "u": "toDeviceTypeName(smarthome.mapper.DeviceDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceTypeMapper",
+    "l": "toDeviceTypeNameDTO(DeviceTypeName)",
+    "u": "toDeviceTypeNameDTO(smarthome.domain.deviceType.vo.DeviceTypeName)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceTypeMapper",
+    "l": "toDeviceTypeNamesDTO(Iterable<DeviceTypeName>)",
+    "u": "toDeviceTypeNamesDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "RoomMapper",
+    "l": "toDimensions(RoomDTO)",
+    "u": "toDimensions(smarthome.mapper.RoomDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorTypeDataModelMapper",
+    "l": "toDomain(ActuatorTypeDataModel)",
+    "u": "toDomain(smarthome.persistence.datamodel.ActuatorTypeDataModel)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "DeviceTypeDataModelMapper",
+    "l": "toDomain(DeviceTypeDataModel)",
+    "u": "toDomain(smarthome.persistence.datamodel.DeviceTypeDataModel)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ActuatorTypeDataModelMapper",
+    "l": "toDomain(Iterable<ActuatorTypeDataModel>)",
+    "u": "toDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "DeviceTypeDataModelMapper",
+    "l": "toDomain(Iterable<DeviceTypeDataModel>)",
+    "u": "toDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorDataModelMapper",
+    "l": "toDomain(Iterable<SensorDataModel>)",
+    "u": "toDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorDataModelMapper",
+    "l": "toDomain(SensorDataModel)",
+    "u": "toDomain(smarthome.persistence.datamodel.SensorDataModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ValueMapper",
+    "l": "toDTO(Value)",
+    "u": "toDTO(smarthome.domain.sensor.vo.values.Value)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "PeriodMapper",
+    "l": "toEnd(PeriodDTO)",
+    "u": "toEnd(smarthome.mapper.PeriodDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "RoomMapper",
+    "l": "toFloor(RoomDTO)",
+    "u": "toFloor(smarthome.mapper.RoomDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "HouseDataModelMapper",
+    "l": "toHouseDomain(HouseDataModel)",
+    "u": "toHouseDomain(smarthome.persistence.datamodel.HouseDataModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "HouseMapper",
+    "l": "toHouseDTO(House)",
+    "u": "toHouseDTO(smarthome.domain.house.House)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "HouseMapper",
+    "l": "toHouseIdsDTO(Iterable<HouseName>)",
+    "u": "toHouseIdsDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "HouseMapper",
+    "l": "toHouseName(HouseDTO)",
+    "u": "toHouseName(smarthome.mapper.HouseDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "RoomMapper",
+    "l": "toHouseName(RoomDTO)",
+    "u": "toHouseName(smarthome.mapper.RoomDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "HouseDataModelMapper",
+    "l": "toHousesDomain(Iterable<HouseDataModel>)",
+    "u": "toHousesDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toIntLowerLimit(ActuatorDTO)",
+    "u": "toIntLowerLimit(smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toIntUpperLimit(ActuatorDTO)",
+    "u": "toIntUpperLimit(smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "HouseMapper",
+    "l": "toLocation(HouseDTO)",
+    "u": "toLocation(smarthome.mapper.HouseDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceMapper",
+    "l": "toMapDTO(Map<String, List<Device>>)",
+    "u": "toMapDTO(java.util.Map)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ActuatorMapper",
+    "l": "toPrecision(ActuatorDTO)",
+    "u": "toPrecision(smarthome.mapper.ActuatorDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ReadingDataModelMapper",
+    "l": "toReadingDomainModel(ReadingDataModel)",
+    "u": "toReadingDomainModel(smarthome.persistence.datamodel.ReadingDataModel)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "ReadingDataModelMapper",
+    "l": "toReadingDomainModels(Iterable<ReadingDataModel>)",
+    "u": "toReadingDomainModels(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ReadingMapper",
+    "l": "toReadingDTO(Reading)",
+    "u": "toReadingDTO(smarthome.domain.reading.Reading)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ReadingMapper",
+    "l": "toReadingIdsDTO(Iterable<ReadingId>)",
+    "u": "toReadingIdsDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ReadingMapper",
+    "l": "toReadingsDTO(Iterable<Reading>)",
+    "u": "toReadingsDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "RoomDataModelMapper",
+    "l": "toRoomDomain(RoomDataModel)",
+    "u": "toRoomDomain(smarthome.persistence.datamodel.RoomDataModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "RoomMapper",
+    "l": "toRoomDTO(Room)",
+    "u": "toRoomDTO(smarthome.domain.room.Room)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "DeviceMapper",
+    "l": "toRoomId(DeviceDTO)",
+    "u": "toRoomId(smarthome.mapper.DeviceDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "RoomMapper",
+    "l": "toRoomId(RoomDTO)",
+    "u": "toRoomId(smarthome.mapper.RoomDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "RoomMapper",
+    "l": "toRoomIdsDTO(Iterable<RoomId>)",
+    "u": "toRoomIdsDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "RoomMapper",
+    "l": "toRoomName(RoomDTO)",
+    "u": "toRoomName(smarthome.mapper.RoomDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "RoomDataModelMapper",
+    "l": "toRoomsDomain(Iterable<RoomDataModel>)",
+    "u": "toRoomsDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "RoomMapper",
+    "l": "toRoomsDTO(Iterable<Room>)",
+    "u": "toRoomsDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorMapper",
+    "l": "toSensorDTO(Sensor)",
+    "u": "toSensorDTO(smarthome.domain.sensor.Sensor)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorModelDataModelMapper",
+    "l": "toSensorModelDomain(SensorModelDataModel)",
+    "u": "toSensorModelDomain(smarthome.persistence.datamodel.SensorModelDataModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorModelMapper",
+    "l": "toSensorModelDto(SensorModel)",
+    "u": "toSensorModelDto(smarthome.domain.sensormodel.SensorModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorMapper",
+    "l": "toSensorModelName(SensorDTO)",
+    "u": "toSensorModelName(smarthome.mapper.SensorDTO)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorModelMapper",
+    "l": "toSensorModelName(SensorModelDTO)",
+    "u": "toSensorModelName(smarthome.mapper.SensorModelDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorModelDataModelMapper",
+    "l": "toSensorModelNamesDomain(List<SensorModelDataModel>)",
+    "u": "toSensorModelNamesDomain(java.util.List)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorModelDataModelMapper",
+    "l": "toSensorModelsDomain(Iterable<SensorModelDataModel>)",
+    "u": "toSensorModelsDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorModelMapper",
+    "l": "toSensorModelsNameDTO(Iterable<SensorModelName>)",
+    "u": "toSensorModelsNameDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorTypeDataModelMapper",
+    "l": "toSensorTypeDomain(SensorTypeDataModel)",
+    "u": "toSensorTypeDomain(smarthome.persistence.datamodel.SensorTypeDataModel)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorTypeMapper",
+    "l": "toSensorTypeDTO(SensorType)",
+    "u": "toSensorTypeDTO(smarthome.domain.sensortype.SensorType)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorTypeMapper",
+    "l": "toSensorTypeId(SensorTypeDTO)",
+    "u": "toSensorTypeId(smarthome.mapper.SensorTypeDTO)"
+}, {
+    "p": "smarthome.persistence.datamodel.mapper",
+    "c": "SensorTypeDataModelMapper",
+    "l": "toSensorTypesDomain(Iterable<SensorTypeDataModel>)",
+    "u": "toSensorTypesDomain(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "SensorTypeMapper",
+    "l": "toSensorTypesIdDTO(Iterable<SensorTypeId>)",
+    "u": "toSensorTypesIdDTO(java.lang.Iterable)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "PeriodMapper",
+    "l": "toStart(PeriodDTO)",
+    "u": "toStart(smarthome.mapper.PeriodDTO)"
+}, {
+    "p": "smarthome.persistence.spring",
+    "c": "SpringDataConfig",
+    "l": "transactionManager(EntityManagerFactory)",
+    "u": "transactionManager(jakarta.persistence.EntityManagerFactory)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IDeviceRepository",
+    "l": "update(Device)",
+    "u": "update(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "DeviceRepositoryJPAImpl",
+    "l": "update(Device)",
+    "u": "update(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "DeviceRepositoryMemImpl",
+    "l": "update(Device)",
+    "u": "update(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "DeviceRepositorySpringDataImpl",
+    "l": "update(Device)",
+    "u": "update(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.domain.repository",
+    "c": "IHouseRepository",
+    "l": "update(House)",
+    "u": "update(smarthome.domain.house.House)"
+}, {
+    "p": "smarthome.persistence.jpa",
+    "c": "HouseRepositoryJPAImpl",
+    "l": "update(House)",
+    "u": "update(smarthome.domain.house.House)"
+}, {
+    "p": "smarthome.persistence.mem",
+    "c": "HouseRepositoryMemImpl",
+    "l": "update(House)",
+    "u": "update(smarthome.domain.house.House)"
+}, {
+    "p": "smarthome.persistence.spring.impl",
+    "c": "HouseRepositorySpringDataImpl",
+    "l": "update(House)",
+    "u": "update(smarthome.domain.house.House)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "DeviceDataModel",
+    "l": "updateDeviceFromDomain(Device)",
+    "u": "updateDeviceFromDomain(smarthome.domain.device.Device)"
+}, {
+    "p": "smarthome.persistence.datamodel",
+    "c": "HouseDataModel",
+    "l": "updateFromDomain(House)",
+    "u": "updateFromDomain(smarthome.domain.house.House)"
+}, {"p": "smarthome.utils", "c": "AvailableCountries", "l": "USA"}, {
+    "p": "smarthome.mapper",
+    "c": "ValueDTO",
+    "l": "ValueDTO(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "smarthome.mapper.mapper",
+    "c": "ValueMapper",
+    "l": "ValueMapper()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "smarthome.persistence",
+    "c": "PersistenceUnitName",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "smarthome.utils",
+    "c": "AvailableCountries",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {"p": "smarthome.persistence", "c": "PersistenceUnitName", "l": "values()"}, {
+    "p": "smarthome.utils",
+    "c": "AvailableCountries",
+    "l": "values()"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "DecimalLimit",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "DecimalValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.actuator.vo",
+    "c": "IntegerValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "TimeStamp",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "AveragePowerConsumptionValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "DewPointValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "ElectricEnergyConsumptionValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "HumidityValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "OnOffValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "PowerConsumptionValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "ScalePercentageValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SolarIrradianceValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SunriseValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "SunsetValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "TemperatureValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "Value",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "WindValue",
+    "l": "valueToString()"
+}, {
+    "p": "smarthome.domain.reading.vo",
+    "c": "ReadingValueTest",
+    "l": "valueToStringReturnsValueOfReading()"
+}, {
+    "p": "smarthome.domain.room.vo",
+    "c": "Width",
+    "l": "Width(double)",
+    "u": "%3Cinit%3E(double)"
+}, {
+    "p": "smarthome.domain.sensor.vo.values",
+    "c": "WindValue",
+    "l": "WindValue(double, double)",
+    "u": "%3Cinit%3E(double,double)"
+}, {"p": "smarthome.domain.house.vo", "c": "ZipCode", "l": "ZipCode(String)", "u": "%3Cinit%3E(java.lang.String)"}];
+updateSearchResults();

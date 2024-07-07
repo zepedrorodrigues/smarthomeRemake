@@ -1,0 +1,72 @@
+@startuml
+
+autonumber
+
+title UC: Get Readings From Device In A Given Period\nREST API\n(Process View Level 4)
+
+/'US33 As a Room Owner [or Power User, or Administrator],
+I want to get a list of all measurement of a device in a room, in a given period.'/
+
+participant "Routing" as R
+participant ":ReadingRESTController" as RC
+'participant ":DeviceMapper" as DM
+'participant ":PeriodMapper" as PM
+participant ":IReadingRESTService" as RS
+participant ":ISensorRepository" as SR
+participant ":IReadingRepository" as RR
+participant ":ReadingMapper" as RM
+participant "_deviceId :DeviceId" as Did
+participant "_start :TimeStamp" as ST
+participant "_end :TimeStamp" as END
+
+[o-> R: GET /readings?device={id}&start={start}&end={end}
+activate R
+
+R-> RC: getReadingsFromDeviceInAGivenPeriod(deviceId, start, end)
+activate RC
+
+'RC -> DM: toDeviceId(deviceDTO)
+'activate DM
+'DM --> RC: deviceId
+'deactivate DM
+'
+'RC -> PM: toStart(timeStampDTO)
+'activate PM
+'PM --> ST**: <create>(startTime)
+'PM --> RC: start
+'deactivate PM
+'
+'RC -> PM: toEnd(timeStampDTO)
+'activate PM
+'PM --> END**: <create>(endTime)
+'PM --> RC: end
+'deactivate PM
+
+RC -> RS: getReadingsFromDeviceInAGivenPeriod(deviceId, start, end)
+activate RS
+
+RS --> Did**: <create>(deviceId)
+RS --> ST**: <create>(start)
+RS --> END**: <create>(end)
+
+RS -> SR: findSensorsByDeviceId(_deviceId)
+activate SR
+SR --> RS: sensors
+deactivate SR
+    RS -> RR: findReadingIdsBySensorIdInAGivenPeriod(sensorId, _start, _end)
+    activate RR
+    RR --> RS: readingIDsBySensorID
+    deactivate RR
+RS --> RC : readingIDs
+deactivate RS
+RC -> RM: toIdDTO(readingIDs)
+activate RM
+RM --> RC: IdDTOs
+deactivate RM
+deactivate RS
+R<-- RC: readings, HttpStatus.OK
+deactivate RC
+[o<-- R: readings, HttpStatus.OK
+deactivate R
+
+@enduml

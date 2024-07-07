@@ -1,0 +1,27 @@
+@startuml
+
+title UC: Get Devices in Room\n(Process View Level 3)
+autonumber
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repository" as R
+
+[o-> RC: (GET) Request Devices (Room Id)
+activate RC
+RC -> S: Get Devices in a Room
+activate S
+S -> R: Find room
+activate R
+R --> S: room
+deactivate R
+S -> R: Retrieve Devices
+activate R
+R --> S: Devices in a room
+deactivate R
+S --> RC: Provide Devices in a Room
+deactivate S
+[o<-- RC: OK 200, Provide Devices in a Room
+deactivate RC
+
+@enduml

@@ -1,0 +1,119 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title UC: Add Actuator To Device\nREST API\n(Process View Level 4)
+
+/'
+As a Power User [or Administrator], I want to add an actuator to an existing
+device in a room. The actuator must be of a model of an existing type of actuator.
+'/
+
+participant "Routing" as ROUT
+participant ":ActuatorTypeRESTController" as ATC
+participant ":IActuatorTypeService" as ATS
+participant ":IActuatorTypeRepository" as ATR
+participant ":ActuatorTypeMapper" as ATM
+participant ":ActuatorModelRESTController" as AMC
+participant ":IActuatorModelService" as AMS
+participant ":IActuatorModelRepository" as AMR
+participant ":ActuatorModelMapper" as AMM
+participant ":ActuatorRESTController" as C12
+participant ":ActuatorMapper" as AM
+participant ":IActuatorService" as AS
+participant ":IActuatorFactory" as AF
+participant ":IActuatorRepository" as AR
+participant "creatorOfActuator :CreatorOfActuator" as CA
+participant "actuatorTypeId :ActuatorTypeId" as AT
+participant "actuatorTypeNameId" as ID
+participant "actuatorModelDTO :ActuatorModelDTO" as AMD
+participant "actuatorMap :ActuatorMap" as AMAP
+participant "_actuator :Actuator" as A
+participant "_actuatorDTO :ActuatorDTO" as S2
+
+[o-> ROUT : GET /actuatortypesIds
+activate ROUT
+ROUT->ATC: getActuatorTypes()
+activate ATC
+ATC -> ATS: getActuatorTypesIds()
+activate ATS
+ATS -> ATR: findActuatorTypeNames()
+activate ATR
+ATR --> ATS : actuatorTypeIds
+deactivate ATR
+ATS --> ATC : actuatorTypeIds
+deactivate ATS
+ATC -> ATM : toActuatorTypeIdsDTO(actuatorTypeIds)
+activate ATM
+ATM --> AT** : <create> (actuatorTypeIds)
+ATM--> ATC : actuatorTypesDTO
+deactivate ATM
+ATC --> ROUT : actuatorTypesDTO,\nHttpStatus.OK
+deactivate ATC
+[o<--ROUT : actuatorTypesDTO,\nHttpStatus.OK
+deactivate ROUT
+
+[o->ROUT : GET/\nactuatormodels/\n{actuatortypeId}
+activate ROUT
+ROUT->AMC: getActuatorModelsByActuatorTypeIdentity(actuatorTypeNameId)
+activate AMC
+AMC --> ID** : <create>(actuatorTypeNameVo)
+AMC-> AMS : getActuatorModels\nByActuatorTypeIdentity\n(actuatorTypeNameVo)
+activate AMS
+AMS -> AMR : findActuatorModelNames\nByActuatorTypeName\n(actuatorTypeNameVo)
+activate AMR
+AMR --> AMS : actuatorModelNames
+deactivate AMR
+AMS --> AMC : actuatorModelNames
+deactivate AMS
+AMC-> AMM : toActuatorModelNamesDTO(actuatorModelNames)
+activate AMM
+AMM --> AMD** : <create> (actuatorModelNames)
+AMM --> AMC : actuatorModelsDTO
+deactivate AMM
+AMC--> ROUT : actuatorModelsDTO,\nHttpStatus.OK
+deactivate AMC
+[o<--ROUT : actuatorModelsDTO,\nHttpStatus.OK
+deactivate ROUT
+
+[o->ROUT: POST /actuators/""
+activate ROUT
+ROUT->C12: addActuator(actuatorDTO)
+activate C12
+C12 -> AM : toActuatorMap\n(actuatorDTO)
+activate AM
+AM --> AMAP** : <create> (actuatorId, deviceId, actuatorModelName, integerUpperLimit, integerLowerLimit,decimalUpperLimit, decimalLowerLimit, precision)
+AM --> C12: actuatorMap
+deactivate AM
+C12 -> AS: createActuator(actuatorMap)
+activate AS
+AS -> AF: createActuator\n(actuatorMap)
+activate AF
+AF -> CA** : get(actuatorModelName)
+activate CA
+CA -->AF: creatorOfActuator
+deactivate CA
+AF -->A**: <create> (actuatorMap)
+deactivate CA
+AF --> AS : _actuator
+deactivate AF
+
+AS -> AR : save(_actuator)
+activate AR
+AR --> AS: _actuator
+deactivate AR
+AS --> C12: _actuator
+deactivate AS
+
+C12 -> AM : actuatorToDTO\n(_actuator)
+activate AM
+AM --> S2** : <create> (actuatorId, deviceId, actuatorModelName, integerUpperLimit, integerLowerLimit,decimalUpperLimit, decimalLowerLimit, precision)
+AM --> C12: _actuator
+deactivate AM
+C12 --> ROUT : _actuatorDTO,\nHttpStatus.CREATED
+deactivate C12
+[o<-- ROUT : _actuatorDTO,\nHttpStatus.CREATED
+deactivate ROUT
+
+@enduml

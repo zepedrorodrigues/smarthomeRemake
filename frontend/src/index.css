@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*
+:root {
+    !* Light mode variables *!
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-background: #7198d1;
+    --button-text-color: #ffffff;
+    --card-background-color: #f8f9fa;
+    --blue-button-bg: #7198d1;
+    --blue-button-text-color: #ffffff;
+    --blue-button-hover-bg: #4c74af;
+    --blue-button-active-bg: #4c74af;
+    --red-button-bg: #ff6347;
+    --red-button-text-color: #ffffff;
+    --red-button-hover-bg: #ff4500;
+    --red-button-active-bg: #e03e00;
+    --grey-button-bg: #d3d3d3;
+    --grey-button-text-color: #ffffff;
+    --grey-button-color: #a9a9a9;
+}
+
+[data-theme='dark'] {
+    !* Dark mode variables *!
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --button-background: #333333;
+    --button-text-color: #ffffff;
+    --blue-button-text-color: #ffffff;
+    --card-background-color: #1e1e1e;
+    --blue-button-bg: #4c74af;
+    --blue-button-hover-bg: #7198d1;
+    --blue-button-active-bg: #4c74af;
+    --red-button-bg: #e03e00;
+    --red-button-text-color: #ffffff;
+    --red-button-hover-bg: #ff4500;
+    --red-button-active-bg: #ff6347;
+    --grey-button-bg: #a9a9a9;
+    --grey-button-text-color: #ffffff;
+    --grey-button-color: #d3d3d3;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button {
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+}
+
+.card {
+    background-color: var(--card-background-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}*/

@@ -1,0 +1,140 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title Actuator Of Decimal Limiter\nDomain Class Diagram - Component\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+
+/'
+As Product Owner, I want the system to have a type of actuator that sets a decimal value in the range defined
+by [lower limit, upper limit] and predefined precision.
+'/
+
+interface Actuator {
++ operate() : Value
++ getIdentity() : ActuatorId
++ getActuatorModelName() : ActuatorModelName
++ getDeviceId() : DeviceId
+}
+
+class ActuatorId {
+- actuatorId : String
++ ActuatorId(...)
++ getActuatorId() : String
+}
+
+class ActuatorModelName {
+- actuatorModelName : String
++ ActuatorModelName(...)
++ getActuatorModelName() : String
+}
+
+class ActuatorType {
++ ActuatorType(...)
++ getIdentity() : ActuatorTypeName
+}
+
+class ActuatorTypeName {
+- actuatorTypeName : String
++ ActuatorTypeName(...)
++ getActuatorTypeName() : String
+}
+
+class ActuatorModel {
++ ActuatorModel(...)
++ getIdentity() : ActuatorModelName
+}
+
+interface IActuatorRepository {
++ save(Actuator) : Actuator
++ findAll() : Iterable<Actuator>
++ findByIdentity(ActuatorId) : Optional<Actuator>
++ containsIdentity(ActuatorId) : boolean
++ findActuatorIdsByDeviceId(DeviceId) : Iterable<ActuatorId>
+}
+
+interface IActuatorTypeRepository {
++ save(ActuatorType) : ActuatorType
++ findAll() : Iterable<ActuatorType>
++ findByIdentity(ActuatorTypeId) : Optional<ActuatorType>
++ containsIdentity(ActuatorTypeId) : boolean
++ findActuatorTypeNames() : Iterable<ActuatorTypeName>
+}
+
+interface IActuatorModelRepository {
++ save(ActuatorModel) : ActuatorModel
++ findAll() : Iterable<ActuatorModel>
++ findByIdentity(ActuatorModelName) : Optional<ActuatorModel>
++ containsIdentity(ActuatorModelName) : boolean
++ findActuatorModelsByActuatorTypeName(ActuatorTypeName) : Iterable<ActuatorModel>
++ findActuatorModelNamesByActuatorTypeName(ActuatorTypeName) : Iterable<ActuatorModelName>
+}
+
+class DeviceId{
+- deviceId : String
++ DeviceId(...)
++ getDeviceId() : String
+}
+
+class ActuatorOfDecimalLimiter {
++ ActuatorOfDecimalLimiter(Limit, Limit, Precision
++ operate(...) : Value
++ getIdentity() : ActuatorId
++ getActuatorModelName() : ActuatorModelName
++ getDeviceId() : DeviceId
+}
+
+class DecimalLimit {
+- decimalLimit : double
++ DecimalLimit(...)
++ getDecimalLimit() : double
+}
+
+class Precision {
+- precision : int
++ Precision(...)
++ getPrecision() : int
+}
+
+class DecimalValue {
+- decimalValue : double
++ DecimalValue(...)
++ valueToString() : String
+}
+
+interface Value{
++ valueToString() : String
+}
+
+interface ActuatorFactory{
++ createActuator(...) : Actuator
+}
+
+class ActuatorOfDecimalLimiterFactory{
++ ActuatorOfDecimalLimiterFactory()
++ createActuator(...) : Actuator
+}
+
+ActuatorOfDecimalLimiter "1" ..> "1" DeviceId : knows
+
+ActuatorModel "1" *-- "1" ActuatorModelName : contains
+ActuatorModel "1" ..> "1" ActuatorTypeName: knows
+ActuatorOfDecimalLimiter "1" ..> "1" ActuatorModelName : knows
+
+ActuatorOfDecimalLimiter "1" *-- "1" ActuatorId : contains
+ActuatorOfDecimalLimiter "1" *-- "1" Precision : contains
+ActuatorOfDecimalLimiter "1" *-- "1" DecimalLimit : contains
+ActuatorOfDecimalLimiter "1" *-- "1" DecimalLimit : contains
+
+ActuatorType "1" *-- "1" ActuatorTypeName : contains
+ActuatorOfDecimalLimiter "1" .l.|> "1" Actuator : implements
+
+IActuatorRepository "1" *-- "*" Actuator : contains
+IActuatorTypeRepository "1" *-- "*" ActuatorType : contains
+IActuatorModelRepository "1" *-- "*" ActuatorModel : contains
+ActuatorOfDecimalLimiter "1" *-- "1" DecimalValue : creates
+DecimalValue "1" ..|> "1" Value : implements
+
+ActuatorOfDecimalLimiterFactory "1" ..|> "1" ActuatorFactory : implements
+/'ActuatorOfDecimalLimiterFactory "1"..> "*" ActuatorOfDecimalLimiter : creates'/
+
+@enduml

@@ -1,0 +1,46 @@
+@startuml
+
+autonumber
+
+title UC: Get rooms\nREST API\n(Process View Level 4)
+
+/'
+As an Administrator, I want to have a list of existing rooms, so that I can choose one to edit it.
+'/
+
+participant "Routing" as ROUT
+participant "roomRESTController:RoomRESTController" as GRC
+participant "roomService:IRoomService" as RS
+participant "roomRepository:IRoomRepository" as RR
+participant "roomMapper:RoomMapper" as RM
+participant "roomDTO:RoomDTO" as RD
+
+
+[o-> ROUT : GET /rooms
+activate ROUT
+ROUT -> GRC: getRooms()
+activate GRC
+GRC-> RS: getRoomIds()
+activate RS
+RS -> RR: findRoomIds()
+activate RR
+RR --> RS: roomIds
+deactivate RR
+RS --> GRC : roomIds
+deactivate RS
+GRC -> RM : toRoomDTO(roomIds)
+activate RM
+group FOR EACH ROOM
+    RM -> RM : toRoomDTO\n(roomId)
+    activate RM
+    RM --> RD** : <create>\n(roomId)
+end
+deactivate RM
+RM --> GRC : roomsDTO
+deactivate RM
+ROUT <-- GRC : roomsDTO
+deactivate GRC
+[o<-- ROUT : roomsDTO,\nHttpStatus.OK
+deactivate ROUT
+
+@enduml

@@ -1,0 +1,20 @@
+@startuml
+
+title UC: Get Readings From Device in a Given Period\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nFrontend" as FE
+participant "<<system(C4)>>\nBackend" as BE
+
+[o-> FE : Request readings from device in a given period
+activate FE
+[o<-- FE : Request time period
+[o-> FE : Provide time period
+FE -> BE : (GET) Request readings from device in a given period
+activate BE
+BE --> FE : (200 OK) Readings
+deactivate BE
+[o<-- FE : Provide readings
+deactivate FE
+
+@enduml

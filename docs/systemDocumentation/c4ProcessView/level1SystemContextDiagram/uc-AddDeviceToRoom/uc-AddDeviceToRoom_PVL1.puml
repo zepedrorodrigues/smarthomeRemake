@@ -1,0 +1,18 @@
+@startuml
+
+title UC: Add a Device To a Room\n(Process View Level 1)
+autonumber
+
+actor "Power User/\nAdministrator" as PU
+participant "<<system(C4)>>\nSmartHome" as SH
+
+PU -> SH : Request add a device to a room
+activate PU
+activate SH
+SH --> PU : Provide device formulary
+PU -> SH : Provide device data
+SH --> PU : Device added to room
+deactivate SH
+deactivate PU
+
+@enduml

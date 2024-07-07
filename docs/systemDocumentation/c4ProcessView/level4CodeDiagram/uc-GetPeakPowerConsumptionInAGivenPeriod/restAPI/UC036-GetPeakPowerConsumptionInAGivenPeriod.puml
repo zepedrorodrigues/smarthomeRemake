@@ -1,0 +1,58 @@
+@startuml
+
+autonumber
+
+title UC: Get Peak Power Consumption In a Given Period\nREST API\n(Process View Level 4)
+
+participant "Routing" as RTe
+participant " :ReadingRESTController" as C
+participant " :IReadingService" as S
+participant " :IDeviceRepository" as DR
+participant " :ISensorRepository" as SR
+participant " :IReadingRepository" as RR
+participant ":ValueMapper" as VM
+participant "_start :TimeStamp" as ST
+participant "_end :TimeStamp" as ET
+participant "peakPowerConsumptionDTO:ValueDTO" as PPC
+
+[o-> RTe : GET/readings/peakPowerConsumption?start={start}&end={end}
+activate RTe
+RTe -> C : getPeakPowerConsumptionInAGivenPeriod(start, end)
+activate C
+C -> ST** : <create> start
+C -> ET** : <create> end
+C -> S : getPeakPowerConsumptionInAGivenPeriod(_start, _end)
+activate S
+group for each DeviceType (gridPowerMeter and powerSourcePowerMeter):
+    S -> DR : findDeviceIdsByDeviceTypeName\n(deviceTypeName)
+    activate DR
+    DR --> S : deviceIds
+    deactivate DR
+    group for each Id in deviceIds:
+        S -> SR : findSensorIdsByDeviceIdAndSensorModelName\n(deviceId, sensorModelName)
+        activate SR
+        SR --> S : sensorIds
+        deactivate SR
+            group for Sensor in sensors:
+                S -> RR : findReadingsBySensorIdInAGivenPeriod(sensorId, _start, _end)
+                activate RR
+                RR --> S : readings
+                deactivate RR
+            end group
+    end group
+end group
+S -> S: calculatePeakPowerConsumption(readings)
+S --> C : peakPowerConsumption
+deactivate S
+C -> VM : toDTO(peakPowerConsumption)
+activate VM
+VM -->PPC** : <create> peakPowerConsumptionDTO(peakPowerConsumption)
+VM -->C : peakPowerConsumptionDTO
+deactivate VM
+C --> RTe : peakPowerConsumptionDTO,\n HttpStatus.OK
+deactivate C
+[o<-- RTe : peakPowerConsumptionDTO,\n HttpStatus.OK
+deactivate RTe
+
+
+@enduml

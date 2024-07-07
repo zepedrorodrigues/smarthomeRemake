@@ -1,0 +1,114 @@
+
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title UC: Configure House Location\nREST API\n(Process View Level 4)
+
+/'
+As an Administrator, I want to configure the location of the house.
+'/
+
+participant "Routing" as R
+participant ":HouseRESTController" as LC
+participant ":IHouseService" as HS
+participant ":IHouseRepository" as HR
+participant ":HouseMapper" as M
+participant ":AvailableCountries" as AC
+participant "house:House" as H
+participant "houseIdsDTO:HouseIdsDTO" as DTO2
+participant "address:Address" as AD
+participant "gps:Gps" as GPS
+participant "location:Location" as L
+participant "houseDTO:HouseDTO" as DTO
+
+[o-> R : GET /houses
+activate R
+R-> LC : getHouses()
+activate LC
+LC -> HS : getHousesIds()
+activate HS
+HS -> HR : findHouseIds()
+activate HR
+HR-->HS : houseIds
+deactivate HR
+HS-->LC : houseIds
+deactivate HS
+LC -> M : toHouseIdsDTO(houseIds)
+activate M
+M-->DTO2** : <create> (houseIds)
+M-->LC : houseIdsDTO
+deactivate M
+LC-->R : houseIdsDTO,\nHttpStatus.OK
+deactivate LC
+[o<-- R : houseIdsDTO,\nHttpStatus.OK
+deactivate R
+
+[o-> R : GET /houses/countries
+activate R
+R-> LC : getAvailableCountries()
+activate LC
+LC -> HS : getAvailableCountries()
+activate HS
+HS -> AC : getCountries()
+activate AC
+AC-->HS : countries
+deactivate AC
+HS-->LC : countries
+deactivate HS
+LC-->R : countries,\nHttpStatus.OK
+deactivate LC
+[o<-- R : countries,\nHttpStatus.OK
+deactivate R
+
+[o-> R : PUT /houses/{houseId}/location
+activate R
+R-> LC : configHouseLocation (houseDTO)
+activate LC
+LC->M : toLocation(houseDTO)
+activate M
+note right of M
+Is created streetName, streetNumber, zipCode,
+city and country value objectsbefore address
+end note
+M-->AD** : <create> (streetName, streetNumber, \n zipCode, city, country)
+note right of M
+Is created latitude and longitude
+value objects before gps
+end note
+M-->GPS** : <create> (latitude, longitude)
+M-->L** : <create>(address, gps)
+M-->LC : location
+deactivate M
+LC -> HS : configHouseLocation (location)
+activate HS
+
+HS --> HR : findHouseIds()
+activate HR
+HR--> HS : Iterable<HouseName>
+deactivate HR
+
+HS -->H : configLocation(location)
+activate H
+H-->HS : location
+deactivate H
+HS --> HR : update(house)
+activate HR
+HR-->HS : house
+deactivate HR
+HS-->LC : house
+deactivate HS
+LC -> M : toHouseDTO(house)
+activate M
+M-->DTO** : <create>\n (houseName, streetName, streetNumber, \nzipCode, city, country, latitude, longitude)
+M-->LC : houseDTO
+deactivate M
+LC-->R : houseDTO,\nHttpStatus.OK
+deactivate LC
+[o<-- R : houseDTO,\nHttpStatus.OK
+deactivate R
+
+@enduml
+
+

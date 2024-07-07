@@ -1,0 +1,104 @@
+@startuml
+
+title Aggregate House Class Diagram\nSystem / BackEnd / Domain\n(Implementation View - Level 4)
+
+package "House Ag." {
+class House {
++ House(...)
++ getIdentity() : HouseName
++ getLocation() : Location
++ configLocation(...) : Location
+}
+class Location {
++ Location(...)
++ getAddress() : Address
++ getGps() : GPS
+}
+class Address {
++ Address(...)
++ getStreetName() : StreetName
++ getStreetNumber() : StreetNumber
++ getZipCode() : ZipCode
++ getCity() : City
++ getCountry() : Country
+}
+class Country{
+- country : String
++ Country(...)
++ getCountryName() : String
+}
+class StreetName {
+- streetName : String
++ StreetName(...)
++ getStreetName() : String
+}
+class StreetNumber {
+- streetNumber : String
++ StreetNumber(...)
++ getStreetNumber() : String
+}
+class City {
+- city : String
++ City(...)
++ getCity() : String
+}
+class ZipCode {
+- zipCode : String
++ ZipCode(...)
++ getZipCode() : String
+}
+class Gps {
++ Gps(...)
++ getLatitude() : Latitude
++ getLongitude() : Longitude
+}
+class Latitude {
+- latitude : double
++ Latitude(...)
++ getLatitude() : double
+}
+class Longitude {
+- longitude : double
++ Longitude(...)
++ getLongitude() : double
+}
+
+class HouseName {
+- houseName : String
++ HouseName(...)
++ getName() : String
+}
+}
+
+package Repositories {
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+interface IHouseRepository{
++ update(House) : House
++ findHouseIds() : Iterable<HouseName>
+}
+}
+
+House "1" *-- "1" HouseName : contains
+House "1" *-l- "1" Location : contains
+Location "1" *-l- "1" Address : contains
+
+Location "1" *-- "1" Gps : contains
+Address "1" *-l- "1" StreetName : contains
+Address "1" *-- "1" StreetNumber : contains
+Address "1" *-- "1" City : contains
+Address "1" *-d- "1" ZipCode : contains
+Address "1" *-- "1" Country : contains
+
+Gps "1" *-- "1" Latitude : contains
+Gps "1" *-- "1" Longitude : contains
+
+IHouseRepository "1" -up-|> IRepository : extends
+IHouseRepository "1" *-- "1" House : contains
+
+@enduml

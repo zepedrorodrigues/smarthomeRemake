@@ -1,0 +1,79 @@
+@startuml
+
+title UC: Get Maximum Instantaneous Temperature Difference\nREST API\n(Process View Level 4)
+
+autonumber
+
+participant "Routing" as RT
+participant ":ReadingRESTController" as C
+participant ":IReadingService" as RS
+participant ":ISensorRepository" as SR
+participant ":IReadingRepository" as RR
+participant "startTime:TimeStamp" as ST
+participant "endTime:TimeStamp" as ET
+participant "deviceId1:DeviceId" as DID1
+participant "deviceId2:DeviceId" as DID2
+participant ":ValueMapper" as TVM
+participant "maxTempDifferenceValueDTO:ValueDTO" as TVD
+
+[o->RT : GET /readings/device/{deviceId1}/max-temperature-difference/{deviceId2}?startPeriod={start}&endPeriod={end}
+activate RT
+RT->C : getMaxTemperatureDifferenceInAGivenPeriod\n(deviceId1, deviceId2, start, end)
+activate C
+
+
+C --> ST** : <create>(startTime)
+C--> ET** : <create>(endTime)
+C --> DID1** : <create>(deviceId1)
+C --> DID2** : <create>(deviceId2)
+
+C->RS : getMaxInstantTemperatureDifferenceInAGivenPeriod\n(deviceId1, deviceId2, startTime, endTime)
+activate RS
+
+RS->SR : findSensorsByDeviceIdAndSensorModelName\n(deviceId1,sensorModelName)
+activate SR
+SR --> RS: sensorsOnDevice1
+deactivate SR
+RS->SR : findSensorsByDeviceIdAndSensorModelName\n(deviceId2,sensorModelName)
+activate SR
+SR --> RS: sensorsOnDevice2
+deactivate SR
+
+group for sensorId in sensors1
+    RS->RR : findReadingIdsBySensorIdInAGivenPeriod\n(sensorId,startTime,endTime)
+    activate RR
+    RR-->RS: readingIdFromDevice1
+    deactivate RR
+    group for readingId in readingIdFromDevice1
+        RS->RR : findReadingById\n(readingIdFromDevice1)
+        activate RR
+        RR-->RS: readingDevice1
+        deactivate RR
+    end
+end
+group for sensorId in sensors2
+    RS->RR : findReadingIdsBySensorIdInAGivenPeriod\n(sensorId,startTime,endTime)
+    activate RR
+    RR-->RS: readingIdFromDevice2
+    deactivate RR
+    group for readingId in readingsFromDevice2
+        RS->RR : findReadingById\n(readingIdFromDevice2)
+        activate RR
+        RR-->RS: readingDevice2
+        deactivate RR
+    end
+end
+
+RS -> RS : calculateMaxInstantReadingDifference\n(totalReadingsFromDevice1, totalReadingsFromDevice2)
+RS --> C: maxInstantTemperatureDifference
+deactivate RS
+C -> TVM : toDTO(maxInstantTemperatureDifference)
+activate TVM
+TVM --> TVD** : <create>(maxInstantaneousDifference)
+TVM --> C : maxTempDifferenceValueDTO
+deactivate TVM
+C --> RT : maxTempDifferenceValueDTO,\nHttpStatus.OK
+deactivate C
+[o<-- RT : maxTempDifferenceValueDTO,\nHttpStatus.OK
+deactivate RT
+@enduml

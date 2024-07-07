@@ -1,0 +1,18 @@
+@startuml
+
+title UC: Get Maximum Instantaneous Temperature Difference \n (Process View Level 1)
+autonumber
+
+actor "Admin/\nRoom Owner/\nPower User" as A
+participant "<<system(C4)>>\nSmartHome" as SH
+
+A -> SH : Request devices
+activate A
+activate SH
+SH --> A : Provide devices
+A -> SH : Provide devices and time period
+SH --> A : Provide maximum instantaneous temperature difference
+deactivate SH
+deactivate A
+
+@enduml

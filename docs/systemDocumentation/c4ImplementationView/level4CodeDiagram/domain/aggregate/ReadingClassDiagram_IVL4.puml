@@ -1,0 +1,63 @@
+@startuml
+
+title Aggregate Reading Class Diagram\nSystem / BackEnd / Domain\n(Implementation View - Level 4)
+
+class SensorId{
+- sensorId : String
++ SensorId(...)
++ getSensorId() : String
+}
+
+package "Reading Ag" {
+class Reading {
++ Reading(...)
++ getIdentity(): ReadingId
++ getValue(...): Value
++ getSensorId(): SensorId
++ getTime(): TimeStamp
+}
+class ReadingId{
+- readingId : String
++ ReadingId(...)
++ getId() : String
+}
+class TimeStamp {
+- timeStamp : LocalDateTime
++ TimeStamp(...)
++ getValue() LocalDateTime
++ valueToString(): String
+}
+class ReadingValue{
+- value: String
++ ReadingValue(...)
++ valueToString(): String
+}
+}
+
+
+package Repositories {
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+interface IReadingRepository{
++ findReadingsBySensorIdInAGivenPeriod(...) : Iterable<Reading>
++ findReadingIdsBySensorIdInAGivenPeriod(...) : Iterable<ReadingId>
++ findLastReadingBySensorId(...) : Optional<Reading>
+}
+}
+
+Reading "1" ..> "1" SensorId : knows
+
+Reading "1" *-- "1" ReadingId : contains
+Reading "1" *-- "1" TimeStamp : contains
+Reading "1" *-right- "1" ReadingValue : contains
+
+IReadingRepository "1" -up-|> IRepository : extends
+
+IReadingRepository "1" *-- "*" Reading : contains
+
+@enduml

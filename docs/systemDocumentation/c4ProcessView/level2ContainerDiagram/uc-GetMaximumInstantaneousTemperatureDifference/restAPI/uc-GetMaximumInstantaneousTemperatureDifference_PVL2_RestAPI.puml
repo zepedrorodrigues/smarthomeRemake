@@ -1,0 +1,14 @@
+@startuml
+
+title UC: Get Maximum Instantaneous Temperature Difference\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nBackend" as SH
+
+[o-> SH : (GET) Request devices
+activate SH
+[o<-- SH: (OK, 200) Provide devices
+[o-> SH : (GET) Provide devices and time period
+[o<-- SH: (OK, 200) Provide maximum instantaneous temperature difference
+deactivate SH
+@enduml

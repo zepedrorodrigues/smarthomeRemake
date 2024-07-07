@@ -1,0 +1,203 @@
+@startuml
+
+title UC: Add Actuator to Device\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+skinparam linetype polyline
+/'
+As a Power User [or Administrator], I want to add an actuator to an existing
+device in a room. The actuator must be of a model of an existing type of actuator.
+'/
+
+class ActuatorTypeDTO {
+    - actuatorTypeName : String
+    + ActuatorTypeDTO(...)
+    + getActuatorTypeName() : String
+}
+
+class ActuatorModelDTO {
+    - actuatorModelName : String
+     - actuatorTypeName : String
+     + ActuatorModelDTO(...)
+     + getActuatorModelName() : String
+     + getActuatorTypeName() : String
+}
+
+class ActuatorDTO {
+    - actuatorId: String
+    - deviceId: String
+    - actuatorModelName: String
+    - integerUpperLimit: Integer
+    - integerLowerLimit: Integer
+    - doubleUpperLimit: Double
+    - doubleLowerLimit: Double
+    - doubleLimitPrecision: Integer
+    + ActuatorDTO(...)
+    + getActuatorId() : String
+    + getDeviceId() : String
+    + getActuatorModelName() : String
+    + getIntegerUpperLimit(): Integer
+    + getIntegerLowerLimit(): Integer
+    + getDoubleUpperLimit(): Double
+    + getDoubleLowerLimit(): Double
+    + getDoubleLimitPrecision(): Integer
+}
+
+class ActuatorTypeMapper{
+    + toActuatorTypeIdsDTO (...): List<ActuatorTypeDTO>
+}
+
+interface IActuatorTypeRepository {
++ getActuatorTypeIds(): Iterable<ActuatorTypeName>
+}
+
+class ActuatorModelMapper {
+    + toActuatorModelNamesDTO (...): List<ActuatorModelDTO>
+}
+
+class ActuatorMap {
+    - actuatorId: String
+    - deviceId: String
+    - actuatorModelName: String
+    - integerUpperLimit: Integer
+    - integerLowerLimit: Integer
+    - doubleUpperLimit: Double
+    - doubleLowerLimit: Double
+    - doubleLimitPrecision: Integer
+    + ActuatorMap(...)
+    + getActuatorId() : String
+    + getDeviceId() : String
+    + getActuatorModelName() : String
+    + getIntegerUpperLimit(): Integer
+    + getIntegerLowerLimit(): Integer
+    + getDoubleUpperLimit(): Double
+    + getDoubleLowerLimit(): Double
+    + getDoubleLimitPrecision(): Integer
+}
+
+interface IActuatorModelRepository {
++ getActuatorModelsByActuatorTypeIdentity(...) : Iterable<ActuatorModelName>
+}
+
+class ActuatorRESTController {
+    + ActuatorRESTController(...)
+    + addActuator(...) : ActuatorDTO
+}
+
+class ActuatorTypeRESTController {
+    + ActuatorTypeRESTController(...)
+    + getActuatorTypes() : List<ActuatorTypeDTO>
+}
+
+class ActuatorModelRESTController {
+    + ActuatorModelRESTController(...)
+    + getActuatorModels(...) : List<ActuatorModelDTO>
+}
+
+interface IActuatorService {
+    + addActuator(...) : Actuator
+}
+
+interface IActuatorTypeService {
+    + getActuatorTypes() : List<ActuatorTypeName>
+}
+
+interface IActuatorModelService {
+    + getActuatorModelsByActuatorTypeIdentity(...) : Iterable<ActuatorModelName>
+}
+
+class ActuatorMapper {
+    + actuatorToDTO(...) : ActuatorDTO
+    + toActuatorMap(...) : ActuatorMap
+}
+
+class ActuatorFactory {
+    + createActuator(...) : Actuator
+}
+
+interface IActuatorRepository {
+    + save(...) : Actuator
+}
+
+class ActuatorType {
+    - actuatorTypeName : ActuatorTypeName
+    + ActuatorType(...)
+    + getIdentity() : ActuatorTypeName
+}
+
+class ActuatorModel {
+    - actuatorModelName : ActuatorModelName
+    - actuatorTypeName : ActuatorTypeName
+    + ActuatorModel(...)
+    + getIdentity() : ActuatorModelName
+    + getActuatorTypeName() : ActuatorTypeName
+}
+
+interface Actuator {
+    + getActuatorModelName() : ActuatorModelName
+    + getDeviceId() : DeviceId
+}
+
+class DeviceId {
+- id : String
++ DeviceId(...)
++ getIdentity() : String
+}
+
+class ActuatorId {
+- actuatorId : String
++ ActuatorId(...)
++ getIdentity() : String
+}
+
+class ActuatorTypeName {
+- actuatorTypeName : String
+}
+
+class ActuatorModelName {
+- actuatorModelName : String
+}
+
+interface IDeviceRepository {
+    + containsIdentity(...) : boolean
+}
+
+ActuatorTypeRESTController  ..>  IActuatorTypeService : uses
+ActuatorTypeRESTController   ..>  ActuatorTypeMapper : use
+ActuatorTypeMapper   ..>  ActuatorTypeDTO : create
+IActuatorTypeService   ..>  IActuatorTypeRepository : use
+IActuatorTypeRepository   *-- "*"  ActuatorType : contains
+
+
+ActuatorRESTController  ..>  ActuatorMapper : use
+ActuatorRESTController  ..>  IActuatorService : use
+
+IActuatorService  ..>  IActuatorRepository : use
+IActuatorService  .>  IDeviceRepository : use
+IActuatorService   .>  ActuatorFactory : use
+
+ActuatorFactory   .>  Actuator : create
+
+Actuator  *--  ActuatorId : contains
+Actuator  *--  DeviceId : contains
+
+ActuatorMapper   ..>  ActuatorDTO : create
+ActuatorMapper   ..>  DeviceId : create
+ActuatorMapper   .....>  ActuatorModelName : create
+ActuatorMapper .l.> ActuatorMap : creates
+
+ActuatorModelRESTController   ..>  ActuatorModelMapper : use
+ActuatorModelRESTController  ..>  IActuatorModelService : uses
+ActuatorModelMapper  ..>  ActuatorTypeName : create
+
+IActuatorModelService  ..>  IActuatorModelRepository : use
+
+IActuatorModelRepository   *-- "*"  ActuatorModel : contains
+
+IActuatorRepository   *-  Actuator : contains
+
+ActuatorModelMapper   ..>  ActuatorModelDTO : create
+ActuatorModelMapper   .....>  ActuatorModelName : create
+
+ActuatorModel  --*  ActuatorModelName : knows
+
+@enduml

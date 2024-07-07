@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+title SmartHome (G6)\nBackEnd\n(Logical View - Level 3)
+
+component "<<component>>\nBackEnd" as BE{
+component "<<component>>\nDatabase" as DATA{
+}
+component "<<component>>\nServer" as SERV{
+}
+portin " " as P1
+
+interface "Database API" as DATAAPI
+}
+
+P1 -- SERV
+P1 -u- "SmartHome API"
+
+SERV --( DATAAPI
+DATA -l- DATAAPI
+
+@enduml
+
+/' Isto provavelmente é um Nível 4, no Nível 3 teríamos, entre outras coisas que definir a ligação à base de dados'/

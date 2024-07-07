@@ -1,0 +1,26 @@
+@startuml
+
+title UC- To close a BlindRoller\nUse Case Diagram Excerpt\n(Scenario View - Level 1)
+
+top to bottom direction
+
+
+actor "Room Owner\n[or Power User\nor Administrator]" as ro
+
+package "Smart Home System"{
+
+usecase UC3 as "UC-To list existing rooms"
+usecase UC6 as "UC-To list devices in room"
+usecase UC37 as "UC- To close a BlindRoller in a Room"
+
+ro ..> UC37
+
+UC6 ..> UC3 : <include>
+UC37 ..> UC6 : <include>
+}
+
+@enduml
+
+
+
+@enduml

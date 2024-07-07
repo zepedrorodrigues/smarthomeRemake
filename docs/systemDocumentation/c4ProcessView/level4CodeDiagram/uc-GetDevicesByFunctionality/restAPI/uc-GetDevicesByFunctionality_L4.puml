@@ -1,0 +1,132 @@
+@startuml
+
+title UC: Get Devices By Functionality\nSmartHome API\n(Process View Level 4)
+autonumber
+
+/'
+As a Power User [or Administrator], I want to get a list of all devices in a house,
+grouped by device functionality types. It must include device location.'/
+
+participant ":Routing" as R
+participant "_deviceRESTController:DeviceRESTOController" as C
+participant "deviceRESTService:IDeviceRESTService" as DS
+participant "ISensorTypeRepository:SensorTypeRepository" as STR
+participant "hashMapSensorTypeToSetDevices:HashMap<String, Set<Device>>" as HM
+participant "sensorType:SensorType" as ST
+participant "sensorTypeName:SensorTypeName" as STN
+participant "IsensorRepository:SensorRepository" as SR
+participant "sensor:Sensor" as S
+participant "ISensorModelRepository:SensorModelRepository" as SMR
+participant "sensorModel:SensorModel" as SMN
+participant "sensorType1:SensorType" as ST1
+participant "IDeviceRepository:DeviceRepository" as DR
+participant "deviceMapper:DeviceMapper" as DM
+participant "hashMapSensorTypeToSetDeviceDTO:HashMap<String, Set<DeviceDTO>>" as HMSMTSDTO
+participant "setDevicesDTO:Set<DeviceDTO>" as SDTO
+participant "deviceDTO:DeviceDTO" as DDTO
+
+
+[o-> R : GET /devices/functionality
+activate R
+R-> C : getDevicesByFunctionality()
+activate C
+C -> DS : getDevicesBySensorType()
+activate DS
+DS -> STR : findAll()
+activate STR
+STR--> DS : sensorTypes
+deactivate STR
+DS -> HM** : create
+group for sensorType in sensorTypes:
+    DS->ST : getSensorTypeName()
+    activate ST
+    ST-> STN : getSensorTypeName()
+    activate STN
+    STN--> ST : sensorTypeName
+    deactivate STN
+    ST--> DS : sensorTypeName
+    deactivate ST
+    DS -> HM : put(sensorTypeName, new HashSet<Device>())
+    activate HM
+end loop
+    deactivate HM
+    DS->SR : findAll()
+    activate SR
+    SR-->DS : sensors
+    deactivate SR
+    group for sensor in sensors:
+        DS->S : getSensorModelName()
+        activate S
+        S-->DS : sensorModelName
+        deactivate S
+        DS -> SMR : findByIdentity(sensorModelName)
+        activate SMR
+        SMR-->DS : sensorModel
+        deactivate SMR
+        DS -> SM : getSensorTypeId()
+        activate SM
+        SM-->DS : sensorTypeId
+        deactivate SM
+        DS -> STR : findByIdentity(sensorTypeId)
+        activate STR
+        STR-->DS : sensorType1
+        deactivate STR
+        DS -> ST1 : getSensorTypeName()
+        activate ST1
+        ST1-->DS : sensorTypeName
+        deactivate ST1
+        DS -> S : getDeviceId()
+        activate S
+        S-->DS : deviceId
+        deactivate S
+        DS->DR : findByIdentity(deviceId)
+        activate DR
+        DR-->DS : device
+        deactivate DR
+        DS -> HM : get(sensorTypeName).add(device)
+        activate HM
+    end loop
+    deactivate HM
+    DS->DS : clearHashMap(hashMapSensorTypeToSetDevices)
+    DS --> C: hashMapSensorTypeToSetDevices
+    deactivate DS
+    C->DM : toMapDto(hashMapSensorTypeToSetDevices)
+    activate DM
+    DM --> HMSMTSDTO**: create
+    group for sensorTypeName in hashMapSensorTypeToSetDevices:
+        DM --> SDTO** : create
+        group for Device in Set<Device>:
+            DM-> DM: toDeviceDTO(Device)
+            DM --> DDTO** : create
+            DM -> SDTO : add(deviceDTO)
+            activate SDTO
+        end loop
+        deactivate SDTO
+        DM -> HMSMTSDTO : put(sensorTypeName, setDevicesDTO)
+        activate HMSMTSDTO
+    end loop
+    deactivate HMSMTSDTO
+    DM --> C : hashMapSensorTypeToSetDeviceDTO
+    deactivate DM
+    C --> R : hashMapSensorTypeToSetDeviceDTO \n HttpStatus.OK
+    deactivate C
+[o<--R : hashMapSensorTypeToSetDeviceDTO \n HttpStatus.OK
+deactivate R
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@enduml

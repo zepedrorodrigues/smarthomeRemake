@@ -1,0 +1,36 @@
+@startuml
+
+title Aggregate DeviceType Class Diagram\nSystem / BackEnd / Domain\n(Implementation View - Level 4)
+
+package "DeviceType Ag" {
+class DeviceType {
++ DeviceType(...)
++ getIdentity() : DeviceTypeName
+}
+class DeviceTypeName {
+- deviceTypeName : String
++ DeviceTypeName(...)
++ getDeviceTypeName() : String
+}
+}
+
+package Repositories {
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+interface IDeviceTypeRepository{
++ findDeviceTypeNames() : Iterable<DeviceTypeName>
+}
+}
+
+DeviceType *-- "1" DeviceTypeName : contains
+
+IDeviceTypeRepository "1" -up-|> IRepository : extends
+
+IDeviceTypeRepository *-- "*" DeviceType : contains
+
+@enduml

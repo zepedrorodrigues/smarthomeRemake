@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+title SmartHome (G6) \n(Logical View - Level 1)
+
+
+component "<<System Context>>\nSmartHome" as SmartHome {
+portin " " as P1
+portin " " as P3
+}
+
+  P1 -u- "SmartHome \nAPI"
+  P3 -u- "Web \nUI"
+
+
+@enduml
+

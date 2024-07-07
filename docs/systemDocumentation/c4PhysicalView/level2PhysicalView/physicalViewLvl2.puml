@@ -1,0 +1,23 @@
+@startuml
+title "Physical View\n(Lvl2)"
+
+folder {
+  node "Server 1: ??" as S1 {
+  [<<component>>\n    Frontend]
+  [<<component>>\n    Backend]
+}
+  node "Server 2: ??" as S2 {
+    database "MySql DB" as DB {
+    }
+
+}
+}
+node "localhost: ??" as LH {
+component <<component>>\nBrowser {
+[<<component>>\n      WebUI ]
+}
+
+S2 -- S1 : HTTP/S
+LH -- S1 : HTTP/S
+
+@enduml

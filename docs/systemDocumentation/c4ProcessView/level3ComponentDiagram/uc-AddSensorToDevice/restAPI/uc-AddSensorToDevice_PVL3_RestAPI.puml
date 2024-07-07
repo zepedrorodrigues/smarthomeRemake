@@ -1,0 +1,61 @@
+@startuml
+
+title UC: Add Sensor to Device\nREST API\n(Process View Level 3)
+autonumber
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repository" as R
+participant "Domain" as D
+
+
+[o-> RC : (GET) Request sensor types
+activate RC
+RC -> S: Get sensor type ids
+activate S
+S -> R: Get sensor type ids
+activate R
+R --> S: sensor type ids
+deactivate R
+deactivate D
+S --> RC: sensor type ids
+deactivate S
+[o<--RC : OK 200, Provide sensor types
+deactivate RC
+
+[o-> RC : (GET) Request sensor models(Sensor type)
+activate RC
+RC -> S: Get sensor model names
+activate S
+S -> R: Get sensor model names
+activate R
+R --> S: sensor model names
+deactivate R
+deactivate D
+S --> RC: sensor model names
+deactivate S
+[o<--RC : OK 200, Provide sensor models
+deactivate RC
+
+[o-> RC: (POST) Request add sensor to device(Sensor model)
+activate RC
+RC -> S: Sensor data
+activate S
+S -> R : Validation of sensor data
+activate R
+R --> S : Sensor data validated
+deactivate R
+S -> D : Create sensor
+activate D
+D --> S: sensor
+deactivate D
+S -> R: Save sensor
+activate R
+R --> S: sensor added
+deactivate R
+S --> RC: sensor added
+deactivate S
+[o<-- RC: 201 Created, Sensor added
+deactivate RC
+
+@enduml

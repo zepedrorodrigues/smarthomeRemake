@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title US004
+
+/'
+As an Administrator, I want to define a sensor type. S1
+'/
+
+Participant "addSensorTypeController:AddSensorTypeController" as C
+Participant "_house:House" as H
+Participant "_catalogue:Catalogue" as CAT
+Participant "_listSensorTypes: List<String>" as LST
+Participant "_functionalities: List<String>" as LF
+
+[o->C : addSensorType(String _sensorType)
+activate C
+C->H : getCatalogue()
+activate H
+H->CAT: addSensorType(_sensorType)
+activate CAT
+CAT->LST: add("sensor."+_sensorType)
+activate LST
+deactivate LST
+CAT->LF: add(sensor.substring("SensorOf".length()).toUpperCase())
+activate LF
+deactivate LF
+CAT-->H : _sensorType
+deactivate CAT
+H-->C : _sensorType
+[o<--C: _sensorType
+
+
+
+
+
+@enduml

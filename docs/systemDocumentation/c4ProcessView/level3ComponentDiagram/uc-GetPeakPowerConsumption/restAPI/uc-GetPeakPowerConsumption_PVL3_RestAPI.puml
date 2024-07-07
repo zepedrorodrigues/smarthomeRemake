@@ -1,0 +1,37 @@
+@startuml
+
+title UC: Get Peak Power Consumption in a Given Period\nREST API\n(Process View Level 3)
+
+participant ":RESTController" as RC
+participant "Service" as S
+participant "Repositories" as R
+
+[o-> RC : (GET) Request Peak Power Consumption (Period)
+activate RC
+RC -> S : get Peak Power Consumption
+activate S
+
+S -> R : get devices
+activate R
+R --> S : devices
+deactivate R
+
+S->R : get sensors
+activate R
+R --> S : sensors
+
+deactivate R
+S -> R : get power consumption readings
+activate R
+R --> S : power consumption readings
+deactivate R
+
+S --> S: Calculate peak power consumption
+
+S --> RC : peak power consumption
+deactivate S
+[o<-- RC: OK 200, Provide peak power consumption
+deactivate RC
+
+
+@enduml

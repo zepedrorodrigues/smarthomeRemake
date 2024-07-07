@@ -1,0 +1,20 @@
+.card-row {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-row-info {
+    background-color: #fff;
+}
+
+.card-row-title {
+    background-color: #f8f8f8;
+    font-weight: bold;
+    font-size: 24px;
+}

@@ -1,0 +1,64 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title UC: Get Devices in Room\nREST API\n(Process View Level 4)
+/'
+As a Room Owner [or Power User, or Administrator], I want to get a list of all
+devices in a room.
+'/
+
+participant "Routing" as RT
+participant ":DeviceRESTController" as GDC
+/'participant ":RoomMapper" as RM'/
+participant "IDeviceService" as DS
+participant ":IRoomRepository" as RR
+participant ":IDeviceRepository" as DR
+participant ":DeviceMapper" as DM
+participant "roomId:RoomId" as RID
+participant "deviceIdsDTO:DeviceIdsDTO" as DTO
+
+[o-> RT : GET devices/room/{roomId}
+activate RT
+RT->GDC : getDevicesInRoom\n(roomId)
+activate GDC
+/'GDC -> RM : toRoomId\n(roomDTO)
+activate RM'/
+GDC --> RID** : <create>(roomId)
+/'RM --> GDC : roomId
+deactivate RM'/
+
+GDC -> DS : getDevicesInRoom\n(roomId)
+activate DS
+DS -> RR : containsIdentity\n(roomId)
+activate RR
+RR --> DS : boolean
+deactivate RR
+
+DS -> DR : findDeviceIdsByRoomId(roomId)
+activate DR
+note right of DR : Fetches each Device in a given Room
+DR -> DR : filter devices\nby roomId
+DR --> DS : deviceIdsInRoom
+deactivate DR
+DS --> GDC : deviceIdsInRoom
+deactivate DS
+
+GDC -> DM : toDeviceIdsDTO(deviceIdsInRoom)
+activate DM
+group FOR EACH DEVICE IN devicesInRoom
+    DM --> DTO** : <create> (deviceId, deviceName,\ndeviceTypeName, roomId, deviceStatus)
+    note right of DM : Adds each DeviceDTO to the list
+    DM -> DM : add(deviceIdDTO)
+end
+DM --> GDC : deviceIdsInRoomDTO
+deactivate DM
+
+RT <-- GDC : deviceIdsInRoomDTO,\nHttpStatus.OK
+deactivate GDC
+
+[o<--RT : deviceIdsInRoomDTO,\nHttpStatus.OK
+deactivate RT
+
+@enduml

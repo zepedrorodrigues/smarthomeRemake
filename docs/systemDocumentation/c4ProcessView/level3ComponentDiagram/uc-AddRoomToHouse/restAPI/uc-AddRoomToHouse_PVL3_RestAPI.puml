@@ -1,0 +1,41 @@
+@startuml
+
+title UC - Add a Room to the House\nREST API\n(Process View Level 3)
+autonumber
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repository" as R
+participant "Domain" as D
+
+[o-> RC: (GET) Request house
+activate RC
+RC -> S: Get house
+activate S
+S -> R: Get house
+activate R
+R --> S: House
+deactivate R
+S --> RC: House
+deactivate S
+[o<-- RC: OK 200, Provide house
+deactivate RC
+
+[o-> RC: (POST) Request to add a room (room data)
+activate RC
+RC -> S: Add a room to the house
+activate S
+S -> D: Create room
+activate D
+D --> S: room
+deactivate D
+S -> R: Save room
+activate R
+R --> S: Saved room
+deactivate R
+S --> RC: Saved room
+deactivate S
+[o<--RC: CREATED 201, Provide saved room
+deactivate RC
+
+@enduml

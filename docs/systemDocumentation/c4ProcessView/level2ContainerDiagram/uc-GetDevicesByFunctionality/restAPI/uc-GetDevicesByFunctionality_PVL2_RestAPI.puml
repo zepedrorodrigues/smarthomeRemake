@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title UC: Get Devices By Functionality\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nBackend" as Backend
+
+[o-> Backend: (GET) Request Devices sorted By Functionality
+activate Backend
+[o<-- Backend:  (OK, 200) Provide Devices Sorted By Functionality
+deactivate Backend
+@enduml

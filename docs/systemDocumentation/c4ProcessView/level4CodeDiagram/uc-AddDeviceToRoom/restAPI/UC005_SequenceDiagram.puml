@@ -1,0 +1,112 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title UC: Add Device To Room\nREST API\n(Process View Level 4)
+
+/'
+As a Power User [or Administrator], I want to add a new device to a room, in order to configure it.
+'/
+autonumber
+
+participant "Routing" as R
+participant ":DeviceTypeRESTController" as DTC
+participant ":IDeviceTypeService" as DTS
+participant ":DeviceRESTController" as ADC
+participant ":DeviceTypeMapper" as DTM
+participant ":DeviceMapper" as M
+participant ":IDeviceService" as DS
+participant ":IRoomRepository" as RR
+participant "IDeviceTypeRepository" as DTR
+
+participant ":DeviceFactory" as DF
+participant ":IDeviceRepository" as DR
+participant ":DeviceTypeNameDTO" as DTD
+participant "roomId:RoomId" as RI
+participant "deviceName:DeviceName" as DN
+participant "deviceTypeName:DeviceTypeName" as T
+participant "device:Device" as D
+participant "_deviceDTO:DeviceDTO" as DTO
+
+[o-> R : GET /devicetypes
+activate R
+R-> DTC : getDeviceTypes()
+activate DTC
+DTC -> DTS : getDeviceTypeNames()
+activate DTS
+DTS -> DTR : findDeviceTypeNames()
+activate DTR
+DTR --> DTS : deviceTypesNames
+deactivate DTR
+DTS --> DTC : deviceTypesNames
+deactivate DTS
+DTC -> DTM : toDeviceTypeNamesDTO(deviceTypesNames)
+activate DTM
+DTM --> DTD** : <create> (deviceTypesNames)
+DTM --> DTC : deviceTypeNamesDTO
+deactivate DTM
+DTC --> R : deviceTypeNamesDTO,\nHttpStatus.OK
+deactivate DTC
+[o<-- R : deviceTypeNamesDTO,\nHttpStatus.OK
+deactivate R
+
+
+
+[o-> R : POST /devices
+activate R
+
+R-> ADC : addDeviceToRoom(roomIdStr, deviceDTO)
+activate ADC
+
+ADC --> RI** : <create> (roomIdStr)
+
+ADC -> M : toDeviceName(deviceDTO)
+activate M
+M --> DN** : <create> (deviceNameStr)
+M --> ADC : deviceName
+deactivate M
+
+ADC -> DTM : toDeviceTypeNameDTO\n(deviceDTO)
+activate DTM
+DTM --> T** : <create> (deviceTypeStr)
+DTM --> ADC : deviceTypeName
+deactivate DTM
+
+ADC -> DS : addDeviceToRoom(deviceName, deviceTypeName, roomId)
+activate DS
+
+DS -> RR : containsIdentity\n(roomId)
+activate RR
+RR --> DS : boolean
+deactivate RR
+
+DS -> DTR : containsIdentity(deviceTypeName)
+activate DTR
+DTR --> DS : boolean
+deactivate DTR
+
+DS -> DF : createDevice(deviceName, deviceTypeName, roomId)
+activate DF
+DF --> D** : <create> (deviceName, deviceTypeName, roomId)
+DF --> DS : device
+deactivate DF
+DS -> DR : save(device)
+activate DR
+DR --> DS : device
+deactivate DR
+
+DS --> ADC : device
+deactivate DS
+
+ADC -> M : toDeviceDTO(device)
+activate M
+M --> DTO** : <create> (deviceId, deviceName, deviceTypeName, roomId, deviceStatus)
+M --> ADC : _deviceDTO
+deactivate M
+
+R<-- ADC : _deviceDTO,\nHttpStatus.CREATED
+deactivate ADC
+
+[o<-- R : _deviceDTO,\nHttpStatus.CREATED
+deactivate R
+
+@enduml

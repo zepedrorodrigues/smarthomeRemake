@@ -1,0 +1,218 @@
+@startuml
+
+title Domain Class Diagram - Core Domain\nSystem / BackEnd / Domain\n(Implementation View Level 4 - 2nd Granularity)
+
+class House {
+- location : Location
++ House(...)
++ getIdentity() : HouseName
++ getLocation() : Location
+}
+
+class HouseName {
+- houseName : String
++ HouseName(...)
++ getHouseName() : String
+}
+
+class Room {
+- roomName : RoomName
+- houseName : HouseName
+- floor : Floor
+- dimensions : Dimensions
++ Room(...)
++ getIdentity() : RoomId
++ getRoomName() : RoomName
++ getHouseName() : HouseName
++ getFloor() : Floor
++ getDimensions() : Dimensions
+}
+
+class RoomId{
+- roomId : String
++ RoomId(...)
++ getRoomId() : String
+}
+
+class Device {
+- deviceName : DeviceName
+- deviceStatus : DeviceStatus
++ Device(...)
++ getIdentity() : DeviceId
++ getDeviceTypeName() : DeviceTypeName
++ getDeviceName() : DeviceName
++ getDeviceStatus() : DeviceStatus
++ getRoomId() : RoomId
+}
+
+class DeviceId{
+- deviceId : String
++ DeviceId(...)
++ getDeviceId() : String
+}
+
+class DeviceType {
++ DeviceType(...)
++ getIdentity() : DeviceTypeName
+}
+
+class DeviceTypeName {
+- deviceTypeName : String
++ DeviceTypeName(...)
++ getDeviceTypeName() : String
+}
+
+interface Sensor {
+- sensorModelName : SensorModelName
+- deviceId : DeviceId
++ getIdentity() : SensorId
++ getSensorModelName() : SensorModelName
++ getValue() : Value
++ getDeviceId() : DeviceId
+}
+
+class SensorId{
+- sensorId : String
++ SensorId(...)
++ getSensorId() : String
+}
+
+class Reading {
+- ReadingValue : ReadingValue
+- timeStamp : TimeStamp
++ Reading(...)
++ getIdentity() : ReadingId
++ getValue(...): ReadingValue
++ getSensorId(): SensorId
++ getTimeStamp(): TimeStamp
+}
+
+class ReadingId{
+- readingId : String
++ ReadingId(...)
++ getId() : String
+}
+
+class SensorType {
+- sensorTypeName : SensorTypeName
+- sensorTypeUnit : SensorTypeUnit
++ SensorType(...)
++ getIdentity() : SensorTypeId
++ getSensorTypeName() : SensorTypeName
++ getSensorTypeUnit() : SensorTypeUnit
+}
+
+class SensorTypeId{
+- sensorTypeId : String
++ SensorTypeId(...)
++ getSensorTypeId() : String
+}
+
+class SensorModel{
++ SensorModel(...)
++ getIdentity() : SensorModelName
++ getSensorTypeId() : SensorTypeId
+}
+
+class SensorModelName{
+- sensorModelName : String
++ SensorModelName(...)
++ getSensorModelName() : String
+}
+
+interface Actuator {
++ operate(...) : Value
++ getIdentity() : ActuatorId
++ getActuatorModelName() : ActuatorModelName
++ getDeviceId() : DeviceId
+}
+
+class ActuatorId{
+- actuatorId : String
++ ActuatorId(...)
++ getIdentity() : String
+}
+
+class ActuatorType {
++ ActuatorType(...)
++ getIdentity() : ActuatorTypeName
+}
+
+class ActuatorTypeName {
+- actuatorTypeName : String
++ ActuatorTypeName(...)
++ getActuatorTypeName() : String
+}
+
+class ActuatorModel {
++ ActuatorModel(...)
++ getIdentity() : ActuatorModelName
+}
+
+class ActuatorModelName {
+- actuatorModelName : String
++ ActuatorModelName(...)
++ getActuatorModelName() : String
+}
+
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+
+House *-- "1" HouseName : contains
+Room ..>  HouseName : knows
+
+Room *-- "1" RoomId : contains
+Device ..> RoomId : knows
+
+Device *-- "1" DeviceId : contains
+Device *-- DeviceTypeName : knows
+DeviceType *-- "1" DeviceTypeName : contains
+
+Sensor ..> DeviceId : knows
+Sensor *-- "1" SensorId : contains
+Sensor ..> SensorModelName : knows
+
+Reading ..> SensorId : knows
+Reading *-- "1" ReadingId : contains
+
+SensorType *-- "1" SensorTypeId: contains
+
+SensorModel *-- "1" SensorModelName : contains
+SensorModel ..> SensorTypeId : knows
+
+Actuator ..> DeviceId : knows
+Actuator *-- "1" ActuatorId : contains
+Actuator ..> ActuatorModelName : knows
+
+ActuatorType *-- "1" ActuatorTypeName : contains
+
+ActuatorModel ..> ActuatorTypeName: knows
+ActuatorModel *-- "1" ActuatorModelName : contains
+
+IRepository *- "*" House : contains
+IRepository *-- "*" Room : contains
+IRepository *-- "*" Device : contains
+IRepository *-- "*" Sensor : contains
+IRepository *--- "*" SensorType : contains
+IRepository *--- "*" SensorModel : contains
+IRepository *-- "*" Actuator : contains
+IRepository *--- "*" ActuatorType : contains
+IRepository *--- "*" ActuatorModel : contains
+IRepository *-- "*" Reading : contains
+IRepository *--- "*" DeviceType : contains
+
+
+
+
+
+
+
+
+
+
+@enduml

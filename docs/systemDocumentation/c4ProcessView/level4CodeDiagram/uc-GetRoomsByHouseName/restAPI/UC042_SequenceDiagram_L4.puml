@@ -1,0 +1,71 @@
+@startuml
+
+autonumber
+
+title UC: Get rooms by House Name\nREST API\n(Process View Level 4)
+
+/'
+As a User, I want to have a list of all rooms in the house in my Web App.
+'/
+
+participant "Routing" as ROUT
+participant ":HouseRESTController" as LC
+participant ":IHouseService" as HS
+participant ":IHouseRepository" as HR
+participant ":HouseMapper" as M
+participant ":RoomRESTController" as GRC
+participant ":IRoomService" as RS
+participant ":IRoomRepository" as RR
+participant ":RoomMapper" as RM
+participant "houseIdsDTO:HouseIdDTO" as DTO2
+participant "roomDTO:RoomDTO" as RD
+
+[o-> ROUT : GET /houses
+activate ROUT
+ROUT-> LC : getHouses()
+activate LC
+LC -> HS : getHouseIds()
+activate HS
+HS -> HR : findAllHouseIds()
+activate HR
+HR-->HS : houseIds
+deactivate HR
+HS-->LC : houseIds
+deactivate HS
+LC -> M : toHouseIdsDTO(houseIds)
+activate M
+M-->DTO2** : <create> (houseIds)
+M-->LC : houseIdsDTO
+deactivate M
+LC-->ROUT : houseIdsDTO,\nHttpStatus.OK
+deactivate LC
+[o<-- ROUT : houseIdsDTO,\nHttpStatus.OK
+deactivate ROUT
+
+
+[o-> ROUT : GET /rooms
+activate ROUT
+ROUT -> GRC: getRoomsByHouseName(houseName)
+activate GRC
+GRC-> RS: getRoomIdsByHouseName(houseName)
+activate RS
+RS -> RR: findRoomIdsByHouseName(houseName)
+activate RR
+RR --> RS: roomIds
+deactivate RR
+RS --> GRC : roomIds
+deactivate RS
+GRC -> RM : toRoomDTO(roomIds)
+activate RM
+group FOR EACH ROOM
+    RM -> RM : toRoomDTO\n(roomId)
+    RM --> RD** : <create>\n(roomId)
+end
+RM --> GRC : roomsDTO
+deactivate RM
+ROUT <-- GRC : roomsDTO
+deactivate GRC
+[o<-- ROUT : roomsDTO,\nHttpStatus.OK
+deactivate ROUT
+
+@enduml

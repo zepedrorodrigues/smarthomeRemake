@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title UC: Get Devices By Functionality\n(Process View Level 1)
+autonumber
+
+actor "Admin/\nPower User" as A
+participant "<<System(C4)>>\nSmartHome" as S
+
+A -> S : Request Devices sorted By Functionality
+activate A
+activate S
+S--> A : Provide Devices sorted By Functionality
+deactivate S
+deactivate A
+
+@enduml

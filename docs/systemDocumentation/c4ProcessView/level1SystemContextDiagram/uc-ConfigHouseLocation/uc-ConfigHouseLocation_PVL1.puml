@@ -1,0 +1,19 @@
+@startuml
+
+title UC: Configure the House Location \n (Process View Level 1)
+autonumber
+
+actor "Administrator" as A
+participant "<<system(C4)>>\nSmartHome" as SH
+
+A -> SH : Request available countries
+activate A
+activate SH
+SH --> A : Provide available countries
+A -> SH : Provide location data
+SH --> A : Provide updated house
+deactivate A
+deactivate SH
+
+
+@enduml

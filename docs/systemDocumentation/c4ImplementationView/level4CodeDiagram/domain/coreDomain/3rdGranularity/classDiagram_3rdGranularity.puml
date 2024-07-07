@@ -1,0 +1,422 @@
+@startuml
+
+title Domain Class Diagram - Core Domain\nSystem / BackEnd / Domain\n(Implementation View Level 4 - 3rd Granularity)
+
+package "House Ag." {
+class House {
++ House(...)
++ getIdentity() : HouseName
++ getLocation() : Location
+}
+class Location {
++ Location(...)
++ getAddress() : Address
++ getGps() : GPS
+}
+class Address {
++ Address(...)
++ getStreetName() : StreetName
++ getStreetNumber() : StreetNumber
++ getCity() : City
++ getZipCode() : ZipCode
++ getCountry() : Country
+}
+class Country{
+- country : String
++ Country(...)
++ getCountryName() : String
+}
+class StreetName {
+- streetName : String
++ StreetName(...)
++ getStreetName() : String
+}
+class StreetNumber {
+- streetNumber : String
++ StreetNumber(...)
++ getStreetNumber() : String
+}
+class City {
+- city : String
++ City(...)
++ getCity() : String
+}
+class ZipCode {
+- zipCode : String
++ ZipCode(...)
++ getZipCode() : String
+}
+class Gps {
++ Gps(...)
++ getLatitude() : Latitude
++ getLongitude() : Longitude
+}
+class Latitude {
+- latitude : double
++ Latitude(...)
++ getLatitude() : double
+}
+class Longitude {
+- longitude : double
++ Longitude(...)
++ getLongitude() : double
+}
+
+class HouseName {
+- houseName : String
++ HouseName(...)
++ getName() : String
+}
+}
+
+package "DeviceType Ag" {
+class DeviceType {
++ DeviceType(...)
++ getIdentity() : DeviceTypeName
+}
+
+class DeviceTypeName {
+- deviceTypeName : String
++ DeviceTypeName(...)
++ getDeviceTypeName() : String
+}
+}
+
+package "Room Ag" {
+class Room {
++ Room(...)
++ getIdentity() : RoomId
++ getRoomName() : RoomName
++ getHouseName() : HouseName
++ getFloor() : Floor
++ getDimensions() : Dimensions
+}
+class RoomName{
+- roomName : String
++ RoomName(...)
++ getRoomName() : String
+}
+class Floor{
+- floor : int
++ Floor(...)
++ getFloor() : int
+}
+class Dimensions {
++ Dimensions(...)
++ getWidth() : Width
++ getLength() : Length
++ getHeight() : Height
+}
+class Width {
+- width : double
++ Width(...)
++ getWidth() : double
+}
+class Length {
+- length : double
++ Length(...)
++ getLength() : double
+}
+class Height {
+- height : double
++ Height(...)
++ getHeight() : double
+}
+
+class RoomId{
+- roomId : String
++ RoomId(...)
++ getRoomId() : String
+}
+}
+
+
+package "Device Ag" {
+class Device {
++ Device(...)
++ getIdentity() : DeviceId
++ getDeviceTypeName() : DeviceTypeName
++ getDeviceName() : DeviceName
++ getDeviceStatus() : DeviceStatus
++ getRoomId() : RoomId
+}
+class DeviceName {
+- deviceName : String
++ DeviceName(...)
++ getDeviceName() : String
+}
+class DeviceStatus {
+- deviceStatus : boolean
++ DeviceStatus(...)
++ getStatus() : boolean
+}
+
+class DeviceId{
+- deviceId : String
++ DeviceId(...)
++ getIdentity() : String
+}
+}
+
+package "Sensor Ag" {
+interface Sensor {
++ getIdentity() : SensorId
++ getSensorModelName() : SensorModelName
++ getDeviceId() : DeviceId
++ getValue() : Value
+}
+
+class SensorId{
+- sensorId : String
++ SensorId(...)
++ getSensorId() : String
+}
+}
+
+package "Reading Ag" {
+class Reading {
++ Reading(...)
++ getIdentity(): ReadingId
++ getValue(...): Value
++ getSensorId(): SensorId
++ getTime(): TimeStamp
+}
+class ReadingId{
+- readingId : String
++ ReadingId(...)
++ getId() : String
+}
+class TimeStamp {
+- timeStamp : LocalDateTime
++ TimeStamp(...)
++ getValue() LocalDateTime
++ valueToString(): String
+}
+class ReadingValue{
+- value: String
++ ReadingValue(...)
++ valueToString(): String
+}
+}
+
+package "SensorType Ag" {
+class SensorType {
++ SensorType(...)
++ getIdentity() : SensorTypeId
++ getSensorTypeName() : SensorTypeName
++ getSensorTypeUnit() : SensorTypeUnit
+}
+class SensorTypeName{
+- sensorTypeName : String
++ SensorTypeName(...)
++ getSensorTypeName() : String
+}
+class SensorTypeUnit{
+- sensorTypeUnit : String
++ SensorTypeUnit(...)
++ getSensorTypeUnit() : String
+}
+
+class SensorTypeId{
+- sensorTypeId : String
++ SensorTypeId(...)
++ getSensorTypeId() : String
+}
+}
+
+package "Sensor Model Ag"{
+class SensorModel{
++ SensorModel(...)
++ getIdentity() : SensorModelName
++ getSensorTypeId() : SensorTypeId
+}
+
+class SensorModelName{
+- sensorModelName : String
++ SensorModelName(...)
++ getSensorModelName() : String
+}
+}
+
+package "Actuator Ag" {
+interface Actuator {
++ getIdentity() : ActuatorId
++ getActuatorModelName() : ActuatorModelName
++ getDeviceId() : DeviceId
+}
+
+class ActuatorId {
+- actuatorId : String
++ ActuatorId(...)
++ getActuatorId() : String
+}
+}
+
+package "ActuatorType Ag" {
+class ActuatorType {
++ ActuatorType(...)
++ getIdentity() : ActuatorTypeName
+}
+
+class ActuatorTypeName {
+- actuatorTypeName : String
++ ActuatorTypeName(...)
++ getActuatorTypeName() : String
+}
+}
+
+package "Actuator Model Ag"{
+class ActuatorModel {
++ ActuatorModel(...)
++ getIdentity() : ActuatorModelName
+}
+
+class ActuatorModelName {
+- actuatorModelName : String
++ ActuatorModelName(...)
++ getActuatorModelName() : String
+}
+}
+
+package Repositories {
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+interface IRoomRepository {
++ findRoomIds() : Iterable<RoomId>
++ findRoomIdsByHouseName(...) : Iterable<RoomId>
+}
+interface IDeviceRepository {
++ findDevicesByRoomId(...) : Iterable<Device>
++ findDeviceIdsByRoomId(...) : Iterable<DeviceId>
++ update(...) : Device
++ findDeviceIdsByDeviceTypeName(...) : Iterable<DeviceId>
++ findDeviceIds() : Iterable<DeviceId>
+}
+interface ISensorRepository {
++ findSensorsByDeviceId(...) : Iterable<Sensor>
++ findSensorsByDeviceIdAndSensorModelName(...) : Iterable<Sensor>
++ findSensorIdsByDeviceIdAndSensorModelName(...) : Iterable<SensorId>
++ findSensorIdsByDeviceId(...) : Iterable<SensorId>
+}
+interface ISensorTypeRepository {
++ findSensorTypeIds() : Iterable<SensorTypeId>
+}
+interface ISensorModelRepository {
++ findSensorModelsBySensorTypeId(...) : Iterable<SensorModel>
++ findSensorModelNamesBySensorTypeId(...) : Iterable<SensorModelName>
+}
+interface IActuatorRepository {
++ findActuatorIdsByDeviceId(...) : Iterable<ActuatorId>
+}
+interface IActuatorTypeRepository {
++ findActuatorTypeNames() : Iterable<ActuatorTypeName>
+}
+interface IActuatorModelRepository {
++ findActuatorModelsByActuatorTypeName(...) : Iterable<ActuatorModel>
++ findActuatorModelNamesByActuatorTypeName(...) : Iterable<ActuatorModelName>
+}
+interface IHouseRepository{
++ update(...) : House
++ findHouseIds() : Iterable<HouseName>
+}
+interface IReadingRepository{
++ findReadingsBySensorIdInAGivenPeriod(...) : Iterable<Reading>
++ findReadingIdsBySensorIdInAGivenPeriod(...) : Iterable<ReadingId>
++ findLastReadingBySensorId(...) : Optional<Reading>
+}
+interface IDeviceTypeRepository{
++ findDeviceTypeNames() : Iterable<DeviceTypeName>
+}
+}
+
+
+House *-- "1" HouseName : contains
+House *-l- "1" Location : contains
+Location *-l- "1" Address : contains
+Location *-- "1" Gps : contains
+Address *-l- "1" StreetName : contains
+Address *-- "1" StreetNumber : contains
+Address *-- "1" City : contains
+Address *-d- "1" ZipCode : contains
+Address *-- "1" Country : contains
+Gps *-- "1" Latitude : contains
+Gps *-- "1" Longitude : contains
+
+Room .>  HouseName : knows
+
+Room *-- "1" RoomName : contains
+Room *- "1" RoomId : contains
+Room *-- "1" Floor : contains
+Room *-- "1" Dimensions : contains
+Dimensions *-- "1" Width : contains
+Dimensions *-- "1" Length : contains
+Dimensions *-- "1" Height : contains
+
+Device .> RoomId : knows
+
+Device *--- "1" DeviceId : contains
+Device *-- "1" DeviceName : contains
+Device ..> DeviceTypeName : knows
+Device *-- "1" DeviceStatus : contains
+
+DeviceType *-- "1" DeviceTypeName : contains
+
+Sensor ...> DeviceId : knows
+Sensor ..> SensorModelName : knows
+
+Sensor *-- "1" SensorId : contains
+
+SensorType *-- "1" SensorTypeName : contains
+SensorType *-- "1" SensorTypeUnit : contains
+SensorType *-- "1" SensorTypeId: contains
+
+SensorModel ..> SensorTypeId : knows
+SensorModel "1" *-- "1" SensorModelName : contains
+
+Reading "1" ..> "1" SensorId : knows
+
+Reading *-- "1" ReadingId : contains
+Reading *-- "1" TimeStamp : contains
+Reading *-right- "1" ReadingValue : contains
+
+Actuator ...> DeviceId : knows
+Actuator *- "1" ActuatorId : contains
+
+Actuator ..> ActuatorModelName : knows
+
+ActuatorType *-- "1" ActuatorTypeName : contains
+
+ActuatorModel *-- "1" ActuatorModelName : contains
+ActuatorModel ..> ActuatorTypeName: knows
+
+IHouseRepository "1" -up-|> IRepository : extends
+IRoomRepository "1" -up-|> IRepository : extends
+IDeviceRepository "1" -up-|> IRepository : extends
+ISensorRepository "1" -up-|> IRepository : extends
+ISensorTypeRepository "1" -up-|> IRepository : extends
+ISensorModelRepository "1" -up-|> IRepository : extends
+IActuatorRepository "1" -up-|> IRepository : extends
+IActuatorTypeRepository "1" -up-|> IRepository : extends
+IActuatorModelRepository "1" -up-|> IRepository : extends
+IReadingRepository "1" -up-|> IRepository : extends
+IDeviceTypeRepository "1" -up-|> IRepository : extends
+
+
+IHouseRepository *- "1" House : contains
+IRoomRepository *-- "*" Room : contains
+IDeviceRepository *-- "*" Device : contains
+ISensorRepository *-- "*" Sensor : contains
+ISensorTypeRepository *-- "*" SensorType : contains
+ISensorModelRepository *-- "*" SensorModel : contains
+IActuatorRepository *-- "*" Actuator : contains
+IActuatorTypeRepository *-- "*" ActuatorType : contains
+IActuatorModelRepository *-- "*" ActuatorModel : contains
+IReadingRepository *-- "*" Reading : contains
+IDeviceTypeRepository *-- "*" DeviceType : contains
+
+@enduml

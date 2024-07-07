@@ -1,0 +1,18 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title SmartHome (G6)\n(Implementation View - Level 2)
+
+package System as S{
+package BackEnd as B{
+}
+package FrontEnd as F{
+}
+package WeatherService as W{
+}
+}
+
+F..>B
+F..>W
+
+@enduml

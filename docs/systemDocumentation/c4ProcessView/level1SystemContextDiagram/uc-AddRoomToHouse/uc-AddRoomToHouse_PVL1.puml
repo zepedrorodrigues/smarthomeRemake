@@ -1,0 +1,18 @@
+@startuml
+
+title UC: Add a Room to the House \n (Process View Level 1)
+autonumber
+
+actor "Administrator" as A
+participant "<<system(C4)>>\nSmartHome" as SH
+
+A -> SH : Request house
+activate A
+activate SH
+SH --> A : Provide house
+A -> SH : Provide room data
+SH --> A : Provide saved room
+deactivate SH
+deactivate A
+
+@enduml

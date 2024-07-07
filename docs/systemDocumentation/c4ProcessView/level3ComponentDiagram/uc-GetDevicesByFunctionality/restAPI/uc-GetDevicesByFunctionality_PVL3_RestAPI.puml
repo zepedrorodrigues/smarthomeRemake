@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title UC: Get Devices By Functionality\nREST API\n(Process View Level 3)
+autonumber
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repository" as R
+
+[o-> RC: (GET) Get Devices By Functionality
+activate RC
+RC -> S: Get Devices By Functionality
+activate S
+S -> R: Get sensor types
+activate R
+R --> S: sensor types
+deactivate R
+
+    S-> R: Get sensors by type
+    activate R
+    R --> S: sensors by type
+    deactivate R
+    S-> R: Get sensor models by sensor
+    activate R
+    R --> S: sensor models
+    deactivate R
+    S -> R: Get devices by sensor model
+    activate R
+    R --> S: devices sorted by sensor model
+    deactivate R
+
+
+S-->RC : devices sorted by functionality
+deactivate S
+[o<-- RC: OK 200, devices sorted by functionality
+deactivate RC
+
+@enduml

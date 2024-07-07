@@ -1,0 +1,41 @@
+@startuml
+
+title UC: Get Rooms by House Name\nREST API\n(Process View Level 3)
+autonumber
+
+actor "User" as A
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repository" as R
+
+A -> RC: Request house
+activate A
+activate RC
+RC -> S: Get house
+activate S
+S -> R: Get house
+activate R
+R -> S: House
+deactivate R
+S -> RC: House
+deactivate S
+RC -> A: Provide house
+deactivate RC
+deactivate A
+
+A -> RC: Get list of rooms by house name
+activate A
+activate RC
+RC -> S: Get list of rooms by house name
+activate S
+S -> R: Get rooms by house name
+activate R
+R --> S: rooms
+deactivate R
+S --> RC: Provide list of rooms
+deactivate S
+RC --> A: Provide list of rooms
+deactivate RC
+deactivate A
+
+@enduml

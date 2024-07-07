@@ -1,0 +1,64 @@
+.room-details {
+    background-color: rgba(224, 224, 224, 0.61);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 100%;
+}
+
+.room-details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.room-details-header h2 {
+    margin: 0;
+}
+
+.room-details-info p {
+    margin: 5px 0;
+}
+
+.device-list {
+    margin-top: 20px;
+    /*    display: flex;
+        flex-direction: column;
+        width: 100%;*/
+}
+
+.add-device-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.add-device-form input,
+.add-device-form select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.device-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 40px;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}

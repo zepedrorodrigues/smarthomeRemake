@@ -1,0 +1,20 @@
+@startuml
+
+title UC: Get Rooms by House Name \n (Process View Level  1)
+autonumber
+
+actor "User" as A
+participant "<<system(C4)>>\nSmartHome" as SH
+
+A -> SH : Get rooms
+activate A
+activate SH
+SH --> A : Provide House
+deactivate SH
+A -> SH : Select House
+activate SH
+SH --> A : Provide rooms
+deactivate SH
+deactivate A
+
+@enduml

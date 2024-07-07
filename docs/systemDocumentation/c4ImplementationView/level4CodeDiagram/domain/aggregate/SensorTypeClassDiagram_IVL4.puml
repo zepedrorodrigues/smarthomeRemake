@@ -1,0 +1,52 @@
+@startuml
+
+title Aggregate SensorType Class Diagram\nSystem / BackEnd / Domain\n(Implementation View - Level 4)
+
+package "SensorType Ag" {
+class SensorType {
++ SensorType(...)
++ getIdentity() : SensorTypeId
++ getSensorTypeName() : SensorTypeName
++ getSensorTypeUnit() : SensorTypeUnit
+}
+class SensorTypeName{
+- sensorTypeName : String
++ SensorTypeName(...)
++ getSensorTypeName() : String
+}
+class SensorTypeUnit{
+- sensorTypeUnit : String
++ SensorTypeUnit(...)
++ getSensorTypeUnit() : String
+}
+
+class SensorTypeId{
+- sensorTypeId : String
++ SensorTypeId(...)
++ getSensorTypeId() : String
+}
+}
+
+package Repositories {
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+interface ISensorTypeRepository {
++ findSensorTypeIds() : Iterable<SensorTypeId>
+}
+}
+
+SensorType "1" *-- "1" SensorTypeName : contains
+SensorType "1" *-- "1" SensorTypeUnit : contains
+SensorType "1" *-- "1" SensorTypeId: contains
+
+ISensorTypeRepository "1" -up-|> IRepository : extends
+
+ISensorTypeRepository "1" *-- "*" SensorType : contains
+
+
+@enduml

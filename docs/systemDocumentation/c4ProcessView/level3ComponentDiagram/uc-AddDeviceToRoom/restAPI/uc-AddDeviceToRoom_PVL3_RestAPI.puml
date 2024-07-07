@@ -1,0 +1,48 @@
+@startuml
+
+title UC: Add a Device To a Room\nREST API\n(Process View Level 3)
+autonumber
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Repository" as R
+participant "Domain" as D
+
+[o-> RC: (GET) Request add device to room
+activate RC
+RC -> S: Get device types
+activate S
+S -> R: Get device types
+activate R
+R --> S: Device types
+deactivate R
+S --> RC: Device types
+deactivate S
+[o<-- RC: OK 200, Provide device types
+deactivate RC
+
+
+[o-> RC: (POST) Device data
+activate RC
+RC -> S: Device data
+activate S
+S -> R: Validation of device data
+activate R
+R --> S: Device data validated
+deactivate R
+
+S --> D: Create device
+activate D
+D --> S: device
+deactivate D
+
+S -> R: Save device
+activate R
+R --> S: Device added
+deactivate R
+S --> RC: Device added
+deactivate S
+[o<-- RC: 201 Created, Device added
+deactivate RC
+
+@enduml

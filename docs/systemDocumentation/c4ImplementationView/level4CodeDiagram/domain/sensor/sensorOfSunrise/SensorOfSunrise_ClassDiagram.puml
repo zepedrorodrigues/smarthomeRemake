@@ -1,0 +1,132 @@
+@startuml
+
+title Sensor of Sunrise\nDomain Class Diagram - Component\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+/'
+As Product Owner, I want the system to have a type of sensor
+that gives the sunrise instant for a given calendar date.
+'/
+
+interface Sensor {
+    + getIdentity() : SensorId
+    + getSensorModelName() : SensorModelName
+    + getValue() : Value
+    + getDeviceId() : DeviceId
+}
+
+class SensorId{
+    - sensorId : String
+    + SensorId(...)
+    + getSensorId() : String
+}
+
+class DeviceId{
+    - deviceId : String
+    + DeviceId(...)
+    + getIdentity() : String
+}
+
+interface Value{
+    + valueToString() : String
+}
+
+class SunriseValue {
+    - sunriseValue : LocalDateTime
+    + SunriseValue(LocalDateTime)
+    + valueToString() : String
+}
+
+class SensorModelName{
+    - sensorModelName : String
+    + SensorModelName(...)
+    + getSensorModelName() : String
+}
+
+class SensorType {
+    + SensorType(...)
+    + getIdentity() : SensorTypeId
+    + getSensorTypeName() : SensorTypeName
+    + getSensorTypeUnit() : SensorTypeUnit
+}
+
+class SensorTypeName{
+    - sensorTypeName : String
+    + SensorTypeName(...)
+    + getSensorTypeName() : String
+}
+
+class SensorTypeUnit{
+    - sensorTypeUnit : String
+    + SensorTypeUnit(...)
+    + getSensorTypeUnit() : String
+}
+
+class SensorModel{
+    + SensorModel(...)
+    + getIdentity() : SensorModelName
+    + getSensorTypeId() : SensorTypeId
+}
+
+class SensorTypeId{
+    - sensorTypeId : String
+    + SensorTypeId(...)
+    + getSensorTypeId() : String
+}
+
+interface ISensorRepository {
+    + save(...) : Sensor
+    + findAll() : Iterable<Sensor>
+    + findByIdentity(...) : Optional<Sensor>
+    + containsIdentity(...) : boolean
+    + findSensorsByDeviceId(...) : Iterable<Sensor>
+    + findSensorsByDeviceIdAndSensorModelName(...) : Iterable<Sensor>
+    + findSensorIdsByDeviceIdAndSensorModelName(...) : Iterable<SensorId>
+}
+
+interface ISensorTypeRepository {
+    + save(...) : SensorType
+    + findAll() : Iterable<SensorType>
+    + findByIdentity(...) : Optional<SensorType>
+    + containsIdentity(...) : boolean
+    + findSensorTypeIds() : Iterable<SensorTypeId>
+}
+
+interface ISensorModelRepository {
+    + save(...) : SensorModel
+    + findAll() : Iterable<SensorModel>
+    + findByIdentity(...) : Optional<SensorModel>
+    + containsIdentity(...) : boolean
+    + findSensorModelsBySensorTypeId(...) : Iterable<SensorModel>
+    + findSensorModelNamesBySensorTypeId(...) : Iterable<SensorModelName>
+}
+
+class SensorOfSunrise {
+    + SensorOfSunrise()
+    + getIdentity() : SensorId
+    + getSensorModelName() : SensorModelName
+    + getValue() : Value
+    + getValue(LocalDate) : Value
+    + getDeviceId() : DeviceId
+}
+
+SunriseValue .up.|> Value : " implements"
+
+SensorOfSunrise .up.|> Sensor : " implements"
+SensorOfSunrise "1" *-- "1" SensorId : contains
+SensorOfSunrise "1  " ..> "1    " Value :  "  uses"
+SensorOfSunrise "1" --> "1" SensorModelName : knows
+SensorOfSunrise "1" --> "1" DeviceId : knows
+
+SensorModel "1" *-- "1" SensorModelName : contains
+SensorModel "1" --> "1" SensorTypeId : knows
+
+SensorType "1" *-- "1" SensorTypeId: contains
+SensorType "1" *-- "1" SensorTypeName : contains
+SensorType "1" *-- "1" SensorTypeUnit : contains
+
+ISensorRepository "1" *-- "*" Sensor : contains
+ISensorTypeRepository "1" *-- "*" SensorType : contains
+ISensorModelRepository "1" *-- "*" SensorModel : contains
+
+
+@enduml

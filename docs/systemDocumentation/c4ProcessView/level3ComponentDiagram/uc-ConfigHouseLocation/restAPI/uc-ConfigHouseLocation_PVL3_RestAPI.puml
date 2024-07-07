@@ -1,0 +1,46 @@
+@startuml
+
+title UC: Configure House Location\nREST API\n(Process View Level 3)
+autonumber
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Domain" as D
+participant "Repository" as R
+
+[o-> RC: (GET) Request available countries
+activate RC
+RC -> S: Get available countries
+activate S
+S -> D: Get available countries
+activate D
+D --> S: Provide available countries
+deactivate D
+S --> RC: Provide available countries
+deactivate S
+[o<-- RC: OK 200, Provide available countries
+deactivate RC
+
+
+[o-> RC: (PUT) Request to configure location (location data)
+activate RC
+RC -> S: Configure house location
+activate S
+S -> R: Get house
+activate R
+R --> S: house
+deactivate R
+S -> D: Configure house location
+activate D
+D --> S: Updated house
+deactivate D
+S -> R: Update house
+activate R
+R --> S: Updated house
+deactivate R
+S --> RC: Updated house
+deactivate S
+[o<-- RC: OK 200, Provide updated house
+deactivate RC
+
+@enduml

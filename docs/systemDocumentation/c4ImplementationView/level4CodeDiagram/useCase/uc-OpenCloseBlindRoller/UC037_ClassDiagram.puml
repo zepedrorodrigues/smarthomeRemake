@@ -1,0 +1,113 @@
+@startuml
+
+'skinparam linetype polyline
+
+title UC: Open or Close Blind Roller in a Room\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+class ActuatorRESTController {
+    -IActuatorService actuatorService
+    -ActuatorMapper actuatorMapper
+    -ValueMapper valueMapper
+    +ActuatorRESTController(...)
+    +getByDeviceIdentity(...) : List<ActuatorIdDTO>
+    +operateBlindRoller(...) : ValueDoubleDTO
+}
+
+interface IActuatorService {
+    +getActuatorIdsByDeviceIdentity(...) : Iterable<ActuatorId>
+    +operateBlindRoller(...) : Value
+}
+
+interface IActuatorRepository {
+    +findByIdentity(...) : Actuator
+    +findActuatorIdsByDeviceId(...) : Iterable<ActuatorId>
+}
+
+class ActuatorMapper {
+    +toActuatorIdsDTO(...) : List<ActuatorIdDTO>
+}
+
+
+class Actuator {
+    +operate(...) : Value
+    +getDeviceId() : DeviceId
+}
+
+class ValueMapper {
+    +toDTO(...) : ValueDTO
+}
+
+class ActuatorId {
+    -actuatorId: String
+    +ActuatorId(...)
+    +getActuatorId() : String
+}
+
+class ScalePercentageValue {
+    -percentageValue: Double
+    +ScalePercentageValue(...)
+    +getPercentageValue() : Double
+}
+
+class ValueDTO {
+    -value: Double
+    +ValueDTO(...)
+    +getValue() : Double
+}
+
+class ActuatorIdDTO {
+    -value: String
+    +ActuatorIdDTO(...)
+    +getActuatorId() : String
+}
+
+interface IDeviceRepository {
+    +findByIdentity(...) : Device
+}
+
+class Device {
+    +getDeviceStatus() : DeviceStatus
+}
+
+class DeviceId {
+    -deviceId: String
+    +getDeviceId() : String
+}
+
+class ReadingFactory {
+    +createReading(...) : Reading
+}
+
+class IReadingRepository {
+    +save(...) : Reading
+}
+
+class Reading {
+    -readingId : ReadingId
+    -value : Value
+    -sensorId : SensorId
+    -timeStamp : LocalDateTime
+    +Reading(...)
+}
+
+ActuatorRESTController ..> IActuatorService : uses
+ActuatorRESTController ..> ActuatorMapper : uses
+ActuatorRESTController ..> ValueMapper : uses
+ActuatorRESTController ..> ActuatorId : creates
+ActuatorRESTController ..> ScalePercentageValue : creates
+
+IActuatorService ..> IActuatorRepository : uses
+IActuatorService ..> IDeviceRepository : uses
+IActuatorService ..> ReadingFactory : uses
+IActuatorService ..> IReadingRepository : uses
+
+ReadingFactory ..> Reading : creates
+ValueMapper ..> ValueDTO : creates
+ActuatorMapper ..> ActuatorIdDTO : creates
+IActuatorRepository -->"*" Actuator : contains
+Actuator -->"1" ActuatorId : contains
+Actuator -->"1" DeviceId : contains
+IDeviceRepository -->"*" Device : contains
+Device -->"1" DeviceId : contains
+
+@enduml

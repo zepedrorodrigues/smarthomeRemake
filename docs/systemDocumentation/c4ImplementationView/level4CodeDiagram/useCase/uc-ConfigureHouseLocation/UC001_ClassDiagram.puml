@@ -1,0 +1,131 @@
+@startuml
+
+title UC: Configure House Location\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+/'
+As an Administrator, I want to configure the location of the house.
+'/
+
+class House {
+  + House(...)
+  + getLocation() : Location
+  + configHouseLocation(...) : Location
+  }
+interface IHouseRepository {
+  + save (...) : House
+  + update (...) : House
+  + findHouseIds() : Iterable<HouseName>
+  }
+
+class Location {
+    + Location(...)
+    + getAddress() : Address
+    + getGps() : Gps
+}
+
+class Address {
+    - streetName : StreetName
+    - streetNumber : StreetNumber
+    - city : City
+    - zipCode : ZipCode
+    + Address(...)
+    + getStreetName() : StreetName
+    + getStreetNumber() : StreetNumber
+    + getCity() : City
+    + getCountry() : Country
+    + getZipCode() : ZipCode
+    - isValidZipCodeForCountry(...) : boolean
+}
+
+class Country {
+    - name : String
+    + Country(...)
+    + getCountryName() : String
+    + isValidCountry(...) : boolean
+}
+
+
+    enum AvailableCountries {
+    - Country(...)
+    + AvailableCountries(...)
+    + getCountry() : String
+    + getZipCodeFormat() : String
+    + getAvailableCountries : List<String>
+    }
+
+    class Gps {
+    - latitude : Latitude
+    - longitude : Longitude
+    + GPS(...)
+    + getLatitude() : Latitude
+    + getLongitude() : Longitude
+    }
+
+
+class HouseController {
+  - locationMapper : HouseMapper
+  - houseRepository : IHouseRepository
+  + HouseController(...)
+  + configHouseLocation(...) : HouseDTO
+}
+
+  class HouseDTO {
+    + HouseDTO(...)
+    + getStreetName() : String
+    + getStreetNumber() : String
+    + getCityName() : String
+    + getZipCode() : String
+    + getCountry() : String
+    + getLatitude() : int
+    + getLongitude() : int
+  }
+
+
+  class HouseMapper {
+    + HouseMapper(...)
+    + toHouseDTO(...) : HouseDTO
+    + toLocation(...) : Location
+    + toHouseName(...) : HouseName
+  }
+  note left of HouseMapper
+    It maps the House entity and the Location VO that includes
+    the Address VO and the Gps VO and all their value objects.
+    end note
+
+interface IHouseService {
+  + getAvailableCountries() : List<String>
+  + configHouseLocation(Location) : House
+}
+
+
+
+
+HouseController .d.> IHouseService : uses
+HouseController .d....> HouseMapper : uses
+HouseController .d.> HouseDTO : uses
+IHouseService .r.> IHouseRepository : uses
+
+IHouseService .l.> AvailableCountries : uses
+IHouseService .d.> House : uses
+IHouseRepository .d.> House : uses
+IHouseService ..> Location : uses
+
+House -d-* Location : contains
+Location *-l- Address : contains
+Location *-r- Gps : contains
+Country .u.> AvailableCountries : uses
+Country -d-* Address : contains
+
+HouseMapper .r.> HouseDTO : uses
+HouseMapper .u.> Location : uses
+HouseMapper .u.> Address : uses
+HouseMapper .u.> Gps : uses
+
+
+
+
+@enduml
+
+
+
+

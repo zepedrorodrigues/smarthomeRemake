@@ -1,0 +1,71 @@
+@startuml
+
+title Aggregate Device Class Diagram\nSystem / BackEnd / Domain\n(Implementation View - Level 4)
+
+class RoomId{
+- roomId : String
++ RoomId(...)
++ getRoomId() : String
+}
+
+package "Device Ag" {
+class Device {
++ Device(...)
++ getIdentity() : DeviceId
++ deactivateDevice() : void
+}
+class DeviceName {
+- deviceName : String
++ DeviceName(...)
++ getDeviceName() : String
+}
+class DeviceStatus {
+- deviceStatus : boolean
++ DeviceStatus(...)
++ getStatus() : boolean
+}
+
+class DeviceId{
+- deviceId : String
++ DeviceId(...)
++ getIdentity() : String
+}
+}
+
+class DeviceTypeName {
+- deviceTypeName : String
++ DeviceTypeName(...)
++ getDeviceTypeName() : String
+}
+
+
+package Repositories {
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+interface IDeviceRepository {
++ findDevicesByRoomId(...) : Iterable<Device>
++ findDeviceIdsByRoomId(...) : Iterable<DeviceId>
++ update(...) : Device
++ findDeviceIdsByDeviceTypeName(...) : Iterable<DeviceId>
++ findDeviceIds() : Iterable<DeviceId>
+}
+}
+
+Device ..> RoomId : knows
+
+Device *-- "1" DeviceId : contains
+Device *-- "1" DeviceName : contains
+Device .right.> DeviceTypeName : knows
+Device *-- "1" DeviceStatus : contains
+
+IDeviceRepository "1" -up-|> IRepository : extends
+
+IDeviceRepository *-- "*" Device : contains
+
+
+@enduml

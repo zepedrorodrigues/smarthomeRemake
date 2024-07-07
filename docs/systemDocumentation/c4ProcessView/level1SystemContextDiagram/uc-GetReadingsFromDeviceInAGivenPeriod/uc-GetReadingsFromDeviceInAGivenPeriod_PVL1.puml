@@ -1,0 +1,20 @@
+@startuml
+
+title UC: Get Readings From Device in a Given Period\n(Process View Level 1)
+autonumber
+
+actor "RoomOwner" as RO
+participant "<<system(C4)>>\nSmartHome" as SH
+
+RO -> SH : Request readings from device in a given period
+activate RO
+activate SH
+SH --> RO : Request time period
+deactivate SH
+RO -> SH : provide time period
+activate SH
+SH --> RO : Provide readings
+deactivate SH
+deactivate RO
+
+@enduml

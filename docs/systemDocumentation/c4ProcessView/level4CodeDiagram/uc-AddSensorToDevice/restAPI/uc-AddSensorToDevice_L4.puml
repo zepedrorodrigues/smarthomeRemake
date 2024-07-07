@@ -1,0 +1,131 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title UC: Add Sensor to Device\nREST API\n(Process View Level 4)
+
+autonumber
+
+/'
+As a Power User [or Administrator], I want to add a sensor to an existing device in
+a room. The sensor must be of a model of an existing type of sensor.
+'/
+
+participant "Routing" as ROUT
+participant ":SensorTypeRESTController" as STC
+participant ":ISensorTypeService" as STS
+participant ":ISensorTypeRepository" as STR
+participant ":SensorTypeMapper" as STM
+participant ":SensorModelRESTController" as SMC
+participant ":ISensorModelService" as SMS
+participant ":ISensorModelRepository" as SMR
+participant ":SensorModelMapper" as SMM
+participant ":SensorRESTController" as C7
+participant ":SensorMapper" as S3
+participant ":ISensorService" as SS
+participant ":IDeviceRepository" as IDR
+participant ":SensorFactory" as F
+participant ":ISensorRepository" as SR
+participant "sensorTypeDTO:SensorTypeDTO" as ST
+participant "sensorTypeId:SensorTypeId" as STID
+participant "sensorModelDTO:SensorModelDTO" as SM
+participant "deviceID:DeviceId" as D7
+participant "sensorModelName:SensorModelName" as SMN
+participant "sensor:Sensor" as S1
+participant "sensorDTO:SensorDTO" as S2
+
+
+
+[o-> ROUT : GET /sensortypesIds
+activate ROUT
+ROUT->STC : getSensorTypes()
+activate STC
+STC -> STS : getSensorTypesIds()
+activate STS
+STS -> STR : findSensorTypeIds()
+activate STR
+STR --> STS : sensorTypeIds
+deactivate STR
+STS --> STC : sensorTypeIds
+deactivate STS
+STC -> STM : toSensorTypesIdDTO(sensorTypeIds)
+activate STM
+STM --> ST** : <create> (sensorTypeId)
+STM --> STC : sensorTypesDTO
+deactivate STM
+STC --> ROUT : sensorTypesDTO,\nHttpStatus.OK
+deactivate STC
+[o<-- ROUT : sensorTypesDTO,\nHttpStatus.OK
+deactivate ROUT
+
+[o->ROUT : GET/sensormodels/{sensortypeId}
+activate ROUT
+ROUT->SMC: getSensorModelsBySensorTypeIdentity(sensorTypeId)
+activate SMC
+SMC --> STID** : <create> (sensorTypeIdVo)
+SMC -> SMS : getSensorModels\nBySensorTypeIdentity\n(sensorTypeIdVo)
+activate SMS
+SMS -> SMR : findSensorModelNames\nBySensorTypeId\n(sensorTypeId)
+activate SMR
+SMR --> SMS : sensorModelNames
+deactivate SMR
+SMS --> SMC : sensorModelNames
+deactivate SMS
+SMC -> SMM : toSensorModelNameDTO(sensorModelNames)
+activate SMM
+SMM --> SM** : <create> (sensorModelName)
+SMM --> SMC : sensorModelsDTO
+deactivate SMM
+SMC --> ROUT : sensorModelsDTO,\nHttpStatus.OK
+deactivate SMC
+[o<--ROUT : sensorModelsDTO,\nHttpStatus.OK
+deactivate ROUT
+
+[o->ROUT: POST /sensors/""
+activate ROUT
+ROUT->C7: addSensor(deviceId, sensorDTO)
+activate C7
+C7 -> S3 : toDeviceId\n(deviceId, sensorDTO)
+activate S3
+S3 --> D7** : <create> (deviceIdVo)
+S3 --> C7 : deviceIdVo
+deactivate S3
+
+C7 -> S3 : toSensorModelName\n(sensorDTO)
+activate S3
+S3 --> SMN** : <create> (sensorModelName)
+S3 --> C7 : sensorModelName
+deactivate S3
+
+C7 -> SS : addSensor(sensorModelName, deviceId)
+activate SS
+SS -> IDR : containsIdentity\n(deviceId)
+activate IDR
+IDR --> SS : boolean
+deactivate IDR
+
+
+
+SS -> F : createSensor\n(sensorModelName, deviceId)
+activate F
+F --> S1** : <create> (sensorModelName, deviceId)
+F --> SS : sensor
+deactivate F
+SS -> SR : save(sensor)
+activate SR
+SR --> SS : sensor
+deactivate SR
+SS --> C7 : sensor
+deactivate SS
+
+C7 -> S3 : toSensorDTO(sensor)
+activate S3
+S3 --> S2** : <create> (sensorId, deviceId, sensorModelName)
+S3 --> C7 : _sensorDTO
+deactivate S3
+C7 --> ROUT : _sensorDTO,\nHttpStatus.CREATED
+deactivate C7
+[o<-- ROUT : _sensorDTO,\nHttpStatus.CREATED
+deactivate ROUT
+
+
+@enduml

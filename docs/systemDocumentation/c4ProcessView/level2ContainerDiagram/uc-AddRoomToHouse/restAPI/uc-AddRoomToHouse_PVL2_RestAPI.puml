@@ -1,0 +1,15 @@
+@startuml
+
+title UC: Add a Room to the House\n(Process View Level 2)
+autonumber
+
+participant "<<system(C4)>>\nBackend" as BE
+
+[o-> BE: (GET) Request house
+activate BE
+[o<-- BE: (OK, 200) Provide house
+[o-> BE: (POST) Provide room data
+[o<--BE: (CREATED, 201) Provide saved room
+deactivate BE
+
+@enduml

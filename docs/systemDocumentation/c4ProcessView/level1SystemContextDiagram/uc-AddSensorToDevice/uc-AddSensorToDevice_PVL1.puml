@@ -1,0 +1,22 @@
+ @startuml
+
+title UC: Add an Sensor to Device \n (Process View Level 1)
+autonumber
+
+actor "Power User/\nAdministrator" as S
+participant "<<system(C4)>>\nSmartHome" as AH
+
+S -> AH : Request add sensor to device
+activate S
+activate AH
+AH --> S : Provide sensor types
+S -> AH : Choose sensor type
+AH --> S : Provide sensor models
+S -> AH : Choose sensor model
+AH --> S : Sensor added
+deactivate AH
+deactivate S
+
+@enduml
+
+/´ syntax mais específica'/

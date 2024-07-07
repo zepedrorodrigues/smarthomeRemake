@@ -1,0 +1,85 @@
+@startuml
+
+title UC: Get Peak Power Consumption In a Given Period\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+class ReadingRESTController{
++ ReadingRESTController(...)
++ getPeakPowerConsumptionInAGivenPeriod(periodDTO) : (Double) peakPowerConsumption
+}
+
+interface IReadingsService{
++ getPeakPowerConsumptionInAGivenPeriod(...) : (Double) peakPowerConsumption
+}
+
+class TimeStamp{
+- timeStamp: LocalDateTime
++ TimeStamp(...)
++ getTimeStamp() : LocalDateTime
+}
+
+interface IDeviceRepository{
++ findDeviceIdsByDeviceTypeName(...): Iterable<DeviceId>
+}
+
+class DeviceId{
+- deviceId: String
++ getDeviceId() : String
+}
+
+class SensorId{
+- sensorId: String
++ getSensorId() : String
+}
+
+
+interface ISensorRepository{
++ findSensorIdsByDeviceIdAndSensorModelName(...): Iterable<SensorId>
+}
+
+interface IReadingRepository{
++ findReadingsBySensorIdInAGivenPeriod(...): Iterable<Reading>
+}
+
+class Reading{
+- timeStamp: TimeStamp
+- readingValue: ReadingValue
++ getReadingValue() : ReadingValue
++ getTime() : TimeStamp
+}
+
+class ValueMapper{
++toDTO(readingValue) : ValueDTO
+}
+
+class ValueDTO{
+- value: Double
++ getValue() : Double
+}
+
+ReadingRESTController ..> IReadingsService : uses
+ReadingRESTController ..> ValueDTO : uses
+ReadingRESTController ..> ValueMapper : uses
+
+ValueMapper ..> ValueDTO : <creates>
+
+IReadingsService ..> IDeviceRepository : uses
+IReadingsService ..> ISensorRepository : uses
+IReadingsService ..> IReadingRepository : uses
+IReadingsService ..> TimeStamp : uses
+
+ReadingRESTController ..> TimeStamp : <creates>
+
+IDeviceRepository *-- DeviceId : contains
+
+
+ISensorRepository *-- SensorId : contains
+ISensorRepository ..> DeviceId : uses
+
+
+IReadingRepository *-- Reading : contains
+IReadingRepository ..> SensorId : uses
+IReadingRepository ..> TimeStamp : uses
+
+
+
+@enduml

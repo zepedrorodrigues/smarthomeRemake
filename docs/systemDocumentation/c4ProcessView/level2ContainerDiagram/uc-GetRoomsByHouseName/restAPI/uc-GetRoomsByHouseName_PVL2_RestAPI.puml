@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title UC: Get Rooms by House Name\nREST API\n(Process View Level 2)
+autonumber
+
+actor "User" as A
+participant "<<system(C4)>>\nBackend" as BE
+
+A -> BE : Get rooms
+activate A
+activate BE
+BE --> A : Provide House
+deactivate BE
+A -> BE : Select House
+activate BE
+BE --> A : Provide rooms
+deactivate BE
+deactivate A
+
+@enduml

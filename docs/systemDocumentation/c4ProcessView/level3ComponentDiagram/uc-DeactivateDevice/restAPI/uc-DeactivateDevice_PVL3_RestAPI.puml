@@ -1,0 +1,28 @@
+@startuml
+
+title UC: Deactivate device\nREST API\n(Process View Level 3)
+autonumber
+
+participant "RESTController" as RC
+participant "Service" as S
+participant "Domain" as D
+participant "Repository" as R
+
+[o-> RC : (POST) Request device deactivation
+activate RC
+RC -> S: deactivate device
+activate S
+S -> D: deactivate device
+activate D
+D --> S: Device deactivated
+deactivate D
+S -> R: update device
+activate R
+R --> S: Device updated
+deactivate R
+S --> RC: Device deactivated
+deactivate S
+[o<--RC : 200 OK, Device deactivated
+deactivate RC
+
+@enduml

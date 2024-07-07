@@ -1,0 +1,57 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title UC: Deactivate Device\nREST API\n(Process View Level 4)
+
+/'
+As a Power User [or Administrator], I want to deactivate a device, so that it is no
+longer used. Nevertheless, it should be possible to access its configuration and
+activity log.
+'/
+
+participant "Routing" as R
+participant " :DeviceRESTController" as C1
+participant " :IDeviceService" as S
+participant " :IDeviceRepository" as DR
+participant "device :Device" as D
+participant " :DeviceMapper" as M
+participant "_deviceId :DeviceId" as DI
+participant "_deviceStatus :DeviceStatus" as DS
+participant "_deviceDTO :DeviceDTO" as D2
+
+[o-> R : PUT /devices/{id}/deactivate
+activate R
+R -> C1 : deactivateDevice(deviceDTO)
+activate C1
+C1 -> DI** : <create> (deviceId)
+
+deactivate M
+C1 -> S : deactivateDevice\n(_deviceId)
+activate S
+S -> DR : findByIdentity\n(_deviceId)
+activate DR
+DR --> S : device
+deactivate DR
+S -> D : deactivateDevice()
+activate D
+D --> DS** : <create> (deviceStatus)
+deactivate D
+S -> DR : update(device)
+activate DR
+DR --> S : device
+deactivate DR
+S -> C1 : device
+deactivate S
+C1 -> M : toDeviceDTO(device)
+activate M
+M --> D2** : <create>\n(deviceId, deviceName, deviceType, roomId, deviceStatus)
+M --> C1 : _deviceDTO
+deactivate M
+C1 --> R : _deviceDTO, HttpStatus.OK
+deactivate C1
+[o<-- R : _deviceDTO, HttpStatus.OK
+deactivate R
+
+@enduml

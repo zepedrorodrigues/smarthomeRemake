@@ -1,0 +1,16 @@
+@startuml
+
+autonumber
+title UC: Deactivate Device\n(Process View Level 1)
+
+actor "Power User" as PU
+participant "<<system(C4)>>\nSmartHome" as SH
+
+PU -> SH: Deactivate device
+activate PU
+activate SH
+SH --> PU: Device deactivated
+deactivate SH
+deactivate PU
+
+@enduml

@@ -1,0 +1,91 @@
+@startuml
+
+title Aggregate Room Class Diagram\nSystem / BackEnd / Domain\n(Implementation View - Level 4)
+
+class HouseName {
+- houseName : String
++ HouseName(...)
++ getHouseName() : String
+}
+
+package "Room Ag" {
+class Room {
++ Room(...)
++ getIdentity() : RoomId
++ getRoomName() : RoomName
++ getHouseName() : HouseName
++ getFloor() : Floor
++ getDimensions() : Dimensions
+}
+
+class RoomName{
+- roomName : String
++ RoomName(...)
++ getRoomName() : String
+}
+
+class Floor{
+- floor : int
++ Floor(...)
++ getFloor() : int
+}
+
+class Dimensions {
++ Dimensions(...)
++ getWidth() : Width
++ getHeight() : Height
++ getLength() : Length
+}
+class Width {
+- width : double
++ Width(...)
++ getWidth() : double
+}
+class Length {
+- length : double
++ Length(...)
++ getLength() : double
+}
+class Height {
+- height : double
++ Height(...)
++ getHeight() : double
+}
+
+class RoomId{
+- roomId : String
++ RoomId(...)
++ getRoomId() : String
+}
+}
+
+
+package Repositories {
+interface IRepository {
++ save(...) : Object
++ findAll() : Iterable<Object>
++ findByIdentity(...) : Optional<Object>
++ containsIdentity(...) : boolean
+}
+
+interface IRoomRepository {
++ findRoomIds() : Iterable<RoomId>
+}
+}
+
+Room ..>  HouseName : knows
+
+Room "1" *-- "1" RoomName : contains
+Room "1" *-right- "1" RoomId : contains
+Room "1" *-- "1" Floor : contains
+Room "1" *-- "1" Dimensions : contains
+
+Dimensions "1" *-- "1" Width : contains
+Dimensions "1" *-- "1" Length : contains
+Dimensions "1" *-- "1" Height : contains
+
+IRoomRepository "1" -up-|> IRepository : extends
+
+IRoomRepository "1" *-- "*" Room : contains
+
+@enduml

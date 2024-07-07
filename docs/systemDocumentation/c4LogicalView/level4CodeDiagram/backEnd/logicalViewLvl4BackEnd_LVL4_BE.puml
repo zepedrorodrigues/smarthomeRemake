@@ -1,0 +1,85 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+title SmartHome (G6)\nBackEnd Server\n(Logical View - Level 4)
+
+component "<<Code>>\nBackEnd Server Component" as BE{
+
+package "Framework and Drivers Layer" as FDL{
+component "<<component>>\nPersistence" as PERS{
+}
+component "<<component>>\nRouting" as ROUT{
+}
+}
+
+package "Interface Adapters Layer" as IAL{
+component "<<component>>\nController" as CONT{
+}
+component "<<component>>\nRepository" as REPO{
+}
+}
+package "Application Business Rules Layer" as ABR{
+component "<<component>>\nApplication Service" as SERV{
+}
+}
+package "Enterprise Business Rules Layer" as EBR{
+component "<<component>>\nDomain Model (DDD)" as DOMAIN{
+}
+}
+component "<<component>>DataModel" as DATAMODEL{
+}
+component "<<component>>\nDTO" as DTO{
+}
+interface "Controller API" as CONTAPI
+interface "DataModel API" as DATAMODELAPI
+interface "Persistence API" as PERSAPI
+interface "Application Service API" as APPSERVAPI
+interface "DTO API" as DTOAPI
+interface "Model API" as MODELAPI
+interface "Repo API" as REPOAPI
+portin " " as BP1
+portin " " as BP5
+}
+
+/'REST API'/
+ROUT --- BP1
+BP1 -u- " SmartHome API"
+
+/'Persistence'/
+PERS -- BP5
+PERS -- PERSAPI
+PERSAPI )-- REPO
+PERS --( DATAMODELAPI
+DATAMODELAPI -l- DATAMODEL
+
+/'Routing Controller'/
+ROUT --( CONTAPI
+CONTAPI -- CONT
+
+/'Controller Service'/
+CONT --( APPSERVAPI
+APPSERVAPI -d- SERV
+CONT -up-( DTOAPI
+DTOAPI -up- DTO
+
+/'Service Domain'/
+SERV --( MODELAPI
+MODELAPI -- DOMAIN
+
+/'Repo Model'/
+REPO -- REPOAPI
+REPO --( MODELAPI
+REPOAPI )-- SERV
+REPO .|> DOMAIN
+
+/'Repo Persistence'/
+REPO -l-( DATAMODELAPI
+
+
+/'Exterior connections'/
+BP5 -u-( "Database API"
+
+@enduml
+
+/' Isto provavelmente é um Nível 4, no Nível 3 teríamos, entre outras coisas que definir a ligação à base de dados'/
+/´precisamos especificar ligação com base de dadosm, feita no BAckend (nivel 2), interna no proprio backend'/

@@ -1,0 +1,32 @@
+.temperature-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+    color: white;
+}
+
+.temperature-card .icon {
+    margin-right: 15px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-container h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.text-container p {
+    margin: 5px 0 0 0;
+}
+  

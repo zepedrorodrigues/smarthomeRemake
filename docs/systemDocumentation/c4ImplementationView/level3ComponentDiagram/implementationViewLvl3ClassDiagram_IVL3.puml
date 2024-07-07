@@ -1,0 +1,50 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+title SmartHome (G6)\nSystem / BackEnd\n(Implementation View - Level 3)
+package System{
+package Infrastructure{
+package Routing{
+}
+package Persistence{
+}
+}
+package "Interface Adapters"{
+package Controllers{}
+
+package Repositories{
+}
+}
+package "Application Services"{
+package ImplAppServices{
+}
+package IAppServices{
+}
+}
+package "Domain"{
+package Aggregates{
+}
+package VOs{
+}
+package IRepositories{}
+}
+
+Routing ..> Controllers
+
+Controllers .> IAppServices
+Controllers ..> VOs
+
+ImplAppServices .u.|> IAppServices
+
+ImplAppServices ...> Aggregates
+ImplAppServices ...> VOs
+ImplAppServices .u.> IRepositories
+
+Repositories .> Persistence
+Repositories .....|> IRepositories
+Repositories ..> VOs
+
+Aggregates .> VOs
+
+
+@enduml

@@ -1,0 +1,113 @@
+@startuml
+
+title UC: Get Devices By Functionality\nDomain Class Diagram - Use Case\nSystem / BackEnd / Domain\n(Implementation View Level 4)
+
+class DeviceRESTController{
++ getDevicesByFunctionality(): HashMap<String,Set<DeviceDTO>>
+}
+interface IDeviceRESTService{
++ getDevicesBySensorType(): HashMap<String,Set<Device>>
+- fillHashMap(): HashMap<String, Set<Device>>
+- clearHashMap(): HashMap<String, Set<Device>>
+}
+interface ISensorTypeRepository{
++ findAll(): Iterable<SensorType>
++ findSensorTypeIds() : Iterable<SensorTypeId>
+}
+interface ISensorModelRepository{
++ findSensorModelsBySensorTypeId(...): SensorModel
+}
+class SensorType{
++ getSensorTypeName: SensorTypeName
+}
+class SensorTypeName{
++ getSensorTypeName(): String
+}
+
+class SensorModelName{
+- sensorModelName : String
++ getSensorModelName(): String
+}
+
+class "HashMap<String, Set<Device>>"{
++ put(String, Set<Device>): void
++ get(String): Set<Device>
+}
+class "HashMap<String,Set<DeviceDTO>>"{
++ get(String): Set<DeviceDTO>
++ put(String, Set<DeviceDTO>): void
+}
+interface ISensorRepository{
++ findAll(): Iterable<Sensor>
+}
+class Sensor{
++ getSensorModelName(): SensorModelName
++ getDeviceId(): DeviceId
+}
+class Device{
+- deviceId : DeviceId
+- deviceName : DeviceName
+- deviceType : DeviceType
+- deviceStatus : DeviceStatus
+- roomName : RoomName
+- deviceStatus : DeviceStatus
++ getDeviceId(): DeviceId
++ getDeviceName(): DeviceName
++ getDeviceType(): DeviceType
++ getDeviceStatus(): DeviceStatus
++ getRoomName(): RoomName
+}
+class SensorModel{
++getSensorTypeId(): SensorType
+}
+interface IDeviceRepository{
++ findByIdentity(DeviceId): Device
+}
+class DeviceMapper{
++toMapDTO(HashMap<String, Set<Device>>): HashMap<String, Set<DeviceDTO>>
++toDeviceDTO(Device): DeviceDTO
+}
+class SensorTypeId{
+- sensorTypeId : String
++ getSensorTypeId(): String
+}
+class DeviceDTO{
+- deviceId : String
+- deviceName : String
+- deviceType : String
+- deviceStatus : String
+- roomName : String
++ getDeviceId(): String
++ getDeviceName(): String
++ getDeviceType(): String
++ getDeviceStatus(): String
++ getRoomName(): String
+}
+
+DeviceRESTController  .>  IDeviceRESTService : uses
+DeviceRESTController ..>  DeviceMapper : uses
+
+IDeviceRESTService "1" --> "1" ISensorTypeRepository : uses
+IDeviceRESTService "1" --> "1" IDeviceRepository : uses
+IDeviceRESTService "1" --> "1" ISensorRepository : uses
+IDeviceRESTService "1" --> "1" ISensorModelRepository : uses
+IDeviceRESTService "1" ..> "1" "HashMap<String, Set<Device>>" : creates
+
+DeviceMapper "1" ..> "1" "HashMap<String,Set<DeviceDTO>>" : creates
+DeviceMapper  ..> "*" DeviceDTO : creates
+DeviceMapper ..> "HashMap<String, Set<Device>>" : uses
+
+
+
+ISensorTypeRepository "1" --> "*" SensorType : contains
+ISensorModelRepository "1" --> "*" SensorModel : contains
+ISensorModelRepository "1" ..> "*" SensorModelName : uses
+IDeviceRepository "1" --> "*" Device : contains
+ISensorRepository "1" --> "*" Sensor : contains
+
+SensorType "1" *-- "1" SensorTypeName : contains
+Sensor "1" *-- "1" SensorModelName : contains
+SensorModel "1" ..> "1" SensorTypeId : knows
+ISensorTypeRepository "1" --> "*" SensorTypeId : uses
+
+@enduml
