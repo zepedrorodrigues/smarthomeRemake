@@ -62,11 +62,9 @@ To set up the project locally, you will need:
    ```sh
    git clone https://github.com/Departamento-de-Engenharia-Informatica/2023-2024-switch-dev-project-assignment-switch-project-2023-2024-grupo6.git
     ```
-2. **Connect our backend to a datbase**
+2. **Connect our backend to a database**
    - This process is described in a more detailed form here:</br>
      https://github.com/Departamento-de-Engenharia-Informatica/2023-2024-switch-dev-project-assignment-switch-project-2023-2024-grupo6/blob/main/docs/userStoryReport/us046/UserStory_046.md
-
-
 3. **Run the Backend**
    ```sh
    mvn spring:boot run
@@ -89,7 +87,7 @@ To set up the project locally, you will need:
 3. Enjoy!
 
 
-   <img src="https://i.postimg.cc/nzhWXcjT/image.png">
+   <img src="https://i.postimg.cc/nzhWXcjT/image.png" alt="SmartHome welcome screen"">
 
 
 ### Use our Deployed REST-ful API (DEI Servers)
