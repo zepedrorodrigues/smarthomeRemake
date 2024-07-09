@@ -79,11 +79,11 @@ CREATE TABLE IF NOT EXISTS actuator
     actuator_model_name VARCHAR(255),
     decimal_lower_limit DOUBLE,
     decimal_upper_limit DOUBLE,
-    deviceid          VARCHAR(255),
+    device_id          VARCHAR(255),
     integer_lower_limit INTEGER,
     integer_upper_limit INTEGER,
     precision_value         INTEGER,
-    FOREIGN KEY (deviceid) REFERENCES device(device_id)
+    FOREIGN KEY (device_id) REFERENCES device(device_id)
 );
 
 CREATE TABLE IF NOT EXISTS reading
@@ -180,18 +180,10 @@ INSERT INTO sensor (sensor_id, device_id, sensor_model_name) VALUES ('37953320-0
 -- table actuator
 INSERT INTO actuator (actuator_id, actuator_model_name, decimal_lower_limit, decimal_upper_limit, device_id, integer_lower_limit, integer_upper_limit, precision_value) VALUES ('46520740-6f3b-43e3-b407-512004ca0d17', 'ActuatorOfBlindRoller', null, null, '41b7b867-a99f-4171-9d12-5a5e25601aec', null, null, null);
 INSERT INTO actuator (actuator_id, actuator_model_name, decimal_lower_limit, decimal_upper_limit, device_id, integer_lower_limit, integer_upper_limit, precision_value) VALUES ('1788f71f-f3ef-42d8-bf34-fd93c5eb1544', 'ActuatorOfBlindRoller', null, null, '44ad9efa-6b89-485d-96ee-255083bcbbff', null, null, null);
-INSERT INTO actuator (actuator_id, actuator_model_name, decimal_lower_limit, decimal_upper_limit, device_id, integer_lower_limit, integer_upper_limit, precision_value) VALUES ('a109d123-040d-4e08-9dcc-c17472b56f87', 'ActuatorOfOnOffSwitch', null, null, '0167fb4a-d6b6-4d61-9fe9-7aec1a72f032', null, null, null);
-INSERT INTO actuator (actuator_id, actuator_model_name, decimal_lower_limit, decimal_upper_limit, device_id, integer_lower_limit, integer_upper_limit, precision_value) VALUES ('271cb3ee-7c6e-46c7-83cb-1e4e3e708e3d', 'ActuatorOfOnOffSwitch', null, null, '08504a80-4818-43d0-91b9-1f2da26fa87d', null, null, null);
-INSERT INTO actuator (actuator_id, actuator_model_name, decimal_lower_limit, decimal_upper_limit, device_id, integer_lower_limit, integer_upper_limit, precision_value) VALUES ('7d3991c7-dba5-4875-9234-bd60165c18fa', 'ActuatorOfOnOffSwitch', null, null, '28a3fddb-e558-41ea-9efb-0683357b9e67', null, null, null);
 
 -- table reading
 
-INSERT INTO reading (reading_id, reading_value, sensor_id, time_stamp) VALUES ('7a85932f-39ff-4fea-8b12-0c87821353ae', '25', '1', '2024-04-25 12:00:00.000000');
-INSERT INTO reading (reading_id, reading_value, sensor_id, time_stamp) VALUES ('00d6dece-42e0-4d04-ae5c-ca6fe09c5d7c', '15', '2', '2024-04-25 12:00:10.000000');
-INSERT INTO reading (reading_id, reading_value, sensor_id, time_stamp) VALUES ('e42e84d5-02fb-4a00-827d-36b840fc3197', '12', '3', '2024-04-25 12:00:00.000000');
-INSERT INTO reading (reading_id, reading_value, sensor_id, time_stamp) VALUES ('5ec07ab6-fcad-4526-8532-83d5540fc17e', '5', '4', '2024-04-25 12:00:10.000000');
-INSERT INTO reading (reading_id, reading_value, sensor_id, time_stamp) VALUES ('410febac-68a3-4ab9-8b5a-3e3c6d060e17', '100', '5', '2024-04-25 12:00:00.000000');
-INSERT INTO reading (reading_id, reading_value, sensor_id, time_stamp) VALUES ('34e4c998-42d1-4790-8665-89176112f3cd', '25', '6', '2024-04-25 12:00:00.000000');
+
 INSERT INTO reading (reading_id, reading_value, sensor_id, time_stamp) VALUES ('7fcd8270-f317-45ff-90f5-dbb4a2f06b3e', '3562.25', '2ca95c92-5a2e-4322-9e4d-6f6a954936a4', '2024-04-25 12:00:00.000000');
 INSERT INTO reading (reading_id, reading_value, sensor_id, time_stamp) VALUES ('a1a96f93-4aef-487d-83a7-2f768b3fef71', '4826.71', '2ca95c92-5a2e-4322-9e4d-6f6a954936a4', '2024-04-25 12:00:06.000000');
 INSERT INTO reading (reading_id, reading_value, sensor_id, time_stamp) VALUES ('cdfb0e90-0c0d-41f7-9c7e-3651e5f95dc7', '2763.50', '2ca95c92-5a2e-4322-9e4d-6f6a954936a4', '2024-04-25 12:00:12.000000');
